@@ -2,7 +2,8 @@
 
 /**
  *
- * @author rober
+ * @author rober, valen, alex
+ * "los p*tos amos"
  */
 public class Videojuego {
 
