@@ -1,3 +1,6 @@
+
+import videojuego.enemigos.Enemigos;
+
 public class PadreCorredor extends Enemigos {
 
     public PadreCorredor(String nombre, String superPoder, int vida, int daño) {

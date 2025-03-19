@@ -1,3 +1,5 @@
+package videojuego.enemigos;
+
 // padre secretario del señor
 public class PadreSecretarioDelSenor extends Enemigos {
 

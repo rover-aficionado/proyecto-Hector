@@ -1,3 +1,5 @@
+package videojuego.enemigos;
+
 
 // estos son los enemigos más básicos
 public class EsbirrosDeLaLuz extends Enemigos{

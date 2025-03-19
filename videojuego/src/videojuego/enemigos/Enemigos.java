@@ -1,3 +1,6 @@
+package videojuego.enemigos;
+
+
 public abstract class Enemigos {
     private String nombre;
     private String superPoder;

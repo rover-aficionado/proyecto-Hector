@@ -1,6 +1,0 @@
-/*@author rober*/
-
-
-class Enemigos {
-
-}
