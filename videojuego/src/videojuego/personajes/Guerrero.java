@@ -1,13 +1,15 @@
-public class Guerrero extends Personajes{
-    int fuerza;
+package videojuego.personajes;
 
-    public Guerrero(String nombre, int vida, int energia, int nivelExperiencia,int fuerza){
-        super(nombre, vida, energia, nivelExperiencia);
+public class Guerrero extends Personajes{
+    private int fuerza = 5;
+
+    public Guerrero(String nombre, int vida, int vidaMaxima, int ataque, int energia, int nivelExperiencia, int experiencia, int fuerza) {
+        super(nombre, vida, vidaMaxima, ataque, energia, nivelExperiencia, experiencia);
         this.fuerza = fuerza;
     }
 
     public int getFuerza() {
-        return this.fuerza;
+        return fuerza;
     }
 
     public void setFuerza(int fuerza) {
@@ -16,9 +18,13 @@ public class Guerrero extends Personajes{
 
     @Override
     public String toString() {
-        return super.toString + "{" +
-            " fuerza='" + getFuerza() + "'" +
-            "}";
+        return super.toString() + "Guerrero{" +
+                "fuerza=" + fuerza +
+                '}';
     }
 
+    @Override
+    public int atacar() {
+        return (int) (this.getFuerza() * (this.getNivelExperiencia() * 0.50));
+    }
 }
