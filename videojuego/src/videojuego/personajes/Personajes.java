@@ -1,6 +1,6 @@
 package personajes;
 // clase heredable de los personajes. Los personaje heredan de esta clase
-//hola
+//hola adios
 public abstract class Personajes {
     private String nombre;
     private int vida = 100;
