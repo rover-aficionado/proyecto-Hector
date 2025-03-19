@@ -34,5 +34,4 @@ public class Mascota extends Personajes{
     public void curarCompañero(Personajes p){
         p.setVida(p.getVida() + curacion);
     }
-    //hduwe
 }
