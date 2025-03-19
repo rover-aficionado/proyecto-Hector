@@ -1,4 +1,4 @@
-package personajes;
+package videojuego.personajes;
 
 import java.util.Scanner;
 

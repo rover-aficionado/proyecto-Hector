@@ -1,4 +1,4 @@
-package personajes;
+package videojuego.personajes;
 
 public class Mascota extends Personajes{
     int fuerza = 1;

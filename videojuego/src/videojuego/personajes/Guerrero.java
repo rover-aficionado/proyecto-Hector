@@ -1,4 +1,4 @@
-package personajes;
+package videojuego.personajes;
 
 public class Guerrero extends Personajes{
     private int fuerza = 5;
