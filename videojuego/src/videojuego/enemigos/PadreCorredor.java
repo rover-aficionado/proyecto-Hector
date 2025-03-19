@@ -1,6 +1,6 @@
-public class PadreLadron extends Enemigos {
+public class PadreCorredor extends Enemigos {
 
-    public PadreLadron(String nombre, String superPoder, int vida, int daño) {
+    public PadreCorredor(String nombre, String superPoder, int vida, int daño) {
         super(nombre, superPoder, vida, daño);
     }
 
@@ -9,5 +9,4 @@ public class PadreLadron extends Enemigos {
         super.setVida(super.getVida()-dañoArma);
     }
 
-    
 }

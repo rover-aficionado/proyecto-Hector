@@ -1,7 +1,7 @@
 public abstract class Enemigos {
     private String nombre;
     private String superPoder;
-    private int vida;
+    private int vida=100;
     private int daño;
 
     public Enemigos(String nombre, String superPoder, int vida, int daño) {
