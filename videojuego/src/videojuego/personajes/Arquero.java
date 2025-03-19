@@ -1,4 +1,4 @@
-package videojuego.personajes;
+package personajes;
 
 public class Arquero extends Personajes {
     private int flechas;

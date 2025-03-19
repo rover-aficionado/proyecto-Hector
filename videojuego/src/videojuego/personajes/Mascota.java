@@ -1,4 +1,4 @@
-package videojuego.personajes;
+package personajes;
 
 public class Mascota extends Personajes{
     int fuerza = 1;
@@ -34,5 +34,4 @@ public class Mascota extends Personajes{
     public void curarCompañero(Personajes p){
         p.setVida(p.getVida() + curacion);
     }
-    //hduwe
 }
