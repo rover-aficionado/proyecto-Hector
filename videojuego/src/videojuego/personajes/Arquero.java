@@ -2,12 +2,10 @@ package videojuego.personajes;
 
 public class Arquero extends Personajes {
     private int flechas;
-    private int fuerza = 3;
 
-    public Arquero(String nombre, int vida, int vidaMaxima, int ataque, int energia, int nivelExperiencia, int experiencia, int flechas, int fuerza) {
-        super(nombre, vida, vidaMaxima, ataque, energia, nivelExperiencia, experiencia);
+    public Arquero(int flechas, String nombre, double fuerza, double energia) {
+        super(nombre, fuerza, energia);
         this.flechas = flechas;
-        this.fuerza = fuerza;
     }
 
     public int getFlechas() {
@@ -18,19 +16,10 @@ public class Arquero extends Personajes {
         this.flechas = flechas;
     }
 
-    public int getFuerza() {
-        return fuerza;
-    }
-
-    public void setFuerza(int fuerza) {
-        this.fuerza = fuerza;
-    }
-
     @Override
     public String toString() {
         return super.toString() + "Arquero{" +
                 "flechas=" + flechas +
-                ", fuerza=" + fuerza +
                 '}';
     }
 

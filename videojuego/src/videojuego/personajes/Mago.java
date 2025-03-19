@@ -4,12 +4,10 @@ import java.util.Scanner;
 
 public class Mago extends Personajes{
     private int mana;
-    private int fuerza = 1;
 
-    public Mago(String nombre, int vida, int vidaMaxima, int ataque, int energia, int nivelExperiencia, int experiencia, int mana, int fuerza) {
-        super(nombre, vida, vidaMaxima, ataque, energia, nivelExperiencia, experiencia);
+    public Mago(int mana, String nombre, double fuerza, double energia) {
+        super(nombre, fuerza, energia);
         this.mana = mana;
-        this.fuerza = fuerza;
     }
 
     public int getMana() {
@@ -20,20 +18,9 @@ public class Mago extends Personajes{
         this.mana = mana;
     }
 
-    public int getFuerza() {
-        return fuerza;
-    }
-
-    public void setFuerza(int fuerza) {
-        this.fuerza = fuerza;
-    }
-
     @Override
     public String toString() {
-        return super.toString() + "Mago{" +
-                "mana=" + mana +
-                ", fuerza=" + fuerza +
-                '}';
+        return super.toString() + " Mago{" + "mana=" + mana + '}';
     }
 
     @Override
