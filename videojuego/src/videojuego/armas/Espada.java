@@ -1,11 +1,23 @@
+package videojuego.armas;
+
 public class Espada extends Armas {
     private double largo;
-    private String material;
 
-    public Espada(String nombre, double durabilidad, double daño, double largo, String material) {
-        super(nombre, durabilidad, daño);
+    public Espada(double largo, String nombre, double daño, String material, String rareza) {
+        super(nombre, daño, material, rareza);
         this.largo = largo;
-        this.material = material;
+    }
+    
+    public double getLargo() {
+        return largo;
     }
 
+    public void setLargo(double largo) {
+        this.largo = largo;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Espada{" + "largo=" + largo + '}';
+    }
 }

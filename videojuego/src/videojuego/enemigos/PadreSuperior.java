@@ -1,3 +1,5 @@
+package videojuego.enemigos;
+
 public class PadreSuperior extends Enemigos {
 
     public PadreSuperior(String nombre, String superPoder, int vida, int daño) {
