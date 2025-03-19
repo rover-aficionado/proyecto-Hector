@@ -1,4 +1,4 @@
-package personajes;
+package videojuego.personajes;
 // clase heredable de los personajes. Los personaje heredan de esta clase
 //hola adios
 public abstract class Personajes {
