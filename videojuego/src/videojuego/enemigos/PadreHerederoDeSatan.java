@@ -11,12 +11,12 @@ public class PadreHerederoDeSatan extends Enemigos {
         
     }
     
-    // definir si el personaje tiene ataque final
+    // definir si el personaje tiene ataque final. esto ocurre con una posibilidad del 1%
     public void tieneAtaque(){
         Aleatorio al = new Aleatorio();
         
         if(al.numero(100)<99){
-            super.setDaño(100);
+            super.setDaño(100); // daño al máximo
         }
     }
     
