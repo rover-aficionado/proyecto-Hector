@@ -1,15 +1,15 @@
 package videojuego.personajes;
 // clase heredable de los personajes. Los personaje heredan de esta clase
-//hola adios adios hola
+//hola adios adios hola adios
 public abstract class Personajes {
     private String nombre;
     private double vida = 100;
     private double vidaMaxima = 100;
-    private double fuerza;
-    private double energia;
+    private double fuerza = 1;
+    private double energia = 100;
     private int nivelExperiencia = 1;
     private double experiencia = 0;
-    private int moneda;
+    private int moneda = 0;
 
     public Personajes(String nombre, double fuerza, double energia, int moneda) {
         this.nombre = nombre;
