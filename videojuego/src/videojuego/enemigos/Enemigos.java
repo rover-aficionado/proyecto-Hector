@@ -16,10 +16,7 @@ public abstract class Enemigos {
     }
 
     // métodos abstractos
-    // public abstract void atacar(int daño);
-    // public abstract void recibirDaño(double dañoArma);
-    
-    // método para recibir daños
+   // método para recibir daños
     public void recibirDaños(double dañoArma){
         vida = vida-dañoArma;
     }
