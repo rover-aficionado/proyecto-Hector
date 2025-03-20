@@ -9,7 +9,7 @@ public class PadreSuperior extends Enemigos {
         this.psds=psds;
         
         if(psds.getVaDarInfo()){
-            super.setDaño(super.getDaño()*2);
+            //super.setDaño(super.getDaño()*2);
         }
         
         
