@@ -3,8 +3,8 @@ package videojuego.personajes;
 public class Guerrero extends Personajes{
     private String armaSecundaria;
     
-    public Guerrero(String nombre, double fuerza, double energia) {
-        super(nombre, fuerza, energia);
+    public Guerrero(String nombre, double fuerza, double energia, int moneda) {
+        super(nombre, fuerza, energia, moneda);
     }
 
     public String getArmaSecundaria() {
@@ -22,6 +22,6 @@ public class Guerrero extends Personajes{
 
     @Override
     public int atacar() {
-        return (int) (this.getFuerza() * (this.getNivelExperiencia() * 0.50));
+        return (int)(this.getFuerza() * (this.getNivelExperiencia() * 0.50));
     }
 }

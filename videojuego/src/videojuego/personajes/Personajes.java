@@ -9,11 +9,13 @@ public abstract class Personajes {
     private double energia;
     private int nivelExperiencia = 1;
     private double experiencia = 0;
+    private int moneda;
 
-    public Personajes(String nombre, double fuerza, double energia) {
+    public Personajes(String nombre, double fuerza, double energia, int moneda) {
         this.nombre = nombre;
         this.fuerza = fuerza;
         this.energia = energia;
+        this.moneda = moneda;
     }
 
     public String getNombre() {
@@ -76,6 +78,14 @@ public abstract class Personajes {
 
     public void setExperiencia(double experiencia) {
         this.experiencia = experiencia;
+    }
+
+    public int getMoneda() {
+        return moneda;
+    }
+
+    public void setMoneda(int moneda) {
+        this.moneda = moneda;
     }
     
     public abstract int atacar();

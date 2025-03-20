@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Mago extends Personajes{
     private int mana;
 
-    public Mago(int mana, String nombre, double fuerza, double energia) {
-        super(nombre, fuerza, energia);
+    public Mago(int mana, String nombre, double fuerza, double energia, int moneda) {
+        super(nombre, fuerza, energia, moneda);
         this.mana = mana;
     }
 
@@ -34,7 +34,7 @@ public class Mago extends Personajes{
             System.out.println("Quieres gastar 50 de mana para obtener" + (this.getFuerza() * 0.2));
             respuesta = sc.nextLine();
             if (respuesta.equalsIgnoreCase("si")){
-                this.setFuerza((int) (this.getFuerza() * 0.2));
+                this.setFuerza((this.getFuerza() * 0.2));
                 this.setMana(this.getMana() - 50);
             } else {
                 this.setMana(this.getMana());
@@ -44,7 +44,7 @@ public class Mago extends Personajes{
             System.out.println("Quieres gastar 133 de mana para obtener" + (this.getFuerza() * 0.3));
             respuesta = sc.nextLine();
             if (respuesta.equalsIgnoreCase("si")){
-                this.setFuerza((int) (this.getFuerza() * 0.3));
+                this.setFuerza((this.getFuerza() * 0.3));
                 this.setMana(this.getMana() - 133);
             } else {
                 this.setMana(this.getMana());
@@ -54,7 +54,7 @@ public class Mago extends Personajes{
             System.out.println("Quieres gastar 200 de mana para obtener" + (this.getFuerza() * 0.4));
             respuesta = sc.nextLine();
             if (respuesta.equalsIgnoreCase("si")){
-                this.setFuerza((int) (this.getFuerza() * 0.4));
+                this.setFuerza((this.getFuerza() * 0.4));
                 this.setMana(this.getMana() - 200);
             } else {
                 this.setMana(this.getMana());
