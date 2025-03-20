@@ -21,6 +21,4 @@ public class Arco extends Armas{
     public String toString() {
         return super.toString() + " Arco{" + "flechasDisparo=" + flechasDisparo + '}';
     }
-    
-    
 }

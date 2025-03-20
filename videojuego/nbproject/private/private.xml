@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/EsbirrosDeLaLuz.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreSuperior.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/armas/Espada.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreCorredor.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreLadron.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/personajes/Mascota.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/personajes/Mago.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreHerederoDeSatan.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/personajes/Personajes.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/Enemigos.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/utils/CargarGuardarPartida.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/personajes/Guerrero.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreSecretarioDelSenor.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/utils/Aleatorio.java</file>
+<<<<<<< Updated upstream
+            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Arquero.java</file>
+            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Personajes.java</file>
+            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Guerrero.java</file>
+=======
+            <file>file:/D:/Proyectos/Java/proyecto-Hector/videojuego/src/videojuego/personajes/Personajes.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
