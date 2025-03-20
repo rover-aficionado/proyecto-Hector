@@ -18,7 +18,7 @@ public abstract class Personajes {
         this.moneda = moneda;
     }
 
-    public String getNombre() {
+    public String getNombre() { 
         return nombre;
     }
 
