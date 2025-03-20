@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/EsbirrosDeLaLuz.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreHerederoDeSatan.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreSuperior.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/personajes/Personajes.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/Enemigos.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreCorredor.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreLadron.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/utils/CargarGuardarPartida.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreSecretarioDelSenor.java</file>
-            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/utils/Aleatorio.java</file>
-=======
-            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Personajes.java</file>
-            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Arquero.java</file>
-            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Guerrero.java</file>
-            <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/personajes/Mago.java</file>
->>>>>>> c5bba7e959e3e79bc8ef3ee6c78a453c0a4f0c3d
-        </group>
+        <group/>
     </open-files>
 </project-private>
