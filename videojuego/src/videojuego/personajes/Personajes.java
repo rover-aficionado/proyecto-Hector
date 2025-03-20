@@ -1,35 +1,21 @@
 package videojuego.personajes;
 // clase heredable de los personajes. Los personaje heredan de esta clase
-//hola adios adios
+//hola adios adios hola
 public abstract class Personajes {
     private String nombre;
-    private int vida = 100;
-    private int vidaMaxima = 100;
-    private int ataque;
-    private int energia;
+    private double vida = 100;
+    private double vidaMaxima = 100;
+    private double fuerza;
+    private double energia;
     private int nivelExperiencia = 1;
-    private int experiencia;
+    private double experiencia = 0;
+    private int moneda;
 
-    public Personajes(String nombre, int vida, int vidaMaxima, int ataque, int energia, int nivelExperiencia, int experiencia) {
+    public Personajes(String nombre, double fuerza, double energia, int moneda) {
         this.nombre = nombre;
-        this.vidaMaxima = vidaMaxima;
-        if (vida >= 100){
-            this.vida = 100;
-        } else if (vida <= 0) {
-            this.vida = 0;
-        }else {
-            this.vida = vida;
-        }
-        this.ataque = ataque;
+        this.fuerza = fuerza;
         this.energia = energia;
-        this.nivelExperiencia = nivelExperiencia;
-        if (experiencia >= 200){
-            this.experiencia =200;
-        } else if (experiencia <= 0) {
-            this.experiencia = 0;
-        }else {
-            this.experiencia = experiencia;
-        }
+        this.moneda = moneda;
     }
 
     public String getNombre() {
@@ -40,41 +26,41 @@ public abstract class Personajes {
         this.nombre = nombre;
     }
 
-    public int getVida() {
+    public double getVida() {
         return vida;
     }
 
-    public void setVida(int vida) {
-        if (vida >= 100){
-            this.vida = 100;
-        } else if (vida <= 0) {
+    public void setVida(double vida) {
+        if(vida > getVidaMaxima()) {
+            this.vida = getVidaMaxima();
+        } else if(vida < 0) {
             this.vida = 0;
-        }else {
+        } else {
             this.vida = vida;
         }
     }
 
-    public int getVidaMaxima() {
+    public double getVidaMaxima() {
         return vidaMaxima;
     }
 
-    public void setVidaMaxima(int vidaMaxima) {
+    public void setVidaMaxima(double vidaMaxima) {
         this.vidaMaxima = vidaMaxima;
     }
 
-    public int getAtaque() {
-        return ataque;
+    public double getFuerza() {
+        return fuerza;
     }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
+    public void setFuerza(double fuerza) {
+        this.fuerza = fuerza;
     }
 
-    public int getEnergia() {
+    public double getEnergia() {
         return energia;
     }
 
-    public void setEnergia(int energia) {
+    public void setEnergia(double energia) {
         this.energia = energia;
     }
 
@@ -86,39 +72,28 @@ public abstract class Personajes {
         this.nivelExperiencia = nivelExperiencia;
     }
 
-    public int getExperiencia() {
+    public double getExperiencia() {
         return experiencia;
     }
 
-    public void setExperiencia(int experiencia) {
-        if (experiencia >= 200){
-            this.experiencia =200;
-        } else if (experiencia <= 0) {
-            this.experiencia = 0;
-        }else {
-            this.experiencia = experiencia;
-        }
+    public void setExperiencia(double experiencia) {
+        this.experiencia = experiencia;
     }
 
-    @Override
-    public String toString() {
-        return "Personajes{" +
-                "nombre='" + nombre + '\'' +
-                ", vida=" + vida +
-                ", vidaMaxima=" + vidaMaxima +
-                ", ataque=" + ataque +
-                ", energia=" + energia +
-                ", nivelExperiencia=" + nivelExperiencia +
-                ", experiencia=" + experiencia +
-                '}';
+    public int getMoneda() {
+        return moneda;
     }
 
+    public void setMoneda(int moneda) {
+        this.moneda = moneda;
+    }
+    
     public abstract int atacar();
 
     public void subirNivel(){
         if (this.getExperiencia() >= 200){
             if (!(this.getNivelExperiencia() >= 5)) {
-                this.setNivelExperiencia(this.getNivelExperiencia() + 1);
+                setNivelExperiencia(getNivelExperiencia() + 1);
                 System.out.println("Sube de nivel");
             }else {
                 System.out.println("Ya ha alcanzado el nivel maximo");
