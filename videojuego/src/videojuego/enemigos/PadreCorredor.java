@@ -6,13 +6,13 @@ import utils.Aleatorio;
 public class PadreCorredor extends Enemigos {
     int velocidadEsquive = 0;
 
-    public PadreCorredor(String nombre, String superPoder, int vida, int daño, int velocidadEsquive) {
+    public PadreCorredor(String nombre, String superPoder, double vida, double daño, int velocidadEsquive) {
         super(nombre, superPoder, vida, daño);
         this.velocidadEsquive=velocidadEsquive;
     }
 
     @Override
-    public void recibirDaño(int dañoArma) {
+    public void recibirDaño(double dañoArma) {
         // en caso de que el enemigo tenga habilidad de esquive se resta al daño del arma
         if(velocidadEsquive>80){
             dañoArma=dañoArma-velocidadEsquive;

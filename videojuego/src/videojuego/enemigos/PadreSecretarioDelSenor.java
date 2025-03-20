@@ -7,13 +7,13 @@ import utils.Aleatorio;
 public class PadreSecretarioDelSenor extends Enemigos {
     private boolean vaDarInfo;
 
-    public PadreSecretarioDelSenor(String nombre, String superPoder, int vida, int daño, boolean vaDarInfo) {
+    public PadreSecretarioDelSenor(String nombre, String superPoder, double vida, double daño, boolean vaDarInfo) {
         super(nombre, superPoder, vida, daño);
         this.vaDarInfo=vaDarInfo;
     }
 
     @Override
-    public void recibirDaño(int dañoArma) {
+    public void recibirDaño(double dañoArma) {
         super.setVida(super.getVida()-dañoArma);
     }
     

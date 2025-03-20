@@ -5,14 +5,14 @@ import videojuego.enemigos.Enemigos;
 public class PadreHerederoDeSatan extends Enemigos {
     boolean ataqueFinal;
 
-    public PadreHerederoDeSatan(String nombre, String superPoder, int vida, int daño, boolean ataqueFinal) {
+    public PadreHerederoDeSatan(String nombre, String superPoder, double vida, double daño, boolean ataqueFinal) {
         super(nombre, superPoder, vida, daño);
         this.ataqueFinal=ataqueFinal;
         
     }
 
     @Override
-    public void recibirDaño(int dañoArma) {
+    public void recibirDaño(double dañoArma) {
         super.setVida(super.getVida()-dañoArma);
         
     }
