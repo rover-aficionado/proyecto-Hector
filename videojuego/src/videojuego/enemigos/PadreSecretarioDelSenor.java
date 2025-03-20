@@ -12,11 +12,6 @@ public class PadreSecretarioDelSenor extends Enemigos {
         this.vaDarInfo=vaDarInfo;
     }
 
-    @Override
-    public void recibirDaño(double dañoArma) {
-        super.setVida(super.getVida()-dañoArma);
-    }
-    
     // método que verifica si el secretario va a dar la indormación al siguiente enemigo
     public boolean darInfo(){
         Aleatorio al = new Aleatorio();
