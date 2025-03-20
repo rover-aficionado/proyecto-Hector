@@ -7,7 +7,7 @@ import java.util.*;
  * "los p*tos amos"
  */
 public class Videojuego {
-
+    // CACHARREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         HashMap<String, Integer> partidas = new HashMap<>();
