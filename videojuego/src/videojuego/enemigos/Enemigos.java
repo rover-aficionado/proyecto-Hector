@@ -17,9 +17,13 @@ public abstract class Enemigos {
 
     // métodos abstractos
     // public abstract void atacar(int daño);
-
-    public abstract void recibirDaño(double dañoArma);
-
+    // public abstract void recibirDaño(double dañoArma);
+    
+    // método para recibir daños
+    public void recibirDaños(double dañoArma){
+        vida = vida-dañoArma;
+    }
+    // métodos getter y setter
     public String getNombre() {
         return nombre;
     }

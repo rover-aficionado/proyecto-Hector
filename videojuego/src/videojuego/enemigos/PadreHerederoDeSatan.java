@@ -10,12 +10,6 @@ public class PadreHerederoDeSatan extends Enemigos {
         this.ataqueFinal=ataqueFinal;
         
     }
-
-    @Override
-    public void recibirDaño(double dañoArma) {
-        super.setVida(super.getVida()-dañoArma);
-        
-    }
     
     // definir si el personaje tiene ataque final
     public void tieneAtaque(){

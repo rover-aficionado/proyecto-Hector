@@ -10,18 +10,7 @@ public class PadreCorredor extends Enemigos {
         super(nombre, superPoder, vida, daño);
         this.velocidadEsquive=velocidadEsquive;
     }
-
-    @Override
-    public void recibirDaño(double dañoArma) {
-        // en caso de que el enemigo tenga habilidad de esquive se resta al daño del arma
-        if(velocidadEsquive>80){
-            dañoArma=dañoArma-velocidadEsquive;
-        }
-        
-        super.setVida(super.getVida()-dañoArma);
-        
-    }
-    
+   
     // define la haabilidad de la velocidad del esquive de este enemigo
     public void esquive(){
         Aleatorio al = new Aleatorio();
