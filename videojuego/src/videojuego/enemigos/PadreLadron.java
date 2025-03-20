@@ -5,13 +5,13 @@ import utils.Aleatorio;
 public class PadreLadron extends Enemigos {
     boolean tieneMaza;
 
-    public PadreLadron(String nombre, String superPoder, int vida, int daño, boolean tieneMaza) {
+    public PadreLadron(String nombre, String superPoder, double vida, double daño, boolean tieneMaza) {
         super(nombre, superPoder, vida, daño);
         this.tieneMaza=tieneMaza;
     }
 
     @Override
-    public void recibirDaño(int dañoArma) {
+    public void recibirDaño(double dañoArma) {
         super.setVida(super.getVida()-dañoArma);
     }
 

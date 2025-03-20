@@ -5,10 +5,10 @@ package videojuego.enemigos;
 public abstract class Enemigos {
     private String nombre;
     private String superPoder;
-    private int vida=100;
-    private int daño;
+    private double vida=100.00;
+    private double daño;
 
-    public Enemigos(String nombre, String superPoder, int vida, int daño) {
+    public Enemigos(String nombre, String superPoder, double vida, double daño) {
         this.nombre = nombre;
         this.superPoder = superPoder;
         this.vida = vida;
@@ -18,7 +18,7 @@ public abstract class Enemigos {
     // métodos abstractos
     // public abstract void atacar(int daño);
 
-    public abstract void recibirDaño(int dañoArma);
+    public abstract void recibirDaño(double dañoArma);
 
     public String getNombre() {
         return nombre;
@@ -28,7 +28,7 @@ public abstract class Enemigos {
         this.nombre = nombre;
     }
 
-    public int getDaño() {
+    public double getDaño() {
         return daño;
     }
 
@@ -40,11 +40,11 @@ public abstract class Enemigos {
         this.superPoder = superPoder;
     }
 
-    public int getVida() {
+    public double getVida() {
         return vida;
     }
 
-    public void setVida(int vida) {
+    public void setVida(double vida) {
         this.vida = vida;
     }
 

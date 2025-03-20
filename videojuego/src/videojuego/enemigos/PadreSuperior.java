@@ -3,7 +3,7 @@ package videojuego.enemigos;
 public class PadreSuperior extends Enemigos {
     PadreSecretarioDelSenor psds;
     
-    public PadreSuperior(String nombre, String superPoder, int vida, int daño, PadreSecretarioDelSenor psds) {
+    public PadreSuperior(String nombre, String superPoder, double vida, double daño, PadreSecretarioDelSenor psds) {
         super(nombre, superPoder, vida, daño);
         // verifica si tiene el golpe especial, si lo tiene duplica el daño de sus golpes
         this.psds=psds;
@@ -17,7 +17,7 @@ public class PadreSuperior extends Enemigos {
     }
 
     @Override
-    public void recibirDaño(int dañoArma) {
+    public void recibirDaño(double dañoArma) {
         super.setVida(super.getVida() - dañoArma);
 
     }
