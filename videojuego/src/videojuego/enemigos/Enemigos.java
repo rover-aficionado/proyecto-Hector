@@ -48,7 +48,7 @@ public abstract class Enemigos {
         this.vida = vida;
     }
 
-    public void setDaño(int daño) {
+    public void setDaño(double daño) {
         this.daño = daño;
     }
 
