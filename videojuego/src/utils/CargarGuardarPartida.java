@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.*;
 import videojuego.personajes.*;
 
 
@@ -51,6 +52,7 @@ public class CargarGuardarPartida {
     }
     
     // cargar partida
+
     public void cargarPartida(){}
     
     // guardar partida
@@ -58,19 +60,20 @@ public class CargarGuardarPartida {
         int numero = buscarArchivo(personaje.getNombre());
         String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
         File archivo = new File(nombreArchivo);
-    
+
         try (FileWriter fw = new FileWriter(archivo);
             PrintWriter pw = new PrintWriter(fw)) {
-            // verifica el tipo del personaje
-            if(personaje instanceof Arquero){
+            
+            // Verifica el tipo del personaje
+            if (personaje instanceof Arquero) {
                 pw.println("1");
-            } else if (personaje instanceof Guerrero){
+            } else if (personaje instanceof Guerrero) {
                 pw.println("2");
-            } else if(personaje instanceof Mago){
+            } else if (personaje instanceof Mago) {
                 pw.println("3");
             }
 
-            // Escribir los datos de los personajes
+            // Escribir los datos del personaje
             pw.println(personaje.getNombre());
             pw.println(personaje.getVida());
             pw.println(personaje.getVidaMaxima());
@@ -80,13 +83,13 @@ public class CargarGuardarPartida {
             pw.println(personaje.getExperiencia());
             pw.println(personaje.getMoneda());
 
-            System.out.println("Partida guardada correctamente");
-
+            System.out.println("Partida guardada correctamente.");
         } catch (IOException e) {
             System.out.println("ERROR: No se pudo guardar la partida.");
         }
     }
     
+       
     // buscar el archivo según su nombre
     public int buscarArchivo(String nombreArchivo){
             
