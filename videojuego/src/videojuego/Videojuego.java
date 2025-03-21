@@ -49,9 +49,9 @@ public class Videojuego {
                 String nombreJugador = sc.nextLine();
                 if (partidas.containsKey(nombreJugador)) {
                     // leer csv con los datos de la partida
-                }else if (opcion.equalsIgnoreCase("3")){
-                    // leer csv ganadores
                 }
+            }else if (opcion.equalsIgnoreCase("3")){
+                // leer csv ganadores
             } else if (opcion.equalsIgnoreCase("4")) {
                 System.out.println("Saliendo del programa");
                 System.exit(0);
