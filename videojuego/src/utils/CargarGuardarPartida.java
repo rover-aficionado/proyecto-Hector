@@ -31,7 +31,24 @@ public class CargarGuardarPartida {
     */
     
     // listar partidas guardadas
-    public void listaPartidas(){}
+    public void listaPartidas(){
+        String ruta = "./utils.partidas";
+        File directorio = new File(ruta);
+        
+        if (directorio.exists() && directorio.isDirectory()){
+            File[] archivos = directorio.listFiles();
+            
+            if (archivos != null ||archivos.length == 0 ){
+                for(File archivo : archivos){
+                    System.out.println(archivo);
+                }
+            } else {
+                System.out.println("no hay partidas guardadas");
+            }
+        } else {
+            System.out.println("ERROR: directorio no encontrado");
+        }
+    }
     
     // cargar partida
     public void cargarPartida(){}
@@ -39,41 +56,41 @@ public class CargarGuardarPartida {
     // guardar partida
     public void guardarPartida(Personajes personaje) throws FileNotFoundException{
         int numero = buscarArchivo(personaje.getNombre());
-    String nombreArchivo = "./utils.partida/" + personaje.getNombre() + numero + ".csv"; // Nombre correcto
-    File archivo = new File(nombreArchivo);
+        String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
+        File archivo = new File(nombreArchivo);
     
-    try (FileWriter fw = new FileWriter(archivo);
-         PrintWriter pw = new PrintWriter(fw)) {
-        // verifica el tipo del personaje
-        if(personaje instanceof Arquero){
-            pw.println("1");
-        } else if (personaje instanceof Guerrero){
-            pw.println("2");
-        } else if(personaje instanceof Mago){
-            pw.println("3");
+        try (FileWriter fw = new FileWriter(archivo);
+            PrintWriter pw = new PrintWriter(fw)) {
+            // verifica el tipo del personaje
+            if(personaje instanceof Arquero){
+                pw.println("1");
+            } else if (personaje instanceof Guerrero){
+                pw.println("2");
+            } else if(personaje instanceof Mago){
+                pw.println("3");
+            }
+
+            // Escribir los datos de los personajes
+            pw.println(personaje.getNombre());
+            pw.println(personaje.getVida());
+            pw.println(personaje.getVidaMaxima());
+            pw.println(personaje.getFuerza());
+            pw.println(personaje.getEnergia());
+            pw.println(personaje.getNivelExperiencia());
+            pw.println(personaje.getExperiencia());
+            pw.println(personaje.getMoneda());
+
+            System.out.println("Partida guardada correctamente");
+
+        } catch (IOException e) {
+            System.out.println("ERROR: No se pudo guardar la partida.");
         }
-        
-        // Escribir los datos de los personajes
-        pw.println(personaje.getNombre());
-        pw.println(personaje.getVida());
-        pw.println(personaje.getVidaMaxima());
-        pw.println(personaje.getFuerza());
-        pw.println(personaje.getEnergia());
-        pw.println(personaje.getNivelExperiencia());
-        pw.println(personaje.getExperiencia());
-        pw.println(personaje.getMoneda());
-
-        System.out.println("Partida guardada correctamente");
-
-    } catch (IOException e) {
-        System.out.println("ERROR: No se pudo guardar la partida.");
-    }
     }
     
     // buscar el archivo según su nombre
     public int buscarArchivo(String nombreArchivo){
             
-        String carpeta = "./utils.partida";
+        String carpeta = "./utils.partidas";
         String nombreBase = nombreArchivo; 
         int numeroMasGrande = -1; 
 
