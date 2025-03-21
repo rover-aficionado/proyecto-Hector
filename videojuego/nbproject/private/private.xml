@@ -5,6 +5,11 @@
         <group>
 <<<<<<< Updated upstream
 <<<<<<< HEAD
+            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/enemigos/PadreHerederoDeSatan.java</file>
+            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/videojuego/Videojuego.java</file>
+            <file>file:/D:/programación/netBeansProjects/videojuego/videojuego/src/utils/CargarGuardarPartida.java</file>
+=======
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             <file>file:/C:/Users/gatin/Desktop/IFP/JAVA/proyecto-Hector/videojuego/src/videojuego/Videojuego.java</file>
@@ -20,9 +25,13 @@
             <file>file:/D:/Proyectos/Java/proyecto-Hector/videojuego/src/videojuego/Videojuego.java</file>
             <file>file:/D:/Proyectos/Java/proyecto-Hector/videojuego/src/videojuego/mascotas/Mascota.java</file>
 >>>>>>> Stashed changes
+<<<<<<< HEAD
 =======
             <file>file:/D:/Proyectos/Java/proyecto-Hector/videojuego/src/videojuego/enemigos/EsbirrosDeLaLuz.java</file>
 >>>>>>> Stashed changes
+=======
+>>>>>>> 9d213146ff681ccf16fc636d1d18df99037b3ebd
+>>>>>>> 9c2be6d12df30ff7e4c4c3b04384c6a9ee50b2e9
         </group>
     </open-files>
 </project-private>
