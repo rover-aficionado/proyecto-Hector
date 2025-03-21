@@ -60,11 +60,10 @@ public class Videojuego {
                 tb.introduccion(personajes);
                 
             } else if (opcion.equalsIgnoreCase("2")) {
-                
+
                 
             } else if(opcion.equalsIgnoreCase("3")) {
-                
-                
+               
             } else if (opcion.equalsIgnoreCase("4")) {
                 System.out.println("Saliendo del juego.....");
                 System.exit(0);
