@@ -15,10 +15,5 @@ public class PadreSuperior extends Enemigos {
         
 
     }
-
-    @Override
-    public void recibirDaño(double dañoArma) {
-        super.setVida(super.getVida() - dañoArma);
-
-    }
+    
 }

@@ -10,11 +10,6 @@ public class PadreLadron extends Enemigos {
         this.tieneMaza=tieneMaza;
     }
 
-    @Override
-    public void recibirDaño(double dañoArma) {
-        super.setVida(super.getVida()-dañoArma);
-    }
-
     // golpe especial
     public void tieneGolpeEspecial(){
         Aleatorio al = new Aleatorio();
