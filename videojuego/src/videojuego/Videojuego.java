@@ -46,10 +46,10 @@ public class Videojuego {
                     personajes.add(g);
                     
                     
-                }else if (opcion.equalsIgnoreCase("2")) {
+                }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 1, 100, 0);
                     personajes.add(a);
-                }else if (opcion.equalsIgnoreCase("3")) {
+                }else if (opcion.equalsIgnoreCase("2")) {
                     Mago m = new Mago(10, nombreJugador, 1, 100, 0);
                     personajes.add(m);
                 }else{
