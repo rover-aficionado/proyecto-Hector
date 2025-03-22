@@ -29,4 +29,53 @@ public class Toolbox {
             }
         }
     }
+    
+    public void seleccionTiendas(ArrayList<Personajes> personaje) {
+        for (Personajes p : personaje) {
+            if(p instanceof Guerrero g) {
+                System.out.println("1. Espada de fuego - 50 monedas");
+                System.out.println("2. Espada de hielo - 50 monedas");
+                System.out.println("3. Espada de Electrica - 80 monedas");
+                System.out.println("4. Espada del inframundo - 120 monedas");
+            }
+        }
+        
+    }
+    
+    
+    public void subirNivel(Personajes x){
+        if (x.getExperiencia() > 200) {
+            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
+            x.setVidaMaxima(x.getVidaMaxima() + 5);
+            x.setFuerza(x.getFuerza() + 5);
+        }
+        if (x.getExperiencia() > 500) {
+            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
+            x.setVidaMaxima(x.getVidaMaxima() + 5);
+            x.setFuerza(x.getFuerza() + 5);
+        }
+        if (x.getExperiencia() > 1000) {
+            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
+            x.setVidaMaxima(x.getVidaMaxima() + 5);
+            x.setFuerza(x.getFuerza() + 5);
+        }
+        if (x.getExperiencia() > 5000) {
+            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
+            x.setVidaMaxima(x.getVidaMaxima() + 5);
+            x.setFuerza(x.getFuerza() + 5);
+        }
+        if (x.getExperiencia() > 10000) {
+            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
+            x.setVidaMaxima(x.getVidaMaxima() + 5);
+            x.setFuerza(x.getFuerza() + 5);
+        }
+    }
+    
+    public void ganarRecompensas(Personajes p){
+        p.setExperiencia(p.getExperiencia() + 50);
+        p.setMoneda(p.getMoneda() + 5);
+        if (p.getExperiencia() > 200 || p.getExperiencia() > 500 || p.getExperiencia() > 1000 || p.getExperiencia() > 5000 || p.getExperiencia() > 10000){
+            p.subirNivel();
+        }
+    }
 }

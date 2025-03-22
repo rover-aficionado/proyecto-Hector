@@ -46,24 +46,26 @@ public class Videojuego {
                     personajes.add(g);
                     
                     
-                }else if (opcion.equalsIgnoreCase("2")) {
+                }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 1, 100, 0);
                     personajes.add(a);
-                }else if (opcion.equalsIgnoreCase("3")) {
+                }else if (opcion.equalsIgnoreCase("2")) {
                     Mago m = new Mago(10, nombreJugador, 1, 100, 0);
                     personajes.add(m);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                 }
+                //escribir csv con los datos de la partida
                 System.out.println("Personaje creado correctamente");
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
                 
             } else if (opcion.equalsIgnoreCase("2")) {
 
-                
+            }else if (opcion.equalsIgnoreCase("3")){
+   
             } else if(opcion.equalsIgnoreCase("3")) {
-               
+
             } else if (opcion.equalsIgnoreCase("4")) {
                 System.out.println("Saliendo del juego.....");
                 System.exit(0);
