@@ -3,8 +3,8 @@ package videojuego.personajes;
 public class Guerrero extends Personajes{
     private String armaSecundaria;
     
-    public Guerrero(String nombre, double fuerza, double energia, int moneda) {
-        super(nombre, fuerza, energia, moneda);
+    public Guerrero(String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
+        super(nombre, fuerza, energia, moneda, curacion, fortuna);
     }
 
     public String getArmaSecundaria() {
