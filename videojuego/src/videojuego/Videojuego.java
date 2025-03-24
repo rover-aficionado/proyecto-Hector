@@ -62,9 +62,7 @@ public class Videojuego {
                 
             } else if (opcion.equalsIgnoreCase("2")) {
 
-            }else if (opcion.equalsIgnoreCase("3")){
-   
-            } else if(opcion.equalsIgnoreCase("3")) {
+            }else if(opcion.equalsIgnoreCase("3")) {
 
             } else if (opcion.equalsIgnoreCase("4")) {
                 System.out.println("Saliendo del juego.....");
