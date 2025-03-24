@@ -3,8 +3,8 @@ package videojuego.personajes;
 public class Arquero extends Personajes {
     private int flechas;
 
-    public Arquero(int flechas, String nombre, double fuerza, double energia, int moneda) {
-        super(nombre, fuerza, energia, moneda);
+    public Arquero(int flechas, String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
+        super(nombre, fuerza, energia, moneda, curacion, fortuna);
         this.flechas = flechas;
     }
 

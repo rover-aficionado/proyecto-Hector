@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Mago extends Personajes{
     private int mana;
 
-    public Mago(int mana, String nombre, double fuerza, double energia, int moneda) {
-        super(nombre, fuerza, energia, moneda);
+    public Mago(int mana, String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
+        super(nombre, fuerza, energia, moneda, curacion, fortuna);
         this.mana = mana;
     }
 
