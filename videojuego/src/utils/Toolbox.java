@@ -220,14 +220,14 @@ public class Toolbox {
             if (opcion.equalsIgnoreCase("1")){
                 for (Personajes x : personajes){
                     x.setMoneda(x.getMoneda() - 50);
-                    //añadir gato con fortuna al personaje
+                    x.setFortuna(1);
                     System.out.println("Has comprado el gato con fortuna");
                     break;
                 }
             } else if (opcion.equalsIgnoreCase("2")) {
                 for(Personajes x : personajes){
                     x.setMoneda(x.getMoneda() - 50);
-                    //añadir perro sanador al personaje
+                    x.setCuracion(1);
                     System.out.println("Has comprado el perro sanador");
                     break;
                 }
@@ -265,8 +265,13 @@ public class Toolbox {
     }
     
     public void ganarRecompensas(Personajes p){
-        p.setExperiencia(p.getExperiencia() + 50);
-        p.setMoneda(p.getMoneda() + 5);
+        if (p.getFortuna() == 0){
+            p.setExperiencia(p.getExperiencia() + 50);
+            p.setMoneda(p.getMoneda() + 5);
+        } else if (p.getFortuna() > 0 ) {
+            p.setExperiencia(p.getExperiencia() + 50 + p.getNivelExperiencia() * 0.25);
+            p.setMoneda((int) (p.getMoneda() + 5 + p.getNivelExperiencia() * 0.25));
+        }
         if (p.getExperiencia() > 200 || p.getExperiencia() > 500 || p.getExperiencia() > 1000 || p.getExperiencia() > 5000 || p.getExperiencia() > 10000){
             p.subirNivel();
         }

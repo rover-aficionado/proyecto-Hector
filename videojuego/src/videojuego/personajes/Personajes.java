@@ -10,12 +10,16 @@ public abstract class Personajes {
     private int nivelExperiencia = 1;
     private double experiencia = 0;
     private int moneda = 0;
+    private int curacion = 0;
+    private int fortuna = 0;
 
-    public Personajes(String nombre, double fuerza, double energia, int moneda) {
+    public Personajes(String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
         this.nombre = nombre;
         this.fuerza = fuerza;
         this.energia = energia;
         this.moneda = moneda;
+        this.curacion = curacion;
+        this.fortuna = fortuna;
     }
 
     public String getNombre() { 
@@ -87,7 +91,23 @@ public abstract class Personajes {
     public void setMoneda(int moneda) {
         this.moneda = moneda;
     }
-    
+
+    public int getCuracion() {
+        return curacion;
+    }
+
+    public void setCuracion(int curacion) {
+        this.curacion = curacion;
+    }
+
+    public int getFortuna() {
+        return fortuna;
+    }
+
+    public void setFortuna(int fortuna) {
+        this.fortuna = fortuna;
+    }
+
     public abstract int atacar();
 
     public void subirNivel(){
@@ -102,4 +122,5 @@ public abstract class Personajes {
             System.out.println("No tienes suficiente experiencia para subir de nivel");
         }
     }
+    
 }
