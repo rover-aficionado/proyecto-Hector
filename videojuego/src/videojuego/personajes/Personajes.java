@@ -108,6 +108,22 @@ public abstract class Personajes {
         this.fortuna = fortuna;
     }
 
+    @Override
+    public String toString() {
+        return "Personajes{" +
+                "nombre='" + nombre + '\'' +
+                ", vida=" + vida +
+                ", vidaMaxima=" + vidaMaxima +
+                ", fuerza=" + fuerza +
+                ", energia=" + energia +
+                ", nivelExperiencia=" + nivelExperiencia +
+                ", experiencia=" + experiencia +
+                ", moneda=" + moneda +
+                ", curacion=" + curacion +
+                ", fortuna=" + fortuna +
+                '}';
+    }
+
     public abstract int atacar();
 
     public void subirNivel(){
@@ -122,5 +138,5 @@ public abstract class Personajes {
             System.out.println("No tienes suficiente experiencia para subir de nivel");
         }
     }
-    
+
 }
