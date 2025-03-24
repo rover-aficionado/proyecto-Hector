@@ -222,7 +222,6 @@ public class Toolbox {
                     x.setMoneda(x.getMoneda() - 50);
                     //añadir gato con fortuna al personaje
                     System.out.println("Has comprado el gato con fortuna");
-                    System.out.println("Tu moneda ha aumentado 5 puntos");
                     break;
                 }
             } else if (opcion.equalsIgnoreCase("2")) {
@@ -230,7 +229,6 @@ public class Toolbox {
                     x.setMoneda(x.getMoneda() - 50);
                     //añadir perro sanador al personaje
                     System.out.println("Has comprado el perro sanador");
-                    System.out.println("Tu moneda ha aumentado 5 puntos");
                     break;
                 }
             }
