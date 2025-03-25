@@ -44,8 +44,6 @@ public class Videojuego {
                 if (opcion.equalsIgnoreCase("1")) {
                     Guerrero g = new Guerrero(nombreJugador,1, 100, 0,0,0);
                     personajes.add(g);
-                    
-                    
                 }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
                     personajes.add(a);
@@ -59,6 +57,7 @@ public class Videojuego {
                 System.out.println("Personaje creado correctamente");
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
+                tb.tiendaArmas(personajes, sc);
                 
             } else if (opcion.equalsIgnoreCase("2")) {
 
