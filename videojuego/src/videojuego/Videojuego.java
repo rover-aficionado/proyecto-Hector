@@ -49,7 +49,7 @@ public class Videojuego {
                 
                 System.out.println("-------------------------------------------------------------");
                 // instancia el personaje según su tipo
-                if (opcion.equalsIgnoreCase("1")) {
+                if (opcion.equalsIgnoreCase("1")) { // guerrero
                     Personajes g = new Guerrero(nombreJugador,1, 100, 0,0,0);
                     personajes.add(g);
                     
@@ -60,7 +60,7 @@ public class Videojuego {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
-                }else if (opcion.equalsIgnoreCase("3")) {
+                }else if (opcion.equalsIgnoreCase("3")) { // arquero
                     Personajes a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
                     personajes.add(a);
                     // guardado de las partidas
@@ -70,17 +70,10 @@ public class Videojuego {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
-                }else if (opcion.equalsIgnoreCase("2")) {
+                }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 1, 100, 0,0,0);
                     personajes.add(m);
-                    
-                    // guardado de las partidas
-                    try {
-                        cgp.guardarPartida(m);
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    
+                                 
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                 }
@@ -89,13 +82,13 @@ public class Videojuego {
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
                 
-            } else if (opcion.equalsIgnoreCase("2")) { 
+            } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
                 System.out.println("nombre del personaje");
                 String nombre = sc.nextLine();
                cgp.cargarPartida(nombre);
-            }else if(opcion.equalsIgnoreCase("3")) {
+            }else if(opcion.equalsIgnoreCase("3")) { // ver ganadores
                 
-            } else if (opcion.equalsIgnoreCase("4")) {
+            } else if (opcion.equalsIgnoreCase("4")) { // salir del juego
                 System.out.println("Saliendo del juego.....");
                 System.exit(0);
             }else {
