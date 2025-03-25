@@ -59,6 +59,8 @@ public class CargarGuardarPartida {
         File archivo = new File(nombreArchivo);
         
         try (Scanner scnFile = new Scanner(archivo)){
+            
+            // extracción de las estadísticas guardadas de los personajes
             int tipo = Integer.parseInt(scnFile.nextLine());
             String nombre = scnFile.nextLine();
             double vida = Double.parseDouble(scnFile.nextLine());
