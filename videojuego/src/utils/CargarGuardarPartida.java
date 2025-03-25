@@ -53,7 +53,42 @@ public class CargarGuardarPartida {
     
     // cargar partida
 
-    public void cargarPartida(){}
+    public void cargarPartida(Personajes personaje){
+        int numero = buscarArchivo(personaje.getNombre());
+        String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
+        File archivo = new File(nombreArchivo);
+        
+        try (Scanner scnFile = new Scanner(archivo)){
+            
+            // extracción de las estadísticas guardadas de los personajes
+            int tipo = Integer.parseInt(scnFile.nextLine());
+            String nombre = scnFile.nextLine();
+            double vida = Double.parseDouble(scnFile.nextLine());
+            double vidaMaxima = Double.parseDouble(scnFile.nextLine());
+            double fuerza = Double.parseDouble(scnFile.nextLine());
+            double energia = Double.parseDouble(scnFile.nextLine());
+            int nivelExperiencia = Integer.parseInt(scnFile.nextLine());
+            double experiencia = Double.parseDouble(scnFile.nextLine());
+            int moneda = Integer.parseInt(scnFile.nextLine());
+            int curacion = Integer.parseInt(scnFile.nextLine());
+            int fortuna = Integer.parseInt(scnFile.nextLine());
+            
+            // instancia de los personajes según su tipo con los datos guardados en los ficheros
+            if (tipo == 1){
+                Personajes nuevoPersonaje = new Arquero(fortuna, nombre, fuerza, energia, moneda, curacion, fortuna);
+                //return nuevoPersonaje;
+            } else if (tipo == 2){
+                Personajes nuevoPersonaje = new Guerrero(nombre, fuerza, energia, moneda, curacion, fortuna);
+                //return nuevoPersonaje;
+            } else if (tipo == 3){
+                Personajes nuevoPersonaje = new Mago(moneda, nombre, fuerza, energia, moneda, curacion, fortuna);
+                //return nuevoPersonaje;
+            }
+            
+        } catch (FileNotFoundException e) {
+            System.out.println("ERROR: archivo no encontrado");
+        }
+    }
     
     // guardar partida
     public void guardarPartida(Personajes personaje) throws FileNotFoundException{
@@ -82,6 +117,9 @@ public class CargarGuardarPartida {
             pw.println(personaje.getNivelExperiencia());
             pw.println(personaje.getExperiencia());
             pw.println(personaje.getMoneda());
+            pw.println(personaje.getCuracion());
+            pw.println(personaje.getFortuna());
+
 
             System.out.println("Partida guardada correctamente.");
         } catch (IOException e) {

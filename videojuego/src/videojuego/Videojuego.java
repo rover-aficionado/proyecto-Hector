@@ -42,15 +42,15 @@ public class Videojuego {
                 
                 System.out.println("-------------------------------------------------------------");
                 if (opcion.equalsIgnoreCase("1")) {
-                    Guerrero g = new Guerrero(nombreJugador,1, 100, 0);
+                    Guerrero g = new Guerrero(nombreJugador,1, 100, 0,0,0);
                     personajes.add(g);
                     
                     
                 }else if (opcion.equalsIgnoreCase("3")) {
-                    Arquero a = new Arquero(5, nombreJugador, 1, 100, 0);
+                    Arquero a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
                     personajes.add(a);
                 }else if (opcion.equalsIgnoreCase("2")) {
-                    Mago m = new Mago(10, nombreJugador, 1, 100, 0);
+                    Mago m = new Mago(10, nombreJugador, 1, 100, 0,0,0);
                     personajes.add(m);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
@@ -62,9 +62,7 @@ public class Videojuego {
                 
             } else if (opcion.equalsIgnoreCase("2")) {
 
-            }else if (opcion.equalsIgnoreCase("3")){
-   
-            } else if(opcion.equalsIgnoreCase("3")) {
+            }else if(opcion.equalsIgnoreCase("3")) {
 
             } else if (opcion.equalsIgnoreCase("4")) {
                 System.out.println("Saliendo del juego.....");
