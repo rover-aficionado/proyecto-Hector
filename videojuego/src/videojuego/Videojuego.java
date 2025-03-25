@@ -1,6 +1,7 @@
 package videojuego;
 
 import java.util.*;
+import utils.CargarGuardarPartida;
 import utils.Toolbox;
 import videojuego.personajes.*;
 
@@ -28,6 +29,7 @@ public class Videojuego {
         opcion = sc.nextLine();
         
         while (true) {
+            CargarGuardarPartida cgp = new CargarGuardarPartida();
             if (opcion.equalsIgnoreCase("1")){
                 System.out.println("-------------------------------------------------------------");
                 System.out.println("Selecciona tu personaje:");
@@ -60,10 +62,12 @@ public class Videojuego {
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
                 
-            } else if (opcion.equalsIgnoreCase("2")) {
-
+            } else if (opcion.equalsIgnoreCase("2")) { 
+                System.out.println("nombre del personaje");
+                String nombre = sc.nextLine();
+               cgp.cargarPartida(nombre);
             }else if(opcion.equalsIgnoreCase("3")) {
-
+                
             } else if (opcion.equalsIgnoreCase("4")) {
                 System.out.println("Saliendo del juego.....");
                 System.exit(0);

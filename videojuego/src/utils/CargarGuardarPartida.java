@@ -53,7 +53,8 @@ public class CargarGuardarPartida {
     
     // cargar partida
 
-    public void cargarPartida(Personajes personaje){
+    public void cargarPartida(String nombrePersonaje){
+        Personajes personaje = null;
         int numero = buscarArchivo(personaje.getNombre());
         String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
         File archivo = new File(nombreArchivo);
