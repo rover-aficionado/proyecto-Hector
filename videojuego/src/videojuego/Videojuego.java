@@ -57,7 +57,7 @@ public class Videojuego {
                 System.out.println("Personaje creado correctamente");
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
-                tb.tiendaArmas(personajes, sc);
+                
                 
             } else if (opcion.equalsIgnoreCase("2")) {
 
