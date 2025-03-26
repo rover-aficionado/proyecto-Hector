@@ -1,11 +1,8 @@
 package videojuego;
 
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import utils.CargarGuardarPartida;
-import utils.Toolbox;
+import utils.*;
 import videojuego.personajes.*;
 
 /*
@@ -84,7 +81,11 @@ public class Videojuego {
                 System.out.println("Personaje creado correctamente");
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
+<<<<<<< HEAD
+                
+=======
                 tb.tiendaArmas(personajes);
+>>>>>>> b8428e2f2859bb37ad3b513a958ed1cfa085effc
                 
             } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
                 System.out.println("nombre del personaje");
