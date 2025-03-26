@@ -2,17 +2,8 @@
 
 package utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.io.*;
+import java.util.*;
 import videojuego.personajes.*;
 
 
@@ -53,7 +44,8 @@ public class CargarGuardarPartida {
     
     // cargar partida
 
-    public void cargarPartida(Personajes personaje){
+    public void cargarPartida(String nombrePersonaje){
+        Personajes personaje = null;
         int numero = buscarArchivo(personaje.getNombre());
         String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
         File archivo = new File(nombreArchivo);
