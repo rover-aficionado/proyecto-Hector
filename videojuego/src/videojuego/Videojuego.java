@@ -51,11 +51,11 @@ public class Videojuego {
                     personajes.add(g);
 
                     //guardado de las partidas
-                    try {
-                        cgp.guardarPartida(g);
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+//                    try {
+//                        cgp.guardarPartida(g);
+//                    } catch (FileNotFoundException ex) {
+//                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
                     
                 }else if (opcion.equalsIgnoreCase("3")) { // arquero
                     Personajes a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
@@ -67,7 +67,7 @@ public class Videojuego {
                     try {
                         cgp.guardarPartida(a);
                     } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
+                        //Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
@@ -81,11 +81,7 @@ public class Videojuego {
                 System.out.println("Personaje creado correctamente");
                 System.out.println("Generando mundo...");
                 tb.introduccion(personajes);
-<<<<<<< HEAD
-                
-=======
-                tb.tiendaArmas(personajes);
->>>>>>> b8428e2f2859bb37ad3b513a958ed1cfa085effc
+                tb.tiendaArmas(personajes, sc);
                 
             } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
                 System.out.println("nombre del personaje");
