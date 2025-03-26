@@ -2,6 +2,8 @@ package videojuego;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import utils.*;
 import videojuego.personajes.*;
 
@@ -50,8 +52,8 @@ public class Videojuego {
                     Personajes g = new Guerrero(nombreJugador,1, 100, 0,0,0);
                     personajes.add(g);
 
-                    //guardado de las partidas
                     try {
+                        //guardado de las partidas
                         cgp.guardarPartida(g);
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
