@@ -1,18 +1,18 @@
 package videojuego.personajes;
 
 public class Guerrero extends Personajes{
-    private String armaSecundaria;
+    private boolean armaSecundaria;
 
-    public Guerrero(String armaSecundaria, String nombre) {
+    public Guerrero(boolean armaSecundaria, String nombre) {
         super(nombre);
         this.armaSecundaria = armaSecundaria;
     }
 
-    public String getArmaSecundaria() {
+    public boolean getArmaSecundaria() {
         return armaSecundaria;
     }
 
-    public void setArmaSecundaria(String armaSecundaria) {
+    public void setArmaSecundaria(boolean armaSecundaria) {
         this.armaSecundaria = armaSecundaria;
     }
 

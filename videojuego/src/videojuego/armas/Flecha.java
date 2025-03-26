@@ -1,34 +1,33 @@
 package videojuego.armas;
 
 
-public class Flecha extends Armas{
-    private String efecto;
-    private double largo;
+public class Flecha {
+    private String nombre;
+    private double daño;
 
-    public Flecha(String efecto, double largo, String nombre, double daño, String material, String rareza) {
-        super(nombre, daño, material, rareza);
-        this.efecto = efecto;
-        this.largo = largo;
+    public Flecha(String nombre, double daño) {
+        this.nombre = nombre;
+        this.daño = daño;
     }
 
-    public String getEfecto() {
-        return efecto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setEfecto(String efecto) {
-        this.efecto = efecto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public double getLargo() {
-        return largo;
+    public double getDaño() {
+        return daño;
     }
 
-    public void setLargo(double largo) {
-        this.largo = largo;
+    public void setDaño(double daño) {
+        this.daño = daño;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " Flecha{" + "efecto=" + efecto + ", largo=" + largo + '}';
-    }   
+        return "Flecha{" + "nombre=" + nombre + ", da\u00f1o=" + daño + '}';
+    }  
 }

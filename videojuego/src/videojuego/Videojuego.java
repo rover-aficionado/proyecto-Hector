@@ -47,7 +47,7 @@ public class Videojuego {
                 System.out.println("-------------------------------------------------------------");
                 // instancia el personaje según su tipo
                 if (opcion.equalsIgnoreCase("1")) { // guerrero
-                    Personajes g = new Guerrero(nombreJugador,1, 100, 0,0,0);
+                    Personajes g = new Guerrero(false, nombreJugador);
                     personajes.add(g);
 
                     //guardado de las partidas
@@ -58,10 +58,10 @@ public class Videojuego {
 //                    }
                     
                 }else if (opcion.equalsIgnoreCase("3")) { // arquero
-                    Personajes a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
+                    Personajes a = new Arquero(5, nombreJugador);
 
                 }else if (opcion.equalsIgnoreCase("3")) {
-                    Arquero a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
+                    Arquero a = new Arquero(5, nombreJugador);
                     personajes.add(a);
                     // guardado de las partidas
                     try {
@@ -71,7 +71,7 @@ public class Videojuego {
                     }
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
-                    Personajes m = new Mago(10, nombreJugador, 1, 100, 0,0,0);
+                    Personajes m = new Mago(10, nombreJugador);
                     personajes.add(m);
                                  
                 }else{
