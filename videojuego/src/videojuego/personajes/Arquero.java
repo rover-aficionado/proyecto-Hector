@@ -3,8 +3,8 @@ package videojuego.personajes;
 public class Arquero extends Personajes {
     private int flechas;
 
-    public Arquero(int flechas, String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
-        super(nombre, fuerza, energia, moneda, curacion, fortuna);
+    public Arquero(int flechas, String nombre) {
+        super(nombre);
         this.flechas = flechas;
     }
 
@@ -24,13 +24,13 @@ public class Arquero extends Personajes {
     }
 
     @Override
-    public int atacar() {
+    public double atacar() {
         if (this.flechas < 0){
             System.out.println("No tienes flechas");
             return 0;
         }else {
-            this.setFlechas(this.getFlechas() - 1);
-            return (int) (this.getFuerza() * (this.getNivelExperiencia() * 0.50));
+            setFlechas(getFlechas() - 1);
+            return getFuerza() * (getNivelExperiencia() * 0.50);
         }
     }
 }
