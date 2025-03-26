@@ -1,7 +1,6 @@
 package utils;
 import java.util.*;
 
-import videojuego.mascotas.Gato;
 import videojuego.personajes.*;
 
 public class Toolbox {
@@ -32,8 +31,7 @@ public class Toolbox {
         }
     }
     
-    public void tiendaArmas(ArrayList<Personajes> personaje) {
-        Scanner sc = new Scanner(System.in);
+    public void tiendaArmas(ArrayList<Personajes> personaje, Scanner sc) {
         String opcion;
         for (Personajes p : personaje) {
             if(p instanceof Guerrero g) {
@@ -42,6 +40,7 @@ public class Toolbox {
                 System.out.println("2. Espada de hielo - 50 monedas");
                 System.out.println("3. Espada de Electrica - 80 monedas");
                 System.out.println("4. Espada del inframundo - 120 monedas");
+                System.out.println("5. Salir");
                 opcion = sc.nextLine();
                 do {
                     if (opcion.equalsIgnoreCase("1")){
@@ -88,6 +87,10 @@ public class Toolbox {
                             System.out.println("No tienes suficientes monedas");
                             break;
                         }
+                        
+                    } else if(opcion.equalsIgnoreCase("5")) {
+                        return;
+                        
                     } else {
                         System.out.println("Opcion incorrecta, selecciona entre 1,2,3,4");
                     }
@@ -98,6 +101,7 @@ public class Toolbox {
                 System.out.println("2. Arco de hielo - 50 monedas");
                 System.out.println("3. Arco de Electrica - 80 monedas");
                 System.out.println("4. Arco del inframundo - 120 monedas");
+                System.out.println("5. Salir");
                 opcion = sc.nextLine();
                 do {
                     if (opcion.equalsIgnoreCase("1")){
@@ -140,6 +144,8 @@ public class Toolbox {
                             System.out.println("Has comprado el arco del inframundo");
                             System.out.println("Tu fuerza ha aumentado 20 puntos");
                             break;
+                        } else if (opcion.equalsIgnoreCase("5")) {
+                            return;
                         } else {
                             System.out.println("No tienes suficientes monedas");
                             break;
@@ -154,6 +160,7 @@ public class Toolbox {
                 System.out.println("2. Varita de hielo - 50 monedas");
                 System.out.println("3. Varita de Electrica - 80 monedas");
                 System.out.println("4. Varita del inframundo - 120 monedas");
+                System.out.println("5. Salir");
                 opcion = sc.nextLine();
                 do {
                     if (opcion.equalsIgnoreCase("1")){
@@ -196,6 +203,8 @@ public class Toolbox {
                             System.out.println("Has comprado la varita del inframundo");
                             System.out.println("Tu fuerza ha aumentado 20 puntos");
                             break;
+                        } else if (opcion.equalsIgnoreCase("5")) {
+                            return;
                         } else {
                             System.out.println("No tienes suficientes monedas");
                             break;
@@ -209,8 +218,7 @@ public class Toolbox {
         
     }
 
-    public void tiendaMascotas(ArrayList<Personajes> personajes){
-        Scanner sc = new Scanner(System.in);
+    public void tiendaMascotas(ArrayList<Personajes> personajes,Scanner sc){
         String opcion;
         System.out.println("TIENDA DE MASCOTAS");
         System.out.println("1. Gato con fortuna- 50 monedas");

@@ -1,11 +1,8 @@
 package videojuego;
 
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import utils.CargarGuardarPartida;
-import utils.Toolbox;
+import utils.*;
 import videojuego.personajes.*;
 
 /*
@@ -52,7 +49,7 @@ public class Videojuego {
                 if (opcion.equalsIgnoreCase("1")) { // guerrero
                     Personajes g = new Guerrero(nombreJugador,1, 100, 0,0,0);
                     personajes.add(g);
-                    
+
                     //guardado de las partidas
                     try {
                         cgp.guardarPartida(g);
@@ -62,6 +59,9 @@ public class Videojuego {
                     
                 }else if (opcion.equalsIgnoreCase("3")) { // arquero
                     Personajes a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
+
+                }else if (opcion.equalsIgnoreCase("3")) {
+                    Arquero a = new Arquero(5, nombreJugador, 1, 100, 0,0,0);
                     personajes.add(a);
                     // guardado de las partidas
                     try {
