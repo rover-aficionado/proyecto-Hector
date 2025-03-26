@@ -3,7 +3,7 @@ package videojuego.personajes;
 public class Arquero extends Personajes {
     private int flechas;
 
-    public Arquero(int flechas, String nombre) {
+    public Arquero(int flechas, String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna1) {
         super(nombre);
         this.flechas = flechas;
     }

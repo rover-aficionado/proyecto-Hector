@@ -3,7 +3,7 @@ package videojuego.personajes;
 public class Guerrero extends Personajes{
     private boolean armaSecundaria;
 
-    public Guerrero(boolean armaSecundaria, String nombre) {
+    public Guerrero(String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
         super(nombre);
         this.armaSecundaria = armaSecundaria;
     }

@@ -49,7 +49,7 @@ public class Videojuego {
                 System.out.println("-------------------------------------------------------------");
                 // instancia el personaje según su tipo
                 if (opcion.equalsIgnoreCase("1")) { // guerrero
-                    Personajes g = new Guerrero(false, nombreJugador);
+                    Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(g);
 
                     try {
@@ -60,12 +60,17 @@ public class Videojuego {
                     }
                     
                 }else if (opcion.equalsIgnoreCase("3")) { // arquero
-                    Personajes a = new Arquero(5, nombreJugador);
+                    Personajes a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
 
                 }else if (opcion.equalsIgnoreCase("3")) {
-                    Arquero a = new Arquero(5, nombreJugador);
+                    Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(a);
-                    // guardado de las partidas
+                    try {
+                        // guardado de las partidas
+                        cgp.guardarPartida(a);
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     try {
                         cgp.guardarPartida(a);
                     } catch (FileNotFoundException ex) {
@@ -73,7 +78,7 @@ public class Videojuego {
                     }
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
-                    Personajes m = new Mago(10, nombreJugador);
+                    Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(m);
                                  
                 }else{

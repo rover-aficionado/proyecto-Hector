@@ -134,17 +134,17 @@ public class CargarGuardarPartida {
         
         // extrae el número del archivo más alto para saber cual es la última partida jugada
         if (archivos != null) {
-            //Pattern pattern = Pattern.compile(nombreBase + "(\\d+)\\.txt"); 
+            Pattern pattern = Pattern.compile(nombreBase + "(\\d+)\\.txt"); 
             
-//            for (File archivo : archivos) {
-//                Matcher matcher = pattern.matcher(archivo.getName());
-//                if (matcher.matches()) {
-//                    int numero = Integer.parseInt(matcher.group(1));
-//                    if (numero > numeroMasGrande) {
-//                        numeroMasGrande = numero;
-//                    }
-//                }
-//            }
+            for (File archivo : archivos) {
+                Matcher matcher = pattern.matcher(archivo.getName());
+                if (matcher.matches()) {
+                    int numero = Integer.parseInt(matcher.group(1));
+                    if (numero > numeroMasGrande) {
+                        numeroMasGrande = numero;
+                    }
+                }
+            }
 
             if (numeroMasGrande != -1) {
                 return numeroMasGrande+1;
