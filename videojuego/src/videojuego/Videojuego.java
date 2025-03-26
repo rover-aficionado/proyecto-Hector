@@ -71,15 +71,17 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    try {
-                        cgp.guardarPartida(a);
-                    } catch (FileNotFoundException ex) {
-                        //Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(m);
+                    
+                    try { // guarda la partida para mago
+                        cgp.guardarPartida(m);
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                                  
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");

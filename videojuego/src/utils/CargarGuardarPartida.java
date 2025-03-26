@@ -32,7 +32,7 @@ public class CargarGuardarPartida {
         if (directorio.exists() && directorio.isDirectory()){
             File[] archivos = directorio.listFiles();
             
-            if (archivos != null ||archivos.length == 0 ){
+            if (archivos != null && archivos.length == 0 ){
                 for(File archivo : archivos){
                     System.out.println(archivo);
                 }
@@ -48,7 +48,7 @@ public class CargarGuardarPartida {
 
     public void cargarPartida(String nombrePersonaje){
         Personajes personaje = null;
-        int numero = buscarArchivo(personaje.getNombre());
+        int numero = buscarArchivo(nombrePersonaje);
         String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
         File archivo = new File(nombreArchivo);
         
