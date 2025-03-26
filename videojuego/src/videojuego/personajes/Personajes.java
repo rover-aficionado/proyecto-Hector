@@ -13,14 +13,9 @@ public abstract class Personajes {
     private int curacion = 0;
     private int fortuna = 0;
 
-    public Personajes(String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
+    public Personajes(String nombre) {
         this.nombre = nombre;
-        this.fuerza = fuerza;
-        this.energia = energia;
-        this.moneda = moneda;
-        this.curacion = curacion;
-        this.fortuna = fortuna;
-    }
+    }    
 
     public String getNombre() { 
         return nombre;
@@ -124,7 +119,7 @@ public abstract class Personajes {
                 '}';
     }
 
-    public abstract int atacar();
+    public abstract double atacar();
 
     public void subirNivel(){
         if (this.getExperiencia() >= 200){

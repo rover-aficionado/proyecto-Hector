@@ -1,17 +1,18 @@
 package videojuego.personajes;
 
 public class Guerrero extends Personajes{
-    private String armaSecundaria;
-    
-    public Guerrero(String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
-        super(nombre, fuerza, energia, moneda, curacion, fortuna);
+    private boolean armaSecundaria;
+
+    public Guerrero(boolean armaSecundaria, String nombre) {
+        super(nombre);
+        this.armaSecundaria = armaSecundaria;
     }
 
-    public String getArmaSecundaria() {
+    public boolean getArmaSecundaria() {
         return armaSecundaria;
     }
 
-    public void setArmaSecundaria(String armaSecundaria) {
+    public void setArmaSecundaria(boolean armaSecundaria) {
         this.armaSecundaria = armaSecundaria;
     }
 
@@ -21,7 +22,7 @@ public class Guerrero extends Personajes{
     }
 
     @Override
-    public int atacar() {
-        return (int)(this.getFuerza() * (this.getNivelExperiencia() * 0.50));
+    public double atacar() {
+        return getFuerza() * (getNivelExperiencia() * 0.50);
     }
 }

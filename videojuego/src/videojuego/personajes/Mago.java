@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Mago extends Personajes{
     private int mana;
 
-    public Mago(int mana, String nombre, double fuerza, double energia, int moneda, int curacion, int fortuna) {
-        super(nombre, fuerza, energia, moneda, curacion, fortuna);
+    public Mago(int mana, String nombre) {
+        super(nombre);
         this.mana = mana;
     }
 
@@ -24,8 +24,8 @@ public class Mago extends Personajes{
     }
 
     @Override
-    public int atacar() {
-        return (int) (this.getFuerza() * (this.getNivelExperiencia() * 0.50));
+    public double atacar() {
+        return getFuerza() * (getNivelExperiencia() * 0.50);
     }
 
     public void usarMana(Scanner sc){
