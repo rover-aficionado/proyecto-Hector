@@ -23,7 +23,8 @@ public class GuardarDB {
         // inserción a la base de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);){
-            // verificar el tipo del personaje
+            
+            // verificar el tipo del personaje dependiendo de qué tipo de personaje sea el tipo será de una forma u otra
             if(personaje instanceof Arquero){
                 prep.setInt(1, 1);
             } else if (personaje instanceof Guerrero){
