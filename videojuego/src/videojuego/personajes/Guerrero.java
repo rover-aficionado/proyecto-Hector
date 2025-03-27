@@ -21,8 +21,7 @@ public class Guerrero extends Personajes{
         return super.toString() + " Guerrero{" + "armaSecundaria=" + armaSecundaria + '}';
     }
 
-    @Override
     public double atacar() {
-        return getFuerza() * (getNivelExperiencia() * 0.50);
+        return getFuerza() + (getNivelExperiencia() * 0.50);
     }
 }
