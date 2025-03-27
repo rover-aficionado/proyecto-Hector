@@ -24,9 +24,8 @@ public class Mago extends Personajes{
         return super.toString() + " Mago{" + "mana=" + mana + '}';
     }
 
-    @Override
     public double atacar() {
-        return getFuerza() * (getNivelExperiencia() * 0.50);
+        return getFuerza() + (getNivelExperiencia() * 0.50);
     }
 
     public void usarMana(Scanner sc){
