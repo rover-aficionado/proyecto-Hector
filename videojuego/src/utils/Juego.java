@@ -5,7 +5,6 @@ import videojuego.personajes.*;
 import utils.*;
 
 import java.io.FileNotFoundException;
-import java.util.Random;
 import java.util.Scanner;
 
 
