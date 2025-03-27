@@ -12,9 +12,10 @@ import java.sql.*;
 
 
 public class GuardarDB {
-    String url = "\"jdbc:mysql://127.0.0.1:3306/prueba\"";
+    String url = "jdbc:mysql://127.0.0.1:3306/prueba";
     Scanner scn = new Scanner(System.in);
     
+    // metodo para el guardado de la partida
     public void guardarPartida(Personajes personaje){
         String sql = "INSERT INTO personajes (tipo, nombre, vida, vidaMaxima, fuerza,energia, nivelExperiencia, experiencia, moneda, curacion, fortun                                                                                                    a)"
                 + "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
@@ -22,7 +23,8 @@ public class GuardarDB {
         // inserción a la base de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);){
-            // verificar el tipo del personaje
+            
+            // verificar el tipo del personaje dependiendo de qué tipo de personaje sea el tipo será de una forma u otra
             if(personaje instanceof Arquero){
                 prep.setInt(1, 1);
             } else if (personaje instanceof Guerrero){
@@ -50,16 +52,17 @@ public class GuardarDB {
         }
     }
     
+    // método para la carga de la partida
     public void cargarPartida(int id){
         String sql = "SELECT * FROM personajes WHERE id=?";
-        ResultSet rs = null;
-        
+               
         // extracción de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
-                PreparedStatement prep = con.prepareStatement(sql)){
+                PreparedStatement prep = con.prepareStatement(sql);
+                ResultSet rs = prep.executeQuery();){
+            
             prep.setInt(1, id);
-            prep.executeUpdate();
-           
+
             // estadísticas de los personajes
             String nombre = rs.getString(2);
             double vida = rs.getDouble(3);
@@ -71,6 +74,9 @@ public class GuardarDB {
             int moneda = rs.getInt(9);
             int curacion = rs.getInt(10);
             int fortuna = rs.getInt(11);
+            
+            // ejecución de la query
+            prep.executeQuery(sql);
             
             // determinar el tipo del personaje e instancias de los mismos
             if(rs.getInt(1)==1){
@@ -87,6 +93,33 @@ public class GuardarDB {
             System.out.println("ERROR: no se pudo conectar con la base de datos");
         }
         
+    }
+    
+    // listado de las partidas guardadas
+    public void verPartidasGuardadas(Scanner scn, String url){
+        String sql = "SELECT * FROM personajes"; 
+        ResultSet rs = null;
+        
+        try (Connection con = DriverManager.getConnection(url, "root", "100695");
+                PreparedStatement prep = con.prepareStatement(sql)){
+            
+            // ejecución de la query
+            prep.executeQuery(sql);
+            
+            // listado de toda la información de las partidas
+            while (rs.next()){
+                System.out.println("|"+
+                    rs.getString(1) + "|--|" + rs.getString(2) + "|--|" + rs.getString(3) + "|--|" + 
+                    rs.getString(4) + "|--|" + rs.getString(5) + "|--|" + rs.getString(6) + "|--|" + 
+                    rs.getString(7) + "|--|" + rs.getString(8) + "|--|" + rs.getString(9) + "|--|" + 
+                    rs.getString(10) + "|--|" + rs.getString(11)+"|"
+                );
+
+            }
+            
+        } catch (Exception e) {
+            System.out.println("ERROR: no se pudo conectar con la base de datos");
+        }
     }
             
 }
