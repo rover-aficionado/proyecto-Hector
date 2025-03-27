@@ -23,14 +23,13 @@ public class Arquero extends Personajes {
                 '}';
     }
 
-    @Override
     public double atacar() {
         if (this.flechas < 0){
             System.out.println("No tienes flechas");
             return 0;
         }else {
             setFlechas(getFlechas() - 1);
-            return getFuerza() * (getNivelExperiencia() * 0.50);
+            return getFuerza() + (getNivelExperiencia() * 0.50);
         }
     }
 }

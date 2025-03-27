@@ -1,4 +1,4 @@
-
+package videojuego.enemigos;
 import utils.Aleatorio;
 import videojuego.enemigos.Enemigos;
 

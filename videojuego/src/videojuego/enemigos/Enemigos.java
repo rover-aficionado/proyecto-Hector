@@ -2,6 +2,8 @@
 package videojuego.enemigos;
 
 
+import videojuego.personajes.Personajes;
+
 public abstract class Enemigos {
     private String nombre;
     private String superPoder;
@@ -58,4 +60,7 @@ public abstract class Enemigos {
         return "Enemigos [nombre=" + nombre + ", superPoder=" + superPoder + ", vida=" + vida + "daño"+ daño +"]";
     }
 
+    public void atacar(Personajes jugador){
+        jugador.setVida(jugador.getVida() - this.getDaño());
+    }
 }

@@ -13,11 +13,12 @@ import videojuego.personajes.*;
  */
 public class Videojuego {
     // CACHARREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
         HashMap<String, Integer> partidas = new HashMap<>();
         ArrayList<Personajes> personajes = new ArrayList<>();
         Toolbox tb = new Toolbox();
+        Juego j = new Juego();
         String opcion;
         
         // menú principal
@@ -58,7 +59,7 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+                    Juego.jugar(g,Juego.generarEnemigoAleatorio());
                 }else if (opcion.equalsIgnoreCase("3")) { // arquero
                     Personajes a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
 
@@ -71,7 +72,7 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+                    Juego.jugar(a,Juego.generarEnemigoAleatorio());
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
@@ -82,7 +83,7 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                                 
+                    Juego.jugar(m,Juego.generarEnemigoAleatorio());
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                 }
