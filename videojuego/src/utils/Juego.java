@@ -5,6 +5,7 @@ import videojuego.personajes.*;
 import utils.*;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -60,21 +61,53 @@ public class Juego {
             }
         }
     }
-    public static void jugar(Personajes jugador, Enemigos enemigo) throws FileNotFoundException {
+    public static void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes) throws FileNotFoundException {
         boolean jugando = true;
         Scanner scanner = new Scanner(System.in);
         CargarGuardarPartida cg = new CargarGuardarPartida();
+        Toolbox tb = new Toolbox();
+        int opcion;
         while (jugando) {
             System.out.println("--- JUEGO ---");
-            System.out.println("1. Enfrentar un enemigo");
+            System.out.println("1. Avanzar en el juego");
             System.out.println("2. Ver estado del jugador");
             System.out.println("3. Guardar partida");
             System.out.println("4. Volver al menú principal");
             System.out.print("Elige una opción: ");
-            int opcion = scanner.nextInt();
+            opcion = Integer.parseInt(scanner.nextLine());
 
             if (opcion == 1) {
-                enfrentarEnemigo(jugador, enemigo);
+                System.out.println("--- MUNDO ---");
+                System.out.println("1. Explorar cueva");
+                System.out.println("2. Enfrentar jefe final");
+                System.out.println("3. Tienda de armas");
+                System.out.println("4. Tienda de mascotas");
+                System.out.println("5. Menú");
+                opcion = Integer.parseInt(scanner.nextLine());
+                
+                while(opcion != 5) {
+                    
+                    if(opcion == 1){
+                        System.out.println("");
+                    } 
+                    else if(opcion == 2) {
+                        enfrentarEnemigo(jugador, enemigo);
+                    }
+                    else if(opcion == 3) {
+                        tb.tiendaArmas(personajes, scanner);
+                    }
+                    else if(opcion == 4){
+                        tb.tiendaMascotas(personajes, scanner);
+                    }
+                    else if(opcion == 5) {
+                        return;
+                    } 
+                    else {
+                        System.out.println("Valor no válido, intente otra vez");
+                    } 
+                }
+                
+                //enfrentarEnemigo(jugador, enemigo);
             } else if (opcion == 2) {
                 mostrarEstado(jugador);
             } else if (opcion == 3) {
