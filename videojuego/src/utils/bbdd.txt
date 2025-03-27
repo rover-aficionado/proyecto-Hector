@@ -1,18 +1,15 @@
 -- BASE DE DATOS PARA GUARDAR LAS PARTIDAS
 
-CREATE DATABASE videojuego;
-
 DROP TABLE IF EXISTS partidas;
 DROP TABLE IF EXISTS personajes;
 
-DROP TABLE IF EXISTS personajes;
-
--- tabla para los personajes
 CREATE TABLE personajes (
     id_personaje INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tipo INT NOT NULL,
     nombre VARCHAR(100) NOT NULL, 
     vida DOUBLE(5,2) NOT NULL,
     vidaMaxima DOUBLE(5,2) NOT NULL,
+    fuerza DOUBLE(5,2) NOT NULL,
     energia DOUBLE(5,2) NOT NULL,
     nivelExperiencia INT NOT NULL,
     experiencia DOUBLE(5,2) NOT NULL,
