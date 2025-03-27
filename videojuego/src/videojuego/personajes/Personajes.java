@@ -14,6 +14,7 @@ public abstract class Personajes {
     private int fortuna = 0;
 
     public Personajes(String nombre) {
+        
         this.nombre = nombre;
     }    
 

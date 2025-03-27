@@ -1,5 +1,6 @@
 /*@author rober*/
 
+
 package utils;
 
 import java.io.*;
@@ -32,7 +33,7 @@ public class CargarGuardarPartida {
         if (directorio.exists() && directorio.isDirectory()){
             File[] archivos = directorio.listFiles();
             
-            if (archivos != null ||archivos.length == 0 ){
+            if (archivos != null && archivos.length == 0 ){
                 for(File archivo : archivos){
                     System.out.println(archivo);
                 }
@@ -48,7 +49,7 @@ public class CargarGuardarPartida {
 
     public void cargarPartida(String nombrePersonaje){
         Personajes personaje = null;
-        int numero = buscarArchivo(personaje.getNombre());
+        int numero = buscarArchivo(nombrePersonaje);
         String nombreArchivo = "./utils.partidas/" + personaje.getNombre().trim() + numero + ".txt"; // Nombre correcto
         File archivo = new File(nombreArchivo);
         
@@ -134,17 +135,17 @@ public class CargarGuardarPartida {
         
         // extrae el número del archivo más alto para saber cual es la última partida jugada
         if (archivos != null) {
-            //Pattern pattern = Pattern.compile(nombreBase + "(\\d+)\\.txt"); 
+            Pattern pattern = Pattern.compile(nombreBase + "(\\d+)\\.txt"); 
             
-//            for (File archivo : archivos) {
-//                Matcher matcher = pattern.matcher(archivo.getName());
-//                if (matcher.matches()) {
-//                    int numero = Integer.parseInt(matcher.group(1));
-//                    if (numero > numeroMasGrande) {
-//                        numeroMasGrande = numero;
-//                    }
-//                }
-//            }
+            for (File archivo : archivos) {
+                Matcher matcher = pattern.matcher(archivo.getName());
+                if (matcher.matches()) {
+                    int numero = Integer.parseInt(matcher.group(1));
+                    if (numero > numeroMasGrande) {
+                        numeroMasGrande = numero;
+                    }
+                }
+            }
 
             if (numeroMasGrande != -1) {
                 return numeroMasGrande+1;
