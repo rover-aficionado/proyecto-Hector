@@ -15,6 +15,7 @@ public class GuardarDB {
     String url = "jdbc:mysql://127.0.0.1:3306/prueba";
     Scanner scn = new Scanner(System.in);
     
+    // metodo para el guardado de la partida
     public void guardarPartida(Personajes personaje){
         String sql = "INSERT INTO personajes (tipo, nombre, vida, vidaMaxima, fuerza,energia, nivelExperiencia, experiencia, moneda, curacion, fortun                                                                                                    a)"
                 + "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
@@ -50,6 +51,7 @@ public class GuardarDB {
         }
     }
     
+    // método para la carga de la partida
     public void cargarPartida(int id){
         String sql = "SELECT * FROM personajes WHERE id=?";
                
@@ -72,6 +74,7 @@ public class GuardarDB {
             int curacion = rs.getInt(10);
             int fortuna = rs.getInt(11);
             
+            // ejecución de la query
             prep.executeQuery(sql);
             
             // determinar el tipo del personaje e instancias de los mismos
@@ -91,6 +94,7 @@ public class GuardarDB {
         
     }
     
+    // listado de las partidas guardadas
     public void verPartidasGuardadas(Scanner scn, String url){
         String sql = "SELECT * FROM personajes"; 
         ResultSet rs = null;
@@ -98,7 +102,10 @@ public class GuardarDB {
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql)){
             
+            // ejecución de la query
             prep.executeQuery(sql);
+            
+            // listado de toda la información de las partidas
             while (rs.next()){
                 System.out.println("|"+
                     rs.getString(1) + "|--|" + rs.getString(2) + "|--|" + rs.getString(3) + "|--|" + 
