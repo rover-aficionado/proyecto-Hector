@@ -100,17 +100,17 @@ public class Juego {
         Aleatorio a = new Aleatorio();
         a.numero(6);
         if (a.equals(1)){
-            return new EsbirrosDeLaLuz("esbirro de luz", "100", 100, a.numero(100));
+            return new EsbirrosDeLaLuz("esbirro de luz", "100", 100, a.numero(50));
         } else if (a.equals(2)){
-            return new PadreCorredor("padre corredor", "100", 100, a.numero(100), 100);
+            return new PadreCorredor("padre corredor", "100", 100, a.numero(50), 100);
         } else if (a.equals(3)){
-            return new PadreLadron("padre ladron", "100", 100, a.numero(100), true);
+            return new PadreLadron("padre ladron", "100", 100, a.numero(50), true);
         } else if (a.equals(4)){
-            return new PadreHerederoDeSatan("heredero de satan", "100", 100, a.numero(100), true);
+            return new PadreHerederoDeSatan("heredero de satan", "100", 100, a.numero(50), true);
         } else if (a.equals(5)){
-            return new PadreSecretarioDelSenor("padre secretario del señor", "100", 100, a.numero(100), true);
+            return new PadreSecretarioDelSenor("padre secretario del señor", "100", 100, a.numero(50), true);
         } else {
-            return new PadreSuperior("padre superior", "100", 100, a.numero(100), new PadreSecretarioDelSenor("padre secretario del señor", "100", 100, 100, true));
+            return new PadreSuperior("padre superior", "100", 100, a.numero(50), new PadreSecretarioDelSenor("padre secretario del señor", "100", 100, a.numero(50), true));
         }
 
 
