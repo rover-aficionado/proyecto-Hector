@@ -55,40 +55,40 @@ public class GuardarDB {
     // método para la carga de la partida
     public void cargarPartida(int id){
         String sql = "SELECT * FROM personajes WHERE id=?";
-               
+                       
         // extracción de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);
-                ResultSet rs = prep.executeQuery();){
+                ){
             
             prep.setInt(1, id);
+            ResultSet rs = prep.executeQuery(sql);
 
             // estadísticas de los personajes
-            String nombre = rs.getString(2);
-            double vida = rs.getDouble(3);
-            double vidaMaxima = rs.getDouble(4);
-            double fuerza = rs.getDouble(5);
-            double energia = rs.getDouble(6);
-            int nivelExperiencia = rs.getInt(7);
-            double experiencia = rs.getDouble(8);
-            int moneda = rs.getInt(9);
-            int curacion = rs.getInt(10);
-            int fortuna = rs.getInt(11);
-            
-            // ejecución de la query
-            prep.executeQuery(sql);
-            
-            // determinar el tipo del personaje e instancias de los mismos
-            if(rs.getInt(1)==1){
-                Personajes nuevaPartida = new Arquero(fortuna, nombre, fuerza, energia, moneda, curacion, fortuna);
-            } else if (rs.getInt(1)==2){
-                Personajes nuevaPartida = new Guerrero(nombre, fuerza, energia, moneda, curacion, fortuna);
-            } else if (rs.getInt(1)==3){
-                Personajes nuevaPartida = new Mago(moneda, nombre, fuerza, energia, moneda, curacion, fortuna);
+            if(rs.next()){
+                String nombre = rs.getString(2);
+                double vida = rs.getDouble(3);
+                double vidaMaxima = rs.getDouble(4);
+                double fuerza = rs.getDouble(5);
+                double energia = rs.getDouble(6);
+                int nivelExperiencia = rs.getInt(7);
+                double experiencia = rs.getDouble(8);
+                int moneda = rs.getInt(9);
+                int curacion = rs.getInt(10);
+                int fortuna = rs.getInt(11);
+
+                // ejecución de la query
+
+                // determinar el tipo del personaje e instancias de los mismos
+                if(rs.getInt(1)==1){
+                    Personajes nuevaPartida = new Arquero(fortuna, nombre, fuerza, energia, moneda, curacion, fortuna);
+                } else if (rs.getInt(1)==2){
+                    Personajes nuevaPartida = new Guerrero(nombre, fuerza, energia, moneda, curacion, fortuna);
+                } else if (rs.getInt(1)==3){
+                    Personajes nuevaPartida = new Mago(moneda, nombre, fuerza, energia, moneda, curacion, fortuna);
+                }
             }
-            
-            
-            
+
         } catch (Exception e) {
             System.out.println("ERROR: no se pudo conectar con la base de datos");
         }
@@ -98,13 +98,12 @@ public class GuardarDB {
     // listado de las partidas guardadas
     public void verPartidasGuardadas(Scanner scn, String url){
         String sql = "SELECT * FROM personajes"; 
-        ResultSet rs = null;
+        
         
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
-                PreparedStatement prep = con.prepareStatement(sql)){
+                PreparedStatement prep = con.prepareStatement(sql);
+                ResultSet rs = prep.executeQuery(sql);){
             
-            // ejecución de la query
-            prep.executeQuery(sql);
             
             // listado de toda la información de las partidas
             while (rs.next()){
