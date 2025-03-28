@@ -50,6 +50,7 @@ public class Juego {
 
             if (jugador.getVida() <= 0) {
                 System.out.println("Has sido derrotado...");
+                jugador.setVida(100);
                 return;
             }
 
@@ -63,6 +64,7 @@ public class Juego {
 
     public static void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes) throws FileNotFoundException {
         boolean jugando = true;
+        Aleatorio a = new Aleatorio();
         Scanner scanner = new Scanner(System.in);
         CargarGuardarPartida cg = new CargarGuardarPartida();
         Toolbox tb = new Toolbox();
@@ -91,6 +93,9 @@ public class Juego {
                     switch (opcion) {
                         case 1:
                             System.out.println("Explorando la cueva...");
+                            System.out.println("Apareció un enemigo!");
+                            Enemigos nuevoEnemigo = new EsbirrosDeLaLuz("Esbirros de la luz", "100", 100, a.numero(10));
+                            enfrentarEnemigo(jugador, nuevoEnemigo);
                             break;
                         case 2:
                             enfrentarEnemigo(jugador, enemigo);
@@ -136,22 +141,20 @@ public class Juego {
 
     public static Enemigos generarEnemigoAleatorio() {
         Aleatorio a = new Aleatorio();
-        int num = a.numero(6);
+        int num = a.numero(5);
 
         switch (num) {
             case 1:
-                return new EsbirrosDeLaLuz("esbirro de luz", "100", 100, a.numero(50));
+                return new PadreCorredor("Padre corredor", "100", 100, a.numero(50), 100);
             case 2:
-                return new PadreCorredor("padre corredor", "100", 100, a.numero(50), 100);
+                return new PadreLadron("Padre ladron", "100", 100, a.numero(50), true);
             case 3:
-                return new PadreLadron("padre ladron", "100", 100, a.numero(50), true);
+                return new PadreHerederoDeSatan("Heredero de satan", "100", 100, a.numero(50), true);
             case 4:
-                return new PadreHerederoDeSatan("heredero de satan", "100", 100, a.numero(50), true);
-            case 5:
-                return new PadreSecretarioDelSenor("padre secretario del señor", "100", 100, a.numero(50), true);
+                return new PadreSecretarioDelSenor("Padre secretario del señor", "100", 100, a.numero(50), true);
             default:
-                return new PadreSuperior("padre superior", "x", 100, a.numero(50),
-                        new PadreSecretarioDelSenor("padre secretario del señor", "100", 100, a.numero(50), true));
+                return new PadreSuperior("Padre superior", "x", 100, a.numero(50),
+                        new PadreSecretarioDelSenor("Padre secretario del señor", "100", 100, a.numero(50), true));
         }
     }
 }
