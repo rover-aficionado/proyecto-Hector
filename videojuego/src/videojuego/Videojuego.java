@@ -75,9 +75,8 @@ public class Videojuego {
                 tb.introduccion(personajes);
                 
             } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
-                System.out.println("nombre del personaje");
-                String nombre = sc.nextLine();
-                gdb.cargarPartida(nombre); // cargar la partida desde el nombre del personaje
+                gdb.cargarPartida();
+                break;
             }else if(opcion.equalsIgnoreCase("3")) { // ver ganadores
                 
             } else if (opcion.equalsIgnoreCase("4")) { // salir del juego
