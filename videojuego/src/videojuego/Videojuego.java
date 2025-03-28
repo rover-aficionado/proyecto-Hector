@@ -1,6 +1,6 @@
 package videojuego;
 
-import java.io.*;
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,10 +12,8 @@ import videojuego.personajes.*;
  * "los p*tos amos"
  */
 public class Videojuego {
-    // CACHARREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
-        HashMap<String, Integer> partidas = new HashMap<>();
         ArrayList<Personajes> personajes = new ArrayList<>();
         Toolbox tb = new Toolbox();
         Juego j = new Juego();
@@ -84,6 +82,7 @@ public class Videojuego {
                 System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta, introduce opcion entre 1,2,3,4");
+
             }
         }
     }

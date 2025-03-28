@@ -67,11 +67,9 @@ public class GuardarDB {
         // extracción de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);
-                ){
+                ResultSet rs = prep.executeQuery();){
             
             prep.setString(1, nombre);
-            ResultSet rs = prep.executeQuery();
-
             // estadísticas de los personajes
             if(rs.next()){
                 //String nombre = rs.getString(2);
@@ -95,8 +93,9 @@ public class GuardarDB {
                 } else if (rs.getInt(1)==3){
                     Personajes nuevaPartida = new Mago(moneda, nombre, fuerza, energia, moneda, curacion, fortuna);
                 }
-            }
 
+            }
+   
         } catch (Exception e) {
             System.out.println("ERROR: no se pudo conectar con la base de datos");
             System.out.println(e);
@@ -111,7 +110,7 @@ public class GuardarDB {
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);
                 ResultSet rs = prep.executeQuery();){
-            
+
             // listado de toda la información de las partidas
             Boolean hayPartidas = false;
             if(rs.next()){
