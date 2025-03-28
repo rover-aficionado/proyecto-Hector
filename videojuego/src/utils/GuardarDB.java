@@ -53,20 +53,20 @@ public class GuardarDB {
     }
     
     // método para la carga de la partida
-    public void cargarPartida(int id){
-        String sql = "SELECT * FROM personajes WHERE id=?";
+    public void cargarPartida(String nombre){
+        String sql = "SELECT * FROM personajes WHERE nombre=?";
                        
         // extracción de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);
                 ){
             
-            prep.setInt(1, id);
+            prep.setString(2, nombre);
             ResultSet rs = prep.executeQuery(sql);
 
             // estadísticas de los personajes
             if(rs.next()){
-                String nombre = rs.getString(2);
+                //String nombre = rs.getString(2);
                 double vida = rs.getDouble(3);
                 double vidaMaxima = rs.getDouble(4);
                 double fuerza = rs.getDouble(5);

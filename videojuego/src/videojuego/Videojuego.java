@@ -20,6 +20,7 @@ public class Videojuego {
         Toolbox tb = new Toolbox();
         Juego j = new Juego();
         String opcion;
+        GuardarDB gdb = new GuardarDB();
         
         // menú principal
         System.out.println("-------------------------------------------------------------");
@@ -33,7 +34,7 @@ public class Videojuego {
         opcion = sc.nextLine();
         
         while (true) {
-            CargarGuardarPartida cgp = new CargarGuardarPartida();
+            
             if (opcion.equalsIgnoreCase("1")){ // selección de personajes
                 System.out.println("-------------------------------------------------------------");
                 System.out.println("Selecciona tu personaje:");
@@ -52,34 +53,18 @@ public class Videojuego {
                 if (opcion.equalsIgnoreCase("1")) { // guerrero
                     Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(g);
-
-                    try {
-                        //guardado de las partidas
-                        cgp.guardarPartida(g);
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    gdb.guardarPartida(g); // guardar la partida
                     Juego.jugar(g,Juego.generarEnemigoAleatorio(), personajes);
                 }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(a);
-                    try {
-                        // guardado de las partidas
-                        cgp.guardarPartida(a);
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    gdb.guardarPartida(a); // guardar partida
                     Juego.jugar(a,Juego.generarEnemigoAleatorio(),personajes);
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(m);
-                    
-                    try { // guarda la partida para mago
-                        cgp.guardarPartida(m);
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    gdb.guardarPartida(m); // guardar la partida
                     Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
@@ -92,7 +77,7 @@ public class Videojuego {
             } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
                 System.out.println("nombre del personaje");
                 String nombre = sc.nextLine();
-               cgp.cargarPartida(nombre);
+                gdb.cargarPartida(nombre); // cargar la partida desde el nombre del personaje
             }else if(opcion.equalsIgnoreCase("3")) { // ver ganadores
                 
             } else if (opcion.equalsIgnoreCase("4")) { // salir del juego
