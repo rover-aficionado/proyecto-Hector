@@ -68,6 +68,7 @@ public class Juego {
         Toolbox tb = new Toolbox();
         int opcion;
         while (jugando) {
+            tb.introduccion(personajes);
             System.out.println("--- JUEGO ---");
             System.out.println("1. Avanzar en el juego");
             System.out.println("2. Ver estado del jugador");
@@ -85,7 +86,7 @@ public class Juego {
                 System.out.println("5. Menú");
                 opcion = Integer.parseInt(scanner.nextLine());
                 
-                while(opcion != 5) {
+                while(true){
                     
                     if(opcion == 1){
                         System.out.println("");

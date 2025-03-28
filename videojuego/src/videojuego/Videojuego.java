@@ -19,20 +19,11 @@ public class Videojuego {
         ArrayList<Personajes> personajes = new ArrayList<>();
         Toolbox tb = new Toolbox();
         Juego j = new Juego();
-        String opcion;
+        String opcion = "";
         
-        // menú principal
-        System.out.println("-------------------------------------------------------------");
-        System.out.println("Bienvenido a Legends of Valor");
-        System.out.println("1. Nueva Partida");
-        System.out.println("2. Reaunudar Partida");
-        System.out.println("3. Ver Ganadores");
-        System.out.println("4. Salir del juego");
-        System.out.println("-------------------------------------------------------------");
-        
-        opcion = sc.nextLine();
-        
-        while (true) {
+        tb.inicio();
+        while (sc.hasNext()) {
+            opcion = sc.nextLine();
             CargarGuardarPartida cgp = new CargarGuardarPartida();
             if (opcion.equalsIgnoreCase("1")){ // selección de personajes
                 System.out.println("-------------------------------------------------------------");
@@ -83,6 +74,7 @@ public class Videojuego {
                     Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
+                    return;
                 }
                 //escribir txt con los datos de la partida
                 System.out.println("Personaje creado correctamente");
@@ -100,6 +92,7 @@ public class Videojuego {
                 System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta, introduce opcion entre 1,2,3,4");
+                tb.inicio();
             }
         }
     }
