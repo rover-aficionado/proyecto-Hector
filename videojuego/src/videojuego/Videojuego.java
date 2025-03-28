@@ -59,10 +59,7 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    Juego.jugar(g,Juego.generarEnemigoAleatorio());
-                }else if (opcion.equalsIgnoreCase("3")) { // arquero
-                    Personajes a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
-
+                    Juego.jugar(g,Juego.generarEnemigoAleatorio(), personajes);
                 }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(a);
@@ -72,7 +69,7 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    Juego.jugar(a,Juego.generarEnemigoAleatorio());
+                    Juego.jugar(a,Juego.generarEnemigoAleatorio(),personajes);
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
@@ -83,7 +80,7 @@ public class Videojuego {
                     } catch (FileNotFoundException ex) {
                         Logger.getLogger(Videojuego.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    Juego.jugar(m,Juego.generarEnemigoAleatorio());
+                    Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                 }

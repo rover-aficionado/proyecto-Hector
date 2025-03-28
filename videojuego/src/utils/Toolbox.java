@@ -211,6 +211,7 @@ public class Toolbox {
                         }
                     } else {
                         System.out.println("Opcion incorrecta, selecciona entre 1,2,3,4");
+                        break;
                     }
                 }while (true);
             }
