@@ -16,6 +16,7 @@ public class Videojuego {
         Scanner sc = new Scanner(System.in);
         ArrayList<Personajes> personajes = new ArrayList<>();
         Toolbox tb = new Toolbox();
+        Textos t = new Textos();
         Juego j = new Juego();
         String opcion;
         GuardarDB gdb = new GuardarDB();
@@ -82,7 +83,7 @@ public class Videojuego {
                 System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta, introduce opcion entre 1,2,3,4");
-                //tb.inicio();
+                t.inicio();
             }
         }
     }
