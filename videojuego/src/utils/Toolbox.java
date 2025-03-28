@@ -1,288 +1,128 @@
 package utils;
 import java.util.*;
-
 import videojuego.personajes.*;
 
 public class Toolbox {
+
     private void historia() {
-        System.out.println("Este mundo consta de 5 niveles, los cuales para avanzar al siguiente nivel deberás acabar con el jefe de nivel.");
-        System.out.println("No te confies con el lindo y maravilloso paisaje, ya que este mundo está lleno de criaturas que trataran de acabar con tu aventura,");
-        System.out.println("por lo que deberás estar en constante lucha, además de siempre mejorar tus armas y/o herramientas para poder acabar con los enemigos.");
-        System.out.println("¿Estás preparado? Tu aventura comienza... AHORA");
+        System.out.println("""
+            Este mundo consta de 5 niveles, los cuales para avanzar al siguiente nivel 
+            deberás acabar con el jefe de nivel. 
+            No te confíes con el lindo y maravilloso paisaje, ya que este mundo está lleno de 
+            criaturas que tratarán de acabar con tu aventura. 
+            Deberás estar en constante lucha y mejorar tus armas y herramientas 
+            para vencer a los enemigos.
+            ¿Estás preparado? Tu aventura comienza... AHORA
+        """);
     }
-    public void introduccion(ArrayList<Personajes> personaje) {
-        for (Personajes p : personaje) {
-            if(p instanceof Guerrero g) {
-                System.out.println("-------------------------------------------------------------");
+
+    public void introduccion(ArrayList<Personajes> personajes) {
+        for (Personajes p : personajes) {
+            System.out.println("-------------------------------------------------------------");
+            if (p instanceof Guerrero) {
                 System.out.println("Bienvenido guerrero, tu aventura está a punto de comenzar...");
-                historia();
-                System.out.println("-------------------------------------------------------------");
-            } else if (p instanceof Mago m) {
-                System.out.println("-------------------------------------------------------------");
+            } else if (p instanceof Mago) {
                 System.out.println("Bienvenido poseedor de magia, tu aventura está a punto de comenzar...");
-                historia();
-                System.out.println("-------------------------------------------------------------");
-            } else if (p instanceof Arquero a) {
-                System.out.println("-------------------------------------------------------------");
+            } else if (p instanceof Arquero) {
                 System.out.println("Bienvenido hawkeye, tu aventura está a punto de comenzar...");
-                historia();
-                System.out.println("-------------------------------------------------------------");
             }
+            historia();
+            System.out.println("-------------------------------------------------------------");
         }
-    }
-    
-    public void tiendaArmas(ArrayList<Personajes> personaje, Scanner sc) {
-        String opcion;
-        for (Personajes p : personaje) {
-            if(p instanceof Guerrero g) {
-                System.out.println("TIENDA DE ARMAS");
-                System.out.println("1. Espada de fuego - 50 monedas");
-                System.out.println("2. Espada de hielo - 50 monedas");
-                System.out.println("3. Espada de Electrica - 80 monedas");
-                System.out.println("4. Espada del inframundo - 120 monedas");
-                System.out.println("5. Salir");
-                opcion = sc.nextLine();
-                do {
-                    if (opcion.equalsIgnoreCase("1")){
-                        if (g.getMoneda() >= 50) {
-                            g.setMoneda(g.getMoneda() - 50);
-                            g.setFuerza(g.getFuerza() + 10);
-                            System.out.println("Has comprado la espada de fuego");
-                            System.out.println("Tu fuerza ha aumentado 10 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("2")){
-                        if (g.getMoneda() >= 50) {
-                            g.setMoneda(g.getMoneda() - 50);
-                            g.setFuerza(g.getFuerza() + 10);
-                            System.out.println("Has comprado la espada de hielo");
-                            System.out.println("Tu fuerza ha aumentado 10 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("3")){
-                        if (g.getMoneda() >= 80) {
-                            g.setMoneda(g.getMoneda() - 80);
-                            g.setFuerza(g.getFuerza() + 15);
-                            System.out.println("Has comprado la espada de electrica");
-                            System.out.println("Tu fuerza ha aumentado 15 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("4")){
-                        if (g.getMoneda() >= 120) {
-                            g.setMoneda(g.getMoneda() - 120);
-                            g.setFuerza(g.getFuerza() + 20);
-                            System.out.println("Has comprado la espada del inframundo");
-                            System.out.println("Tu fuerza ha aumentado 20 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                        
-                    } else if(opcion.equalsIgnoreCase("5")) {
-                        return;
-                        
-                    } else {
-                        System.out.println("Opcion incorrecta, selecciona entre 1,2,3,4");
-                    }
-                }while(true);
-            } else if (p instanceof Arquero a) {
-                System.out.println("TIENDA DE ARMAS");
-                System.out.println("1. Arco de fuego - 50 monedas");
-                System.out.println("2. Arco de hielo - 50 monedas");
-                System.out.println("3. Arco de Electrica - 80 monedas");
-                System.out.println("4. Arco del inframundo - 120 monedas");
-                System.out.println("5. Salir");
-                opcion = sc.nextLine();
-                do {
-                    if (opcion.equalsIgnoreCase("1")){
-                        if (a.getMoneda() >= 50) {
-                            a.setMoneda(a.getMoneda() - 50);
-                            a.setFuerza(a.getFuerza() + 10);
-                            System.out.println("Has comprado el arco de fuego");
-                            System.out.println("Tu fuerza ha aumentado 10 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("2")){
-                        if (a.getMoneda() >= 50) {
-                            a.setMoneda(a.getMoneda() - 50);
-                            a.setFuerza(a.getFuerza() + 10);
-                            System.out.println("Has comprado el arco de hielo");
-                            System.out.println("Tu fuerza ha aumentado 10 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("3")){
-                        if (a.getMoneda() >= 80) {
-                            a.setMoneda(a.getMoneda() - 80);
-                            a.setFuerza(a.getFuerza() + 15);
-                            System.out.println("Has comprado el arco de electrica");
-                            System.out.println("Tu fuerza ha aumentado 15 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("4")){
-                        if (a.getMoneda() >= 120) {
-                            a.setMoneda(a.getMoneda() - 120);
-                            a.setFuerza(a.getFuerza() + 20);
-                            System.out.println("Has comprado el arco del inframundo");
-                            System.out.println("Tu fuerza ha aumentado 20 puntos");
-                            break;
-                        } else if (opcion.equalsIgnoreCase("5")) {
-                            return;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else {
-                        System.out.println("Opcion incorrecta, selecciona entre 1,2,3,4");
-                    }
-                }while (true);
-            } else if (p instanceof Mago m) {
-                System.out.println("TIENDA DE ARMAS");
-                System.out.println("1. Varita de fuego - 50 monedas");
-                System.out.println("2. Varita de hielo - 50 monedas");
-                System.out.println("3. Varita de Electrica - 80 monedas");
-                System.out.println("4. Varita del inframundo - 120 monedas");
-                System.out.println("5. Salir");
-                opcion = sc.nextLine();
-                do {
-                    if (opcion.equalsIgnoreCase("1")){
-                        if (m.getMoneda() >= 50) {
-                            m.setMoneda(m.getMoneda() - 50);
-                            m.setFuerza(m.getFuerza() + 10);
-                            System.out.println("Has comprado la varita de fuego");
-                            System.out.println("Tu fuerza ha aumentado 10 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("2")){
-                        if (m.getMoneda() >= 50) {
-                            m.setMoneda(m.getMoneda() - 50);
-                            m.setFuerza(m.getFuerza() + 10);
-                            System.out.println("Has comprado la varita de hielo");
-                            System.out.println("Tu fuerza ha aumentado 10 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("3")){
-                        if (m.getMoneda() >= 80) {
-                            m.setMoneda(m.getMoneda() - 80);
-                            m.setFuerza(m.getFuerza() + 15);
-                            System.out.println("Has comprado la varita de electrica");
-                            System.out.println("Tu fuerza ha aumentado 15 puntos");
-                            break;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else if (opcion.equalsIgnoreCase("4")){
-                        if (m.getMoneda() >= 120) {
-                            m.setMoneda(m.getMoneda() - 120);
-                            m.setFuerza(m.getFuerza() + 20);
-                            System.out.println("Has comprado la varita del inframundo");
-                            System.out.println("Tu fuerza ha aumentado 20 puntos");
-                            break;
-                        } else if (opcion.equalsIgnoreCase("5")) {
-                            return;
-                        } else {
-                            System.out.println("No tienes suficientes monedas");
-                            break;
-                        }
-                    } else {
-                        System.out.println("Opcion incorrecta, selecciona entre 1,2,3,4");
-                        break;
-                    }
-                }while (true);
-            }
-        }
-        
     }
 
-    public void tiendaMascotas(ArrayList<Personajes> personajes,Scanner sc){
-        String opcion;
+    private void mostrarMenuArmas(String tipoArma) {
+        System.out.println("TIENDA DE ARMAS");
+        System.out.println("1. " + tipoArma + " de fuego - 50 monedas");
+        System.out.println("2. " + tipoArma + " de hielo - 50 monedas");
+        System.out.println("3. " + tipoArma + " eléctrica - 80 monedas");
+        System.out.println("4. " + tipoArma + " del inframundo - 120 monedas");
+        System.out.println("5. Salir");
+    }
+
+    private void comprarArma(Personajes p, String tipoArma, int costo, int bonus) {
+        if (p.getMoneda() >= costo) {
+            p.setMoneda(p.getMoneda() - costo);
+            p.setFuerza(p.getFuerza() + bonus);
+            System.out.println("Has comprado " + tipoArma + ". Tu fuerza ha aumentado " + bonus + " puntos.");
+        } else {
+            System.out.println("No tienes suficientes monedas.");
+        }
+    }
+
+    public void tiendaArmas(ArrayList<Personajes> personajes, Scanner sc) {
+        for (Personajes p : personajes) {
+            String tipoArma = p instanceof Guerrero ? "Espada" : p instanceof Arquero ? "Arco" : "Varita";
+            mostrarMenuArmas(tipoArma);
+            String opcion;
+            while (true) {
+                opcion = sc.nextLine();
+                switch (opcion) {
+                    case "1" -> comprarArma(p, tipoArma + " de fuego", 50, 10);
+                    case "2" -> comprarArma(p, tipoArma + " de hielo", 50, 10);
+                    case "3" -> comprarArma(p, tipoArma + " eléctrica", 80, 15);
+                    case "4" -> comprarArma(p, tipoArma + " del inframundo", 120, 20);
+                    case "5" -> { return; }
+                    default -> System.out.println("Opción incorrecta, selecciona entre 1, 2, 3, 4 o 5.");
+                }
+            }
+        }
+    }
+
+    public void tiendaMascotas(ArrayList<Personajes> personajes, Scanner sc) {
         System.out.println("TIENDA DE MASCOTAS");
-        System.out.println("1. Gato con fortuna- 50 monedas");
+        System.out.println("1. Gato con fortuna - 50 monedas");
         System.out.println("2. Perro sanador - 50 monedas");
-        opcion = sc.nextLine();
-        do {
-            if (opcion.equalsIgnoreCase("1")){
-                for (Personajes x : personajes){
-                    x.setMoneda(x.getMoneda() - 50);
-                    x.setFortuna(1);
-                    System.out.println("Has comprado el gato con fortuna");
-                    break;
-                }
-            } else if (opcion.equalsIgnoreCase("2")) {
-                for(Personajes x : personajes){
-                    x.setMoneda(x.getMoneda() - 50);
-                    x.setCuracion(1);
-                    System.out.println("Has comprado el perro sanador");
-                    break;
-                }
-            }
-        }while(true);
+        System.out.println("3. Salir");
 
+        String opcion;
+        while (true) {
+            opcion = sc.nextLine();
+            switch (opcion) {
+                case "1":
+                case "2":
+                    for (Personajes p : personajes) {
+                        if (p.getMoneda() >= 50) {
+                            p.setMoneda(p.getMoneda() - 50);
+                            if (opcion.equals("1")) {
+                                p.setFortuna(1);
+                                System.out.println("Has comprado el gato con fortuna.");
+                            } else {
+                                p.setCuracion(1);
+                                System.out.println("Has comprado el perro sanador.");
+                            }
+                        } else {
+                            System.out.println("No tienes suficientes monedas.");
+                        }
+                    }
+                    return;
+                case "3":
+                    return;
+                default:
+                    System.out.println("Opción incorrecta, selecciona entre 1, 2 o 3.");
+            }
+        }
     }
-    
-    public void subirNivel(Personajes x){
-        if (x.getExperiencia() > 200) {
-            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
-            x.setVidaMaxima(x.getVidaMaxima() + 5);
-            x.setFuerza(x.getFuerza() + 5);
-        }
-        if (x.getExperiencia() > 500) {
-            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
-            x.setVidaMaxima(x.getVidaMaxima() + 5);
-            x.setFuerza(x.getFuerza() + 5);
-        }
-        if (x.getExperiencia() > 1000) {
-            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
-            x.setVidaMaxima(x.getVidaMaxima() + 5);
-            x.setFuerza(x.getFuerza() + 5);
-        }
-        if (x.getExperiencia() > 5000) {
-            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
-            x.setVidaMaxima(x.getVidaMaxima() + 5);
-            x.setFuerza(x.getFuerza() + 5);
-        }
-        if (x.getExperiencia() > 10000) {
-            x.setNivelExperiencia(x.getNivelExperiencia() + 1);
-            x.setVidaMaxima(x.getVidaMaxima() + 5);
-            x.setFuerza(x.getFuerza() + 5);
+
+    public void subirNivel(Personajes p) {
+        int[] niveles = {200, 500, 1000, 5000, 10000};
+        for (int nivel : niveles) {
+            if (p.getExperiencia() > nivel) {
+                p.setNivelExperiencia(p.getNivelExperiencia() + 1);
+                p.setVidaMaxima(p.getVidaMaxima() + 5);
+                p.setFuerza(p.getFuerza() + 5);
+                System.out.println(p.getNombre() + " ha subido de nivel. ¡Felicidades!");
+            }
         }
     }
-    
-    public void ganarRecompensas(Personajes p){
-        if (p.getFortuna() == 0){
-            p.setExperiencia(p.getExperiencia() + 50);
-            p.setMoneda(p.getMoneda() + 5);
-        } else if (p.getFortuna() > 0 ) {
-            p.setExperiencia(p.getExperiencia() + 50 + p.getNivelExperiencia() * 0.25);
-            p.setMoneda((int) (p.getMoneda() + 5 + p.getNivelExperiencia() * 0.25));
-        }
-        if (p.getExperiencia() > 200 || p.getExperiencia() > 500 || p.getExperiencia() > 1000 || p.getExperiencia() > 5000 || p.getExperiencia() > 10000){
-            p.subirNivel();
-        }
+
+    public void ganarRecompensas(Personajes p) {
+        int bonusExp = (p.getFortuna() > 0) ? (int) (p.getNivelExperiencia() * 0.25) : 0;
+        int bonusMonedas = (p.getFortuna() > 0) ? (int) (p.getNivelExperiencia() * 0.25) : 0;
+
+        p.setExperiencia(p.getExperiencia() + 50 + bonusExp);
+        p.setMoneda(p.getMoneda() + 5 + bonusMonedas);
+
+        subirNivel(p);
     }
 }
