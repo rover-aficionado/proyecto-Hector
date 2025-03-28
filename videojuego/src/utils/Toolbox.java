@@ -22,7 +22,9 @@ public class Toolbox {
                 t.historia();
                 System.out.println("-------------------------------------------------------------");
 
-
+            }
+        }
+    }
     private void mostrarMenuArmas(String tipoArma) {
         System.out.println("TIENDA DE ARMAS");
         System.out.println("1. " + tipoArma + " de fuego - 50 monedas");
