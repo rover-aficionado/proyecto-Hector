@@ -82,7 +82,7 @@ public class Videojuego {
                 System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta, introduce opcion entre 1,2,3,4");
-                tb.inicio();
+                //tb.inicio();
             }
         }
     }
