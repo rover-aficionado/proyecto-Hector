@@ -71,6 +71,7 @@ public class Juego {
         int opcion;
 
         while (jugando) {
+            tb.introduccion(personajes);
             System.out.println("--- JUEGO ---");
             System.out.println("1. Avanzar en el juego");
             System.out.println("2. Ver estado del jugador");

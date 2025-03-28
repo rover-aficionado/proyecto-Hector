@@ -3,33 +3,25 @@ import java.util.*;
 import videojuego.personajes.*;
 
 public class Toolbox {
-
-    private void historia() {
-        System.out.println("""
-            Este mundo consta de 5 niveles, los cuales para avanzar al siguiente nivel 
-            deberás acabar con el jefe de nivel. 
-            No te confíes con el lindo y maravilloso paisaje, ya que este mundo está lleno de 
-            criaturas que tratarán de acabar con tu aventura. 
-            Deberás estar en constante lucha y mejorar tus armas y herramientas 
-            para vencer a los enemigos.
-            ¿Estás preparado? Tu aventura comienza... AHORA
-        """);
-    }
-
-    public void introduccion(ArrayList<Personajes> personajes) {
-        for (Personajes p : personajes) {
-            System.out.println("-------------------------------------------------------------");
-            if (p instanceof Guerrero) {
+    Textos t = new Textos();
+    public void introduccion(ArrayList<Personajes> personaje) {
+        for (Personajes p : personaje) {
+            if(p instanceof Guerrero g) {
+                System.out.println("-------------------------------------------------------------");
                 System.out.println("Bienvenido guerrero, tu aventura está a punto de comenzar...");
-            } else if (p instanceof Mago) {
+                t.historia();
+                System.out.println("-------------------------------------------------------------");
+            } else if (p instanceof Mago m) {
+                System.out.println("-------------------------------------------------------------");
                 System.out.println("Bienvenido poseedor de magia, tu aventura está a punto de comenzar...");
-            } else if (p instanceof Arquero) {
+                t.historia();
+                System.out.println("-------------------------------------------------------------");
+            } else if (p instanceof Arquero a) {
+                System.out.println("-------------------------------------------------------------");
                 System.out.println("Bienvenido hawkeye, tu aventura está a punto de comenzar...");
-            }
-            historia();
-            System.out.println("-------------------------------------------------------------");
-        }
-    }
+                t.historia();
+                System.out.println("-------------------------------------------------------------");
+
 
     private void mostrarMenuArmas(String tipoArma) {
         System.out.println("TIENDA DE ARMAS");

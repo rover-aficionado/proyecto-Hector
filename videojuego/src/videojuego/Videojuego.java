@@ -32,7 +32,6 @@ public class Videojuego {
         opcion = sc.nextLine();
         
         while (true) {
-            
             if (opcion.equalsIgnoreCase("1")){ // selección de personajes
                 System.out.println("-------------------------------------------------------------");
                 System.out.println("Selecciona tu personaje:");
@@ -66,6 +65,7 @@ public class Videojuego {
                     Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
+                    return;
                 }
                 //escribir txt con los datos de la partida
                 System.out.println("Personaje creado correctamente");
@@ -82,7 +82,7 @@ public class Videojuego {
                 System.exit(0);
             }else {
                 System.out.println("Opcion incorrecta, introduce opcion entre 1,2,3,4");
-
+                tb.inicio();
             }
         }
     }
