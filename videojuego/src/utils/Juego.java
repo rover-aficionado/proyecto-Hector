@@ -2,10 +2,11 @@ package utils;
 
 import videojuego.enemigos.*;
 import videojuego.personajes.*;
-
+import videojuego.armas.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class Juego {
     public static void enfrentarEnemigo(Personajes jugador, Enemigos enemigo) {
@@ -62,7 +63,7 @@ public class Juego {
         }
     }
 
-    public static void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes) throws FileNotFoundException {
+    public static void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo) throws FileNotFoundException {
         boolean jugando = true;
         Aleatorio a = new Aleatorio();
         Scanner scanner = new Scanner(System.in);
@@ -102,7 +103,7 @@ public class Juego {
                             enfrentarEnemigo(jugador, enemigo);
                             break;
                         case 3:
-                            tb.tiendaArmas(personajes, scanner);
+                            tb.tiendaArmas(personajes, scanner, equipo);
                             break;
                         case 4:
                             tb.tiendaMascotas(personajes, scanner);

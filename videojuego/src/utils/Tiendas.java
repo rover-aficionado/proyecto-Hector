@@ -13,6 +13,7 @@ public class Tiendas {
         System.out.println("4. Cortavientos - 80 monedas");
         System.out.println("5. Daga Lunar - 90 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasGuerrero2() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -22,6 +23,7 @@ public class Tiendas {
         System.out.println("4. Filo del Alba - 210 monedas");
         System.out.println("5. Susurro Nocturno - 250 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasGuerrero3() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -31,6 +33,7 @@ public class Tiendas {
         System.out.println("4. Tormenta Carmesí - 650 monedas");
         System.out.println("5. Ruina del Rey - 700 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasGuerrero4() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -40,6 +43,7 @@ public class Tiendas {
         System.out.println("4. Sepulturero Eterno - 2.000 monedas");
         System.out.println("5. Última Plegaria - 2.500 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasGuerrero5() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -49,6 +53,7 @@ public class Tiendas {
         System.out.println("4. Vorágine de la Eternidad - 10.000 monedas");
         System.out.println("5. Filo de la Oscuridad Primigenia - 12.500 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     
     // TIENDA PARA LOS ARQUEROS
@@ -61,6 +66,7 @@ public class Tiendas {
         System.out.println("4. Colmillo de Lobo - 12 monedas c/u");
         System.out.println("5. Aguijón Veloz - 15 monedas c/u");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasArquero2() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -70,6 +76,7 @@ public class Tiendas {
         System.out.println("4. Garra de Halcón - 40 monedas c/u");
         System.out.println("5. Susurro Sombrío - 50 monedas c/u");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasArquero3() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -79,6 +86,7 @@ public class Tiendas {
         System.out.println("4. Flecha Fantasmal - 180 monedas c/u");
         System.out.println("5. Rompehechizos - 200 monedas c/u");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasArquero4() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -88,6 +96,7 @@ public class Tiendas {
         System.out.println("4. Flecha de la Luna Eterna - 1.200 monedas c/u");
         System.out.println("5. Lanza del Cazador Divino - 1.500 monedas c/u");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasArquero5() {
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -97,6 +106,7 @@ public class Tiendas {
         System.out.println("4. Flecha del Vacío Abismal - 8.500 monedas c/u");
         System.out.println("5. Destino del Último Amanecer - 10.000 monedas c/u");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     
     // TIENDA PARA LOS MAGOS
@@ -109,6 +119,7 @@ public class Tiendas {
         System.out.println("4. Compendio de Encantamientos Menores - 150 monedas");
         System.out.println("5. Guía de la Magia Primaria - 180 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasMago2(){
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -118,6 +129,7 @@ public class Tiendas {
         System.out.println("4. Volumen del Viento Celestial - 450 monedas");
         System.out.println("5. Libro del Mago Errante - 500 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasMago3(){
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -127,6 +139,7 @@ public class Tiendas {
         System.out.println("4. Grimorio de los Espíritus Antiguos - 1.400 monedas");
         System.out.println("5. Volumen de la Sangre y la Luna - 1.600 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasMago4(){
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -136,6 +149,7 @@ public class Tiendas {
         System.out.println("4. Códice del Destino Torcido - 4.500 monedas");
         System.out.println("5. Tomo del Último Arcano - 5.000 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
     public void tiendaArmasMago5(){
         System.out.println("=== TIENDA DE ARMAS ===");
@@ -145,6 +159,13 @@ public class Tiendas {
         System.out.println("4. Tomo del Infinito - 18.000 monedas");
         System.out.println("5. La Verdadera Palabra de los Primordiales - 20.000 monedas");
         System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
     }
-    
+    public void tiendaMascotas () {
+        System.out.println("=== TIENDA DE MASCOTAS ===");
+        System.out.println("1. Perro (SANADOR) - 2.500 monedas");
+        System.out.println("2. Gato (FORTUNA) - 2.500 monedas");
+        System.out.println("3. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
 }
