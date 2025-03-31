@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.*;
 import videojuego.personajes.*;
+import videojuego.armas.*;
 
 /*
  * @author rober, valen, alex
@@ -20,16 +21,11 @@ public class Videojuego {
         Juego j = new Juego();
         String opcion;
         GuardarDB gdb = new GuardarDB();
+        ArrayList<Armas> equipo = new ArrayList<>();
         
         // menú principal
-        System.out.println("-------------------------------------------------------------");
-        System.out.println("Bienvenido a Legends of Valor");
-        System.out.println("1. Nueva Partida");
-        System.out.println("2. Reaunudar Partida");
-        System.out.println("3. Ver Ganadores");
-        System.out.println("4. Salir del juego");
-        System.out.println("-------------------------------------------------------------");
         
+        t.inicio();
         opcion = sc.nextLine();
         
         while (true) {
@@ -52,18 +48,18 @@ public class Videojuego {
                     Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(g);
                     gdb.guardarPartida(g); // guardar la partida
-                    Juego.jugar(g,Juego.generarEnemigoAleatorio(), personajes);
+                    Juego.jugar(g,Juego.generarEnemigoAleatorio(), personajes, equipo);
                 }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(a);
                     gdb.guardarPartida(a); // guardar partida
-                    Juego.jugar(a,Juego.generarEnemigoAleatorio(),personajes);
+                    Juego.jugar(a,Juego.generarEnemigoAleatorio(),personajes, equipo);
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(m);
                     gdb.guardarPartida(m); // guardar la partida
-                    Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes);
+                    Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes, equipo);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                     return;

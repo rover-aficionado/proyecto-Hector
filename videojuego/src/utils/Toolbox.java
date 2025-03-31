@@ -1,9 +1,11 @@
 package utils;
 import java.util.*;
 import videojuego.personajes.*;
+import videojuego.armas.*;
 
 public class Toolbox {
     Textos t = new Textos();
+    Tiendas ti = new Tiendas();
     public void introduccion(ArrayList<Personajes> personaje) {
         for (Personajes p : personaje) {
             if(p instanceof Guerrero g) {
@@ -25,39 +27,82 @@ public class Toolbox {
             }
         }
     }
-    private void mostrarMenuArmas(String tipoArma) {
-        System.out.println("TIENDA DE ARMAS");
-        System.out.println("1. " + tipoArma + " de fuego - 50 monedas");
-        System.out.println("2. " + tipoArma + " de hielo - 50 monedas");
-        System.out.println("3. " + tipoArma + " eléctrica - 80 monedas");
-        System.out.println("4. " + tipoArma + " del inframundo - 120 monedas");
-        System.out.println("5. Salir");
-    }
 
     private void comprarArma(Personajes p, String tipoArma, int costo, int bonus) {
         if (p.getMoneda() >= costo) {
             p.setMoneda(p.getMoneda() - costo);
-            p.setFuerza(p.getFuerza() + bonus);
+            p.setFuerza (p.getFuerza() + bonus);
             System.out.println("Has comprado " + tipoArma + ". Tu fuerza ha aumentado " + bonus + " puntos.");
         } else {
             System.out.println("No tienes suficientes monedas.");
         }
     }
-
-    public void tiendaArmas(ArrayList<Personajes> personajes, Scanner sc) {
+    
+    // METODO PARA VER LAS TIENDAS
+    
+    public void tiendaArmas(ArrayList<Personajes> personajes, Scanner sc, ArrayList<Armas> equipo) {
+        String opcion;
+        t.seleccionTiendas();
+        opcion = sc.nextLine();
         for (Personajes p : personajes) {
-            String tipoArma = p instanceof Guerrero ? "Espada" : p instanceof Arquero ? "Arco" : "Varita";
-            mostrarMenuArmas(tipoArma);
-            String opcion;
-            while (true) {
-                opcion = sc.nextLine();
-                switch (opcion) {
-                    case "1" -> comprarArma(p, tipoArma + " de fuego", 50, 10);
-                    case "2" -> comprarArma(p, tipoArma + " de hielo", 50, 10);
-                    case "3" -> comprarArma(p, tipoArma + " eléctrica", 80, 15);
-                    case "4" -> comprarArma(p, tipoArma + " del inframundo", 120, 20);
-                    case "5" -> { return; }
-                    default -> System.out.println("Opción incorrecta, selecciona entre 1, 2, 3, 4 o 5.");
+            if(p instanceof Guerrero g) {
+                switch(opcion) {
+                    case "1": 
+                        ti.tiendaArmasGuerrero1();
+                        opcion = sc.nextLine();
+                        switch(opcion) {
+                            case "1":
+                                if(g.getMoneda() != 50 || g.getMoneda() <= 50) {
+                                    System.out.println("No tienes suficientes monedas.");
+                                    ti.tiendaArmasGuerrero1();
+                                }
+                        }
+                    case "2":
+                        ti.tiendaArmasGuerrero2();
+                    case "3":
+                        ti.tiendaArmasGuerrero3();
+                    case "4":
+                        ti.tiendaArmasGuerrero4();
+                    case "5": 
+                        ti.tiendaArmasGuerrero5();
+                    case "6":
+                        return;
+                    default:
+                        System.out.println("Valor no válido, vuelva a intentarlo");
+                }
+            } else if (p instanceof Arquero a) {
+                switch(opcion) {
+                    case "1": 
+                        ti.tiendaArmasArquero1();
+                    case "2":
+                        ti.tiendaArmasArquero2();
+                    case "3":
+                        ti.tiendaArmasArquero3();
+                    case "4":
+                        ti.tiendaArmasArquero4();
+                    case "5": 
+                        ti.tiendaArmasArquero5();
+                    case "6":
+                        return;
+                    default:
+                        System.out.println("Valor no válido, vuelva a intentarlo");
+                }
+            } else if (p instanceof Mago m) {
+                switch(opcion) {
+                    case "1": 
+                        ti.tiendaArmasMago1();
+                    case "2":
+                        ti.tiendaArmasMago2();
+                    case "3":
+                        ti.tiendaArmasMago3();
+                    case "4":
+                        ti.tiendaArmasMago4();
+                    case "5": 
+                        ti.tiendaArmasMago5();
+                    case "6":
+                        return;
+                    default:
+                        System.out.println("Valor no válido, vuelva a intentarlo");
                 }
             }
         }
@@ -118,5 +163,9 @@ public class Toolbox {
         p.setMoneda(p.getMoneda() + 5 + bonusMonedas);
 
         subirNivel(p);
+    }
+    
+    public void creacionObjetos() {
+        
     }
 }
