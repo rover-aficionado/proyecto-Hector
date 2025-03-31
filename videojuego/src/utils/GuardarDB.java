@@ -14,7 +14,7 @@ import java.sql.*;
 public class GuardarDB {
     String url = "jdbc:mysql://127.0.0.1:3306/videojuego";
     Scanner scn = new Scanner(System.in);
-    
+    // comentario de prueba
     // metodo para el guardado de la partida
     public void guardarPartida(Personajes personaje){
         String sql = "INSERT INTO personajes (tipo, nombre, vida, vidaMaxima, fuerza,energia, nivelExperiencia, experiencia, moneda, curacion, fortuna) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
