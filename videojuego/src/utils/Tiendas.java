@@ -7,6 +7,7 @@ public class Tiendas {
     
     public void tiendaArmasGuerrero1() {
         System.out.println("=== TIENDA DE ARMAS ===");
+        System.out.println("0. Espada de piedra - 0 monedas");
         System.out.println("1. Filo Sombrío - 50 monedas");        
         System.out.println("2. Colmillo de Hierro - 65 monedas");
         System.out.println("3. Brisa de Acero - 70 monedas");
@@ -60,6 +61,7 @@ public class Tiendas {
     
     public void tiendaArmasArquero1() {
         System.out.println("=== TIENDA DE ARMAS ===");
+        System.out.println("0. Felchas normales - 0 monedas c/u");
         System.out.println("1. Flecha de Madera Simple - 5 monedas c/u");
         System.out.println("2. Dardo Ligero - 7 monedas c/u");
         System.out.println("3. Punta de Cobre - 10 monedas c/u");

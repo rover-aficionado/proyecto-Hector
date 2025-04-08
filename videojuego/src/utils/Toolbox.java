@@ -44,6 +44,7 @@ public class Toolbox {
         String opcion;
         t.seleccionTiendas();
         opcion = sc.nextLine();
+        
         for (Personajes p : personajes) {
             if(p instanceof Guerrero g) {
                 switch(opcion) {
@@ -57,14 +58,19 @@ public class Toolbox {
                                     ti.tiendaArmasGuerrero1();
                                 }
                         }
+                        break;
                     case "2":
                         ti.tiendaArmasGuerrero2();
+                        break;
                     case "3":
                         ti.tiendaArmasGuerrero3();
+                        break;
                     case "4":
                         ti.tiendaArmasGuerrero4();
+                        break;
                     case "5": 
                         ti.tiendaArmasGuerrero5();
+                        break;
                     case "6":
                         return;
                     default:

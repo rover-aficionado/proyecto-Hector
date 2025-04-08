@@ -1,23 +1,25 @@
 package videojuego.armas;
 
 public class Espada extends Armas {
-    private double largo;
-
-    public Espada(double largo, String nombre, double daño, String material, String rareza) {
-        super(nombre, daño, material, rareza);
-        this.largo = largo;
-    }
+    private double durabilidad;
     
-    public double getLargo() {
-        return largo;
+    public Espada(String nombre, double daño, int precio, double durabilidad) {
+        super(nombre, daño, precio);
+        this.durabilidad = durabilidad;
     }
 
-    public void setLargo(double largo) {
-        this.largo = largo;
+    public double getDurabilidad() {
+        return durabilidad;
+    }
+
+    public void setDurabilidad(double durabilidad) {
+        this.durabilidad = durabilidad;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " Espada{" + "largo=" + largo + '}';
+        return super.toString() + " Espada{" + "durabilidad=" + durabilidad + '}';
     }
+    
+    
 }

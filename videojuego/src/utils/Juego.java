@@ -9,9 +9,62 @@ import java.util.Scanner;
 
 
 public class Juego {
-    public static void enfrentarEnemigo(Personajes jugador, Enemigos enemigo) {
-        Toolbox tb = new Toolbox();
-        Scanner scanner = new Scanner(System.in);
+    Textos t = new Textos();
+    
+    public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Scanner sc) throws FileNotFoundException {
+        boolean jugando = true;
+        Aleatorio a = new Aleatorio();
+        CargarGuardarPartida cg = new CargarGuardarPartida();
+
+        tb.introduccion(personajes);
+        while (jugando) {
+            t.menuJuego();
+            String opcion = sc.nextLine();
+
+            switch (opcion) {
+                case "1":
+                    t.menuMundo();
+                    opcion = sc.nextLine();
+
+                    switch (opcion) {
+                        case "1":
+                            System.out.println("Explorando la cueva...");
+                            System.out.println("Apareció un enemigo!");
+                            Enemigos nuevoEnemigo = new EsbirrosDeLaLuz("Esbirros de la luz", "100", 100, a.numero(10));
+                            enfrentarEnemigo(jugador, nuevoEnemigo,tb,sc);
+                            break;
+                        case "2":
+                            enfrentarEnemigo(jugador, enemigo, tb, sc);
+                            break;
+                        case "3":
+                            tb.tiendaArmas(personajes, sc, equipo);
+                            break;
+                        case "4":
+                            tb.tiendaMascotas(personajes, sc);
+                            break;
+                        case "5":
+                            t.menuMundo();
+                        default:
+                            System.out.println("Valor no válido, intente otra vez");
+                    }
+                    break;
+
+                case "2":
+                    mostrarEstado(jugador);
+                    break;
+                case "3":
+                    cg.guardarPartida(jugador);
+                    break;
+                case "4":
+                    System.out.println("Regresando al menú principal...");
+                    jugando = false;
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
+        }
+    }
+    public void enfrentarEnemigo(Personajes jugador, Enemigos enemigo, Toolbox tb, Scanner sc) {
         System.out.println("¡Un " + enemigo.getNombre() + " apareció!");
 
         while (enemigo.getVida() > 0 && jugador.getVida() > 0) {
@@ -20,7 +73,7 @@ public class Juego {
             System.out.println("1. Atacar");
             System.out.println("2. Huir");
             System.out.print("Elige: ");
-            int opcion = scanner.nextInt();
+            int opcion = sc.nextInt();
 
             if (opcion == 1) {
                 if (jugador instanceof Guerrero) {
@@ -62,76 +115,7 @@ public class Juego {
             }
         }
     }
-
-    public static void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo) throws FileNotFoundException {
-        boolean jugando = true;
-        Aleatorio a = new Aleatorio();
-        Scanner scanner = new Scanner(System.in);
-        CargarGuardarPartida cg = new CargarGuardarPartida();
-        Toolbox tb = new Toolbox();
-        int opcion;
-
-        while (jugando) {
-            tb.introduccion(personajes);
-            System.out.println("--- JUEGO ---");
-            System.out.println("1. Avanzar en el juego");
-            System.out.println("2. Ver estado del jugador");
-            System.out.println("3. Guardar partida");
-            System.out.println("4. Volver al menú principal");
-            System.out.print("Elige una opción: ");
-            opcion = Integer.parseInt(scanner.nextLine());
-
-            switch (opcion) {
-                case 1:
-                    System.out.println("--- MUNDO ---");
-                    System.out.println("1. Explorar cueva");
-                    System.out.println("2. Enfrentar jefe final");
-                    System.out.println("3. Tienda de armas");
-                    System.out.println("4. Tienda de mascotas");
-                    System.out.println("5. Menú");
-                    System.out.print("Elige una opción: ");
-                    opcion = Integer.parseInt(scanner.nextLine());
-
-                    switch (opcion) {
-                        case 1:
-                            System.out.println("Explorando la cueva...");
-                            System.out.println("Apareció un enemigo!");
-                            Enemigos nuevoEnemigo = new EsbirrosDeLaLuz("Esbirros de la luz", "100", 100, a.numero(10));
-                            enfrentarEnemigo(jugador, nuevoEnemigo);
-                            break;
-                        case 2:
-                            enfrentarEnemigo(jugador, enemigo);
-                            break;
-                        case 3:
-                            tb.tiendaArmas(personajes, scanner, equipo);
-                            break;
-                        case 4:
-                            tb.tiendaMascotas(personajes, scanner);
-                            break;
-                        case 5:
-                            return;
-                        default:
-                            System.out.println("Valor no válido, intente otra vez");
-                    }
-                    break;
-
-                case 2:
-                    mostrarEstado(jugador);
-                    break;
-                case 3:
-                    cg.guardarPartida(jugador);
-                    break;
-                case 4:
-                    System.out.println("Regresando al menú principal...");
-                    jugando = false;
-                    break;
-                default:
-                    System.out.println("Opción no válida.");
-            }
-        }
-    }
-
-    public static void mostrarEstado(Personajes p) {
+    public void mostrarEstado(Personajes p) {
         System.out.println("=== ESTADO DEL JUGADOR ===");
         System.out.println("Nombre: " + p.getNombre());
         System.out.println("Vida: " + p.getVida());
@@ -141,7 +125,7 @@ public class Juego {
         System.out.println("Nivel de experiencia: " + p.getNivelExperiencia());
     }
 
-    public static Enemigos generarEnemigoAleatorio() {
+    public Enemigos generarEnemigoAleatorio() {
         Aleatorio a = new Aleatorio();
         int num = a.numero(5);
 

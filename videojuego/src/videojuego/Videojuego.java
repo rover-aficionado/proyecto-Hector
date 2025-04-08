@@ -24,18 +24,12 @@ public class Videojuego {
         ArrayList<Armas> equipo = new ArrayList<>();
         
         // menú principal
-        
         t.inicio();
         opcion = sc.nextLine();
         
         while (true) {
             if (opcion.equalsIgnoreCase("1")){ // selección de personajes
-                System.out.println("-------------------------------------------------------------");
-                System.out.println("Selecciona tu personaje:");
-                System.out.println("1. Guerrero");
-                System.out.println("2. Mago");
-                System.out.println("3. Arquero");
-                
+                t.seleccionPersonaje();
                 opcion = sc.nextLine();
                 
                 // inicio de personajes
@@ -48,18 +42,18 @@ public class Videojuego {
                     Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(g);
                     gdb.guardarPartida(g); // guardar la partida
-                    Juego.jugar(g,Juego.generarEnemigoAleatorio(), personajes, equipo);
+                    j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc);
                 }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(a);
                     gdb.guardarPartida(a); // guardar partida
-                    Juego.jugar(a,Juego.generarEnemigoAleatorio(),personajes, equipo);
+                    j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc);
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(m);
                     gdb.guardarPartida(m); // guardar la partida
-                    Juego.jugar(m,Juego.generarEnemigoAleatorio(), personajes, equipo);
+                    j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                     return;
