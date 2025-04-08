@@ -2,17 +2,13 @@ package videojuego.armas;
 
 public abstract class Armas {
     private String nombre;
-    private double durabilidad = 100;
-    private double durabilidadMax = 100;
     private double daño;
-    private String material;
-    private String rareza;
+    private int precio;
 
-    public Armas(String nombre, double daño, String material, String rareza) {
+    public Armas(String nombre, double daño, int precio) {
         this.nombre = nombre;
         this.daño = daño;
-        this.material = material;
-        this.rareza = rareza;
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -23,26 +19,12 @@ public abstract class Armas {
         this.nombre = nombre;
     }
 
-    public double getDurabilidad() {
-        return durabilidad;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setDurabilidad(double durabilidad) {
-        if(durabilidad < 0) {
-            this.durabilidad = 0;
-        } else if (durabilidad > getDurabilidadMax()) {
-            this.durabilidad = getDurabilidadMax();
-        } else {
-            this.durabilidad = durabilidad;
-        }
-    }
-
-    public double getDurabilidadMax() {
-        return durabilidadMax;
-    }
-
-    public void setDurabilidadMax(double durabilidadMax) {
-        this.durabilidadMax = durabilidadMax;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
     public double getDaño() {
@@ -53,24 +35,10 @@ public abstract class Armas {
         this.daño = daño;
     }
 
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
-        this.material = material;
-    }
-
-    public String getRareza() {
-        return rareza;
-    }
-
-    public void setRareza(String rareza) {
-        this.rareza = rareza;
-    }
-
     @Override
     public String toString() {
-        return "Armas{" + "nombre=" + nombre + ", durabilidad=" + durabilidad + ", durabilidadMax=" + durabilidadMax + ", da\u00f1o=" + daño + ", material=" + material + ", rareza=" + rareza + '}';
+        return "Armas{" + "nombre=" + nombre + ", da\u00f1o=" + daño + ", precio=" + precio + '}';
     }
+
+    
 }

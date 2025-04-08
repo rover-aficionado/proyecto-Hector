@@ -10,6 +10,14 @@ public class Textos {
         System.out.println("4. Salir del juego");
         System.out.println("Selecciona una opcion: ");
     }
+    public void seleccionPersonaje() {
+        System.out.println("-------------------------------------------------------------");
+        System.out.println("Selecciona tu personaje:");
+        System.out.println("1. Guerrero");
+        System.out.println("2. Mago");
+        System.out.println("3. Arquero");
+        System.out.print("Elige una opción: ");
+    }
      public void historia() {
         System.out.println("Este mundo consta de 5 niveles, los cuales para avanzar al siguiente nivel deberás acabar con el jefe de nivel.");
         System.out.println("No te confies con el lindo y maravilloso paisaje, ya que este mundo está lleno de criaturas que trataran de acabar con tu aventura,");
