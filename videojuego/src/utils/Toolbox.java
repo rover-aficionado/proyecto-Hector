@@ -174,4 +174,20 @@ public class Toolbox {
     public void creacionObjetos() {
         
     }
+    
+    // métodos para usar los libros comprados
+    public void usarLibros(Personajes personaje, Grimorio grimorio){ // MÉTODO NO TESTEADO
+        double fuerza = personaje.getFuerza();
+        double nuevaFuerza = personaje.getFuerza()+grimorio.getPotenciador();
+        int contador=0;
+        
+        while (contador < grimorio.getTiempo()){
+            if (fuerza!=nuevaFuerza){
+                personaje.setFuerza(personaje.getFuerza()+grimorio.getPotenciador());
+            }
+            contador++;
+        }
+       
+                
+    }
 }
