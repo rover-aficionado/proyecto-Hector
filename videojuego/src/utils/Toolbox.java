@@ -27,20 +27,10 @@ public class Toolbox {
             }
         }
     }
-
-    private void comprarArma(Personajes p, String tipoArma, int costo, int bonus) {
-        if (p.getMoneda() >= costo) {
-            p.setMoneda(p.getMoneda() - costo);
-            p.setFuerza (p.getFuerza() + bonus);
-            System.out.println("Has comprado " + tipoArma + ". Tu fuerza ha aumentado " + bonus + " puntos.");
-        } else {
-            System.out.println("No tienes suficientes monedas.");
-        }
-    }
     
-    // METODO PARA VER LAS TIENDAS
+    // METODO PARA VER LAS TIENDAS Y COMPRAR ARMAS
     
-    public void tiendaArmas(ArrayList<Personajes> personajes, Scanner sc, ArrayList<Armas> equipo) {
+    public void tiendaArmas(ArrayList<Personajes> personajes, Scanner sc, ArrayList<Armas> equipo, Objetos o) {
         String opcion;
         t.seleccionTiendas();
         opcion = sc.nextLine();
@@ -52,11 +42,32 @@ public class Toolbox {
                         ti.tiendaArmasGuerrero1();
                         opcion = sc.nextLine();
                         switch(opcion) {
+                            case "0":
+                                equipo.add(o.espadas.get(0));
+                                g.setMoneda(g.getMoneda() - o.espadas.get(0).getPrecio());
+                                break;
                             case "1":
-                                if(g.getMoneda() != 50 || g.getMoneda() <= 50) {
-                                    System.out.println("No tienes suficientes monedas.");
-                                    ti.tiendaArmasGuerrero1();
-                                }
+                                equipo.add(o.espadas.get(1));
+                                g.setMoneda(g.getMoneda() - o.espadas.get(1).getPrecio());
+                                break;
+                            case "2":
+                                equipo.add(o.espadas.get(2));
+                                g.setMoneda(g.getMoneda() - o.espadas.get(2).getPrecio());
+                                break;
+                            case "3":
+                                equipo.add(o.espadas.get(3));
+                                g.setMoneda(g.getMoneda() - o.espadas.get(3).getPrecio());
+                                break;
+                            case "4":
+                                equipo.add(o.espadas.get(4));
+                                g.setMoneda(g.getMoneda() - o.espadas.get(4).getPrecio());
+                                break;
+                            case "5":
+                                equipo.add(o.espadas.get(5));
+                                g.setMoneda(g.getMoneda() - o.espadas.get(5).getPrecio());
+                                break;
+                            case "6":
+                                break;
                         }
                         break;
                     case "2":

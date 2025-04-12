@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Juego {
     Textos t = new Textos();
     
-    public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Scanner sc) throws FileNotFoundException {
+    public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Scanner sc, Objetos o) throws FileNotFoundException {
         boolean jugando = true;
         Aleatorio a = new Aleatorio();
         CargarGuardarPartida cg = new CargarGuardarPartida();
@@ -23,32 +23,34 @@ public class Juego {
 
             switch (opcion) {
                 case "1":
-                    t.menuMundo();
-                    opcion = sc.nextLine();
-
-                    switch (opcion) {
-                        case "1":
-                            System.out.println("Explorando la cueva...");
-                            System.out.println("Apareció un enemigo!");
-                            Enemigos nuevoEnemigo = new EsbirrosDeLaLuz("Esbirros de la luz", "100", 100, a.numero(10));
-                            enfrentarEnemigo(jugador, nuevoEnemigo,tb,sc);
-                            break;
-                        case "2":
-                            enfrentarEnemigo(jugador, enemigo, tb, sc);
-                            break;
-                        case "3":
-                            tb.tiendaArmas(personajes, sc, equipo);
-                            break;
-                        case "4":
-                            tb.tiendaMascotas(personajes, sc);
-                            break;
-                        case "5":
-                            t.menuMundo();
-                        default:
-                            System.out.println("Valor no válido, intente otra vez");
+                    boolean enMundo = true;
+                    while (enMundo){
+                        t.menuMundo();
+                        opcion = sc.nextLine();
+                        switch (opcion) {
+                            case "1":
+                                System.out.println("Explorando la cueva...");
+                                System.out.println("¡Apareció un enemigo!");
+                                Enemigos nuevoEnemigo = new EsbirrosDeLaLuz("Esbirros de la luz", "100", 100, a.numero(10));
+                                enfrentarEnemigo(jugador, nuevoEnemigo, tb, sc);
+                                break;
+                            case "2":
+                                enfrentarEnemigo(jugador, enemigo, tb, sc);
+                                break;
+                            case "3":
+                                tb.tiendaArmas(personajes, sc, equipo, o);
+                                break;
+                            case "4":
+                                tb.tiendaMascotas(personajes, sc);
+                                break;
+                            case "5":
+                                enMundo = false;
+                                break;
+                            default:
+                                System.out.println("Valor no válido, intente otra vez");
+                        }
                     }
                     break;
-
                 case "2":
                     mostrarEstado(jugador);
                     break;
