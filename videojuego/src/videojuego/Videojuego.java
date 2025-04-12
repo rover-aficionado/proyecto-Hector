@@ -22,6 +22,8 @@ public class Videojuego {
         String opcion;
         GuardarDB gdb = new GuardarDB();
         ArrayList<Armas> equipo = new ArrayList<>();
+        Objetos o = new Objetos();
+        o.crearObjetos();
         
         // menú principal
         t.inicio();
@@ -42,18 +44,18 @@ public class Videojuego {
                     Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(g);
                     gdb.guardarPartida(g); // guardar la partida
-                    j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc);
+                    j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
                 }else if (opcion.equalsIgnoreCase("3")) {
                     Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(a);
                     gdb.guardarPartida(a); // guardar partida
-                    j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc);
+                    j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
                     
                 }else if (opcion.equalsIgnoreCase("2")) { // mago
                     Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                     personajes.add(m);
                     gdb.guardarPartida(m); // guardar la partida
-                    j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc);
+                    j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc,o);
                 }else{
                     System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
                     return;
