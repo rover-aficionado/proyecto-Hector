@@ -1,65 +1,121 @@
 package utils;
+import java.util.ArrayList;
 import videojuego.armas.*;
 
 public class Objetos {
-    // Creando las armas para Guerrero
-    Espada e = new Espada("Espada de piedra", 5, 0, 100);
-    Espada e1 = new Espada("Filo Sombrío", 10, 50, 120);
-    Espada e2 = new Espada("Colmillo de Hierro", 12.5, 65, 140);
-    Espada e3 = new Espada("Brisa de Acero", 15, 70, 160);
-    Espada e4 = new Espada("Cortavientos", 17.5, 80, 180);
-    Espada e5 = new Espada("Daga Lunar", 20, 90, 200);
-    Espada e6 = new Espada("Mandíbula de Dragón", 22.5, 150, 220);
-    Espada e7 = new Espada("Hija de Tormenta", 25, 170, 240);
-    Espada e8 = new Espada("Espina Carmesí", 27.5, 190, 260);
-    Espada e9 = new Espada("Filo del Alba", 30, 210, 280);
-    Espada e10 = new Espada("Susurro Nocturno", 32.5, 250, 300);
-    Espada e11 = new Espada("Devoramundos", 35, 500, 320);
-    Espada e12 = new Espada("Canto de Sangre", 37.5, 550, 340);
-    Espada e13 = new Espada("Juicio Celestial", 40, 600, 360);
-    Espada e14 = new Espada("Tormenta Carmesí", 42.5, 650, 380);
-    Espada e15 = new Espada("Ruina del Rey", 45, 700, 400);
-    Espada e16 = new Espada("Alma de los caídos", 47.5, 1200, 420);
-    Espada e17 = new Espada("Desgarro del infinito", 50, 1500, 440);
-    Espada e18 = new Espada("Hoja del Apocalipsis", 52.5, 1750, 460);
-    Espada e19 = new Espada("Sepulturero Eterno", 55, 2000, 480);
-    Espada e20 = new Espada("Ultima Plegaria", 57.5, 2500, 500);
-    Espada e21 = new Espada("Luz de la Creación Primordial", 60, 5000, 520);
-    Espada e22 = new Espada("La Furia de los Mil Truenos", 62.5, 6500, 540);
-    Espada e23 = new Espada("Sentencia del Fin del Mundo", 65, 8000, 560);
-    Espada e24 = new Espada("Vorágine de la Eternidad", 67.5, 10000, 580);
-    Espada e25 = new Espada("Fio de la Oscuridad Primigenia", 70, 12500, 600);
+    public ArrayList<Espada> espadas = new ArrayList<>();
+    public ArrayList<Flecha> flechas = new ArrayList<>();
+    public ArrayList<Grimorio> grimorios = new ArrayList<>();
+    public ArrayList<Hechizo> hechizos = new ArrayList<>();
     
-    // Creando las flechas para Arquero
-    
-    Flecha f = new Flecha ("Flechas normales", 1, 0);
-    Flecha f1 = new Flecha("Flecha de Madera Simple", 2, 5);
-    Flecha f2 = new Flecha("Dardo Ligero", 2.5, 7);
-    Flecha f3 = new Flecha("Punta de Cobre", 3, 10);
-    Flecha f4 = new Flecha("Colmillo de Lobo", 3.5, 12);
-    Flecha f5 = new Flecha("Aguijón Veloz", 4, 15);
-    Flecha f6 = new Flecha("Flecha de Acero", 4.5, 25);
-    Flecha f7 = new Flecha("Punzón de Plata", 5, 30);
-    Flecha f8 = new Flecha("Dardo de Viento", 5.5, 35);
-    Flecha f9 = new Flecha("Garra de Halcón", 6, 40);
-    Flecha f10 = new Flecha("Susurro Sombrío", 6.5, 50);
-    Flecha f11 = new Flecha("Flecha de Sangre Ardiente", 7, 100);
-    Flecha f12 = new Flecha("Danza del Relámpago", 7.5, 120);
-    Flecha f13 = new Flecha("Colmillo del Dragón", 8, 150);
-    Flecha f14 = new Flecha("Flecha Fantasmal", 8.5, 180);
-    Flecha f15 = new Flecha("Rompehechizos", 9, 200);
-    Flecha f16 = new Flecha("Flecha de Fénix", 9.5, 500);
-    Flecha f17 = new Flecha("Grito del Trueno", 10, 700);
-    Flecha f18 = new Flecha("Punzón del Destino", 10.5, 900);
-    Flecha f19 = new Flecha("Flecha de la Luna Eterna", 11, 1200);
-    Flecha f20 = new Flecha("Lanza del Cazador Divino", 11.5, 1500);
-    Flecha f21 = new Flecha("Aliento de los Dioses", 12, 3000);
-    Flecha f22 = new Flecha("Llamarada del Juicio Final", 12.5, 4500);
-    Flecha f23 = new Flecha("Lamento del Inframundo", 13, 6000);
-    Flecha f24 = new Flecha("Flecha del Vacío Abismal", 13.5, 8500);
-    Flecha f25 = new Flecha("Destino del Último Amanecer", 14, 10000);
-    
-    // Creando los grimorios para Mago
-    
-    Grimorio g = new Grimorio("Manual principal", 5, 0);
+    public void crearObjetos() {
+        // Creando las armas para Guerrero
+        espadas.add(new Espada("Filo Sombrío", 10, 50, "Común", 120));
+        espadas.add(new Espada("Colmillo de Hierro", 12.5, 65, "Común", 140));
+        espadas.add(new Espada("Brisa de Acero", 15, 70, "Común", 160));
+        espadas.add(new Espada("Cortavientos", 17.5, 80, "Común", 180));
+        espadas.add(new Espada("Daga Lunar", 20, 90, "Común", 200));
+        espadas.add(new Espada("Mandíbula de Dragón", 22.5, 150, "Poco común", 220));
+        espadas.add(new Espada("Hija de Tormenta", 25, 170, "Poco común", 240));
+        espadas.add(new Espada("Espina Carmesí", 27.5, 190, "Poco común", 260));
+        espadas.add(new Espada("Filo del Alba", 30, 210, "Rara", 280));
+        espadas.add(new Espada("Susurro Nocturno", 32.5, 250, "Rara", 300));
+        espadas.add(new Espada("Devoramundos", 35, 500, "Épica", 320));
+        espadas.add(new Espada("Canto de Sangre", 37.5, 550, "Legendaria", 340));
+        espadas.add(new Espada("Juicio Celestial", 40, 600, "Legendaria", 360));
+        espadas.add(new Espada("Tormenta Carmesí", 42.5, 650, "Legendaria", 380));
+        espadas.add(new Espada("Ruina del Rey", 45, 700, "Legendaria", 400));
+        espadas.add(new Espada("Alma de los caídos", 47.5, 1200, "Mítica", 420));
+        espadas.add(new Espada("Desgarro del infinito", 50, 1500, "Mítica", 440));
+        espadas.add(new Espada("Hoja del Apocalipsis", 52.5, 1750, "Mítica", 460));
+        espadas.add(new Espada("Sepulturero Eterno", 55, 2000, "Mítica", 480));
+        espadas.add(new Espada("Ultima Plegaria", 57.5, 2500, "Divina", 500));
+        espadas.add(new Espada("Luz de la Creación Primordial", 60, 5000, "Divina", 520));
+        espadas.add(new Espada("La Furia de los Mil Truenos", 62.5, 6500, "Divina", 540));
+        espadas.add(new Espada("Sentencia del Fin del Mundo", 65, 8000, "Divina", 560));
+        espadas.add(new Espada("Vorágine de la Eternidad", 67.5, 10000, "Divina", 580));
+        espadas.add(new Espada("Fio de la Oscuridad Primigenia", 70, 12500, "Divina", 600));
+
+
+        // Creando las flechas para Arquero
+        flechas.add(new Flecha("Flecha de Madera Simple", 3, 5, "Común"));
+        flechas.add(new Flecha("Dardo Ligero", 3.5, 7, "Común"));
+        flechas.add(new Flecha("Punta de Cobre", 4, 10, "Común"));
+        flechas.add(new Flecha("Colmillo de Lobo", 4.5, 12, "Común"));
+        flechas.add(new Flecha("Aguijón Veloz", 5, 15, "Común"));
+        flechas.add(new Flecha("Flecha de Acero", 5.5, 25, "Común"));
+        flechas.add(new Flecha("Punzón de Plata", 6, 30, "Común"));
+        flechas.add(new Flecha("Dardo de Viento", 6.5, 35, "Común"));
+        flechas.add(new Flecha("Garra de Halcón", 7, 40, "Común"));
+        flechas.add(new Flecha("Susurro Sombrío", 7.5, 50, "Común"));
+        flechas.add(new Flecha("Flecha de Sangre Ardiente", 8, 100, "Poco común"));
+        flechas.add(new Flecha("Danza del Relámpago", 8.5, 120, "Rara"));
+        flechas.add(new Flecha("Colmillo del Dragón", 9, 150, "Rara"));
+        flechas.add(new Flecha("Flecha Fantasmal", 9.5, 180, "Rara"));
+        flechas.add(new Flecha("Rompehechizos", 10, 200, "Rara"));
+        flechas.add(new Flecha("Flecha de Fénix",10.5, 500, "Épica"));
+        flechas.add(new Flecha("Grito del Trueno", 11, 700, "Legendaria"));
+        flechas.add(new Flecha("Punzón del Destino", 11.5, 900, "Legendaria"));
+        flechas.add(new Flecha("Flecha de la Luna Eterna", 12, 1200, "Mítica"));
+        flechas.add(new Flecha("Lanza del Cazador Divino", 12.5, 1500, "Mítica"));
+        flechas.add(new Flecha("Aliento de los Dioses", 13, 3000, "Divina"));
+        flechas.add(new Flecha("Llamarada del Juicio Final", 13.5, 4500, "Divina"));
+        flechas.add(new Flecha("Lamento del Inframundo", 14, 6000, "Divina"));
+        flechas.add(new Flecha("Flecha del Vacío Abismal", 14.5, 8500, "Divina"));
+        flechas.add(new Flecha("Destino del Último Amanecer", 15, 10000, "Divina"));
+        
+        // Creando los grimorios para Mago
+        grimorios.add(new Grimorio("Manual del Aprendiz", 10, 50, "Común"));
+        grimorios.add(new Grimorio("Tomo de Chispas Arcanas", 12, 100, "Común"));
+        grimorios.add(new Grimorio("Libro de las Runas Simples", 15, 120, "Poco Común"));
+        grimorios.add(new Grimorio("Compendio de Encantamientos Menores", 18, 150, "Poco Común"));
+        grimorios.add(new Grimorio("Guía de la Magia Primaria", 20, 180, "Rara"));
+        grimorios.add(new Grimorio("Códice del Hechicero", 25, 300, "Rara"));
+        grimorios.add(new Grimorio("Grimorio de las Sombras Susurrantes", 30, 350, "Épica"));
+        grimorios.add(new Grimorio("Tomo de la Llama Azul", 35, 400, "Épica"));
+        grimorios.add(new Grimorio("Volumen del Viento Celestial", 40, 450, "Épica"));
+        grimorios.add(new Grimorio("Libro del Mago Errante", 45, 500, "Legendaria"));
+        grimorios.add(new Grimorio("Necronomicon Menor", 50, 900, "Legendaria"));
+        grimorios.add(new Grimorio("Tomo de la Tempestad Arcana", 55, 1000, "Legendaria"));
+        grimorios.add(new Grimorio("Enciclopedia de los Ocho Sellos", 60, 1200, "Mítica"));
+        grimorios.add(new Grimorio("Grimorio de los Espíritus Antiguos", 65, 1400, "Mítica"));
+        grimorios.add(new Grimorio("Volumen de la Sangre y la Luna", 70, 1600, "Mítica"));
+        grimorios.add(new Grimorio("Libro del Ocaso Eterno", 75, 3000, "Divina"));
+        grimorios.add(new Grimorio("Manuscrito del Vacío Sombrío", 80, 3500, "Divina"));
+        grimorios.add(new Grimorio("Crónicas de los Dioses Caídos", 85, 4000, "Divina"));
+        grimorios.add(new Grimorio("Códice del Destino Torcido", 90, 4500, "Divina"));
+        grimorios.add(new Grimorio("Tomo del Último Arcano", 95, 5000, "Divina"));
+        grimorios.add(new Grimorio("El Libro de la Creación Perdida", 100, 10000, "Divina"));
+        grimorios.add(new Grimorio("Necronomicon Absoluto", 105, 12500, "Divina"));
+        grimorios.add(new Grimorio("Grimorio del Fin de los Tiempos", 110, 15000, "Divina"));
+        grimorios.add(new Grimorio("Tomo del Infinito", 115, 18000, "Divina"));
+        grimorios.add(new Grimorio("La Verdadera Palabra de los Primordiales", 120, 20000, "Divina"));
+        
+        // Creando hechizos para los grimorios
+        hechizos.add(new Hechizo("Hechizo de Chispas Arcanas", 12.0, 100, "Común"));
+        hechizos.add(new Hechizo("Hechizo de Fuego Menor", 15.0, 120, "Común"));
+        hechizos.add(new Hechizo("Hechizo de Congelación Básico", 18.0, 150, "Poco Común"));
+        hechizos.add(new Hechizo("Hechizo de Relámpago Menor", 20.0, 180, "Poco Común"));
+        hechizos.add(new Hechizo("Hechizo Curativo Rápido", 22.0, 200, "Poco Común"));
+        hechizos.add(new Hechizo("Hechizo de Viento Cortante", 25.0, 250, "Raro"));
+        hechizos.add(new Hechizo("Hechizo de Tierra Desgarradora", 30.0, 300, "Raro"));
+        hechizos.add(new Hechizo("Hechizo de Rayos Potentes", 35.0, 350, "Raro"));
+        hechizos.add(new Hechizo("Hechizo de Protección Avanzada", 0.0, 400, "Épico"));
+        hechizos.add(new Hechizo("Hechizo de Invocación de Llamas", 40.0, 450, "Épico"));
+        hechizos.add(new Hechizo("Hechizo de Congelación Profunda", 45.0, 500, "Épico"));
+        hechizos.add(new Hechizo("Hechizo de Rayo de Destructor", 50.0, 600, "Legendario"));
+        hechizos.add(new Hechizo("Hechizo de Espejos Arcanos", 55.0, 700, "Legendario"));
+        hechizos.add(new Hechizo("Hechizo de Tormenta Divina", 60.0, 800, "Legendario"));
+        hechizos.add(new Hechizo("Hechizo del Portal Infinito", 65.0, 900, "Mítico"));
+        hechizos.add(new Hechizo("Hechizo de Resurrección Épica", 70.0, 1000, "Mítico"));
+        hechizos.add(new Hechizo("Hechizo de Fuerza Imparable", 75.0, 1200, "Mítico"));
+        hechizos.add(new Hechizo("Hechizo de Oscuridad Absoluta", 80.0, 1500, "Divina"));
+        hechizos.add(new Hechizo("Hechizo del Juicio Final", 85.0, 1800, "Divina"));
+        hechizos.add(new Hechizo("Hechizo del Caos Supremo", 90.0, 2000, "Divina"));
+        hechizos.add(new Hechizo("Hechizo de la Eternidad Oscura", 95.0, 2500, "Divina"));
+        hechizos.add(new Hechizo("Hechizo de la Creación Infinita", 100.0, 3000, "Divina"));
+        hechizos.add(new Hechizo("Hechizo del Renacer Celestial", 105.0, 3500, "Divina"));
+        hechizos.add(new Hechizo("Hechizo de la Divinidad Suprema", 110.0, 4000, "Divina"));
+        hechizos.add(new Hechizo("Hechizo de los Primordiales Eternos", 120.0, 4500, "Divina"));
+    }
 }

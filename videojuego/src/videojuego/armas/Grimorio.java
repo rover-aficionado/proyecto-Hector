@@ -1,38 +1,29 @@
 package videojuego.armas;
 
+import java.util.ArrayList;
 
-public class Grimorio extends Armas{ //esto es un libro de hechizos. Es un nombre de esos que uno no sabe que existe pero que resulta que exisye
+public class Grimorio extends Armas {
+    private ArrayList<Hechizo> hechizos;
+
+    public Grimorio(String nombre, double daño, int precio, String rareza) {
+        super(nombre, daño, precio, rareza);
+        this.hechizos = new ArrayList<>();
+    }
+       
+    public void agregarHechizo(Hechizo hechizo) {
+        hechizos.add(hechizo);
+    }
     
-    double potenciador; // el potenciador es la habilidad temporal que va a aprender el jugador. como la fuerza extra
-    int tiempo; 
-
-    public Grimorio(double potenciador, int tiempo, String nombre, double daño, int precio) {
-        super(nombre, daño, precio);
-        this.potenciador = potenciador;
-        this.tiempo = tiempo;
-    }  
-
-    public double getPotenciador() {
-        return potenciador;
+    public ArrayList<Hechizo> getHechizos() {
+        return hechizos;
     }
-
-    public void setPotenciador(double potenciador) {
-        this.potenciador = potenciador;
+    
+    public void setHechizos(ArrayList<Hechizo> hechizos) {
+        this.hechizos = hechizos;
     }
-
+    
     @Override
     public String toString() {
-        return "Grimorio{" + "potenciador=" + potenciador + '}';
+        return super.toString() + " Grimorio{" + "hechizos=" + hechizos + '}';
     }
-
-    public int getTiempo() {
-        return tiempo;
-    }
-
-    public void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
-    }
-    
-    
-    
 }
