@@ -6,11 +6,11 @@ public class Grimorio extends Armas{ //esto es un libro de hechizos. Es un nombr
     double potenciador; // el potenciador es la habilidad temporal que va a aprender el jugador. como la fuerza extra
     int tiempo; 
 
-    public Grimorio(double potenciador, String nombre, double daño, int precio, int tiempo) {
+    public Grimorio(double potenciador, int tiempo, String nombre, double daño, int precio) {
         super(nombre, daño, precio);
         this.potenciador = potenciador;
-        this.tiempo=tiempo;
-    }
+        this.tiempo = tiempo;
+    }  
 
     public double getPotenciador() {
         return potenciador;
