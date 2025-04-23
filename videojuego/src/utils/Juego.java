@@ -16,6 +16,7 @@ public class Juego {
         boolean jugando = true;
         Aleatorio a = new Aleatorio();
         CargarGuardarPartida cg = new CargarGuardarPartida();
+        GuardarDB gdb = new GuardarDB();
 
         tb.introduccion(personajes);
         while (jugando) {
@@ -56,7 +57,7 @@ public class Juego {
                     mostrarEstado(jugador);
                     break;
                 case "3":
-                    cg.guardarPartida(jugador);
+                    gdb.guardarPartida(jugador);
                     break;
                 case "4":
                     System.out.println("Regresando al menú principal...");
