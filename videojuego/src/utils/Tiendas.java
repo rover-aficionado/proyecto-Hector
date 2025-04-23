@@ -1,173 +1,243 @@
 package utils;
 
+import videojuego.armas.*;
 
 public class Tiendas {
-    
-    // TIENDA PARA LOS GUERREROS 
-    
+
+    // TIENDA PARA LOS GUERREROS
+    private Objetos o = new Objetos(); 
+    private void imprimirEspada(int indice) {
+        Espada espada = o.espadas.get(indice);
+        System.out.println(espada.getNombre() + " - " + espada.getPrecio() + " monedas | Daño: " + espada.getDaño() + " | Rareza: " + espada.getRareza());
+    }
+
     public void tiendaArmasGuerrero1() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("0. Espada de piedra - 0 monedas");
-        System.out.println("1. Filo Sombrío - 50 monedas");        
-        System.out.println("2. Colmillo de Hierro - 65 monedas");
-        System.out.println("3. Brisa de Acero - 70 monedas");
-        System.out.println("4. Cortavientos - 80 monedas");
-        System.out.println("5. Daga Lunar - 90 monedas");
+        imprimirEspada(0);
+        imprimirEspada(1);
+        imprimirEspada(2);
+        imprimirEspada(3);
+        imprimirEspada(4);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasGuerrero2() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Mandíbula de Dragón - 150 monedas");        
-        System.out.println("2. Hija de Tormenta - 170 monedas");
-        System.out.println("3. Espina Carmesí  - 190 monedas");
-        System.out.println("4. Filo del Alba - 210 monedas");
-        System.out.println("5. Susurro Nocturno - 250 monedas");
+        imprimirEspada(5);
+        imprimirEspada(6);
+        imprimirEspada(7);
+        imprimirEspada(8);
+        imprimirEspada(9);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasGuerrero3() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Devoramundos - 500 monedas");        
-        System.out.println("2. Canto de Sangre - 550 monedas");
-        System.out.println("3. Juicio Celestial - 600 monedas");
-        System.out.println("4. Tormenta Carmesí - 650 monedas");
-        System.out.println("5. Ruina del Rey - 700 monedas");
+        imprimirEspada(10);
+        imprimirEspada(11);
+        imprimirEspada(12);
+        imprimirEspada(13);
+        imprimirEspada(14);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasGuerrero4() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Alma de los caídos - 1.200 monedas");        
-        System.out.println("2. Desgarro del infinito - 1.500 monedas");
-        System.out.println("3. Hoja del Apocalipsis - 1.750 monedas");
-        System.out.println("4. Sepulturero Eterno - 2.000 monedas");
-        System.out.println("5. Última Plegaria - 2.500 monedas");
+        imprimirEspada(15);
+        imprimirEspada(16);
+        imprimirEspada(17);
+        imprimirEspada(18);
+        imprimirEspada(19);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasGuerrero5() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Luz de la Creación Primordial - 5.000 monedas");        
-        System.out.println("2. La Furia de Los Mil Truenos - 6.500 monedas");
-        System.out.println("3. Sentencia del Fin del Tiemoo - 8.000 monedas");
-        System.out.println("4. Vorágine de la Eternidad - 10.000 monedas");
-        System.out.println("5. Filo de la Oscuridad Primigenia - 12.500 monedas");
+        imprimirEspada(20);
+        imprimirEspada(21);
+        imprimirEspada(22);
+        imprimirEspada(23);
+        imprimirEspada(24);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
-    
+
     // TIENDA PARA LOS ARQUEROS
-    
+    private void imprimirFlecha(int indice) {
+        Flecha flecha = o.flechas.get(indice);
+        System.out.println(flecha.getNombre() + " - " + flecha.getPrecio() + " monedas c/u | Daño: " + flecha.getDaño() + " | Rareza: " + flecha.getRareza());
+    }
+
     public void tiendaArmasArquero1() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("0. Felchas normales - 0 monedas c/u");
-        System.out.println("1. Flecha de Madera Simple - 5 monedas c/u");
-        System.out.println("2. Dardo Ligero - 7 monedas c/u");
-        System.out.println("3. Punta de Cobre - 10 monedas c/u");
-        System.out.println("4. Colmillo de Lobo - 12 monedas c/u");
-        System.out.println("5. Aguijón Veloz - 15 monedas c/u");
+        imprimirFlecha(0);
+        imprimirFlecha(1);
+        imprimirFlecha(2);
+        imprimirFlecha(3);
+        imprimirFlecha(4);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasArquero2() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Flecha de Acero - 25 monedas c/u");
-        System.out.println("2. Punzón de Plata - 30 monedas c/u");
-        System.out.println("3. Dardo de Viento - 35 monedas c/u");
-        System.out.println("4. Garra de Halcón - 40 monedas c/u");
-        System.out.println("5. Susurro Sombrío - 50 monedas c/u");
+        imprimirFlecha(5);
+        imprimirFlecha(6);
+        imprimirFlecha(7);
+        imprimirFlecha(8);
+        imprimirFlecha(9);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasArquero3() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Flecha de Sangre Ardiente - 100 monedas c/u");
-        System.out.println("2. Danza del Relámpago - 120 monedas c/u");
-        System.out.println("3. Colmillo del Dragón - 150 monedas c/u");
-        System.out.println("4. Flecha Fantasmal - 180 monedas c/u");
-        System.out.println("5. Rompehechizos - 200 monedas c/u");
+        imprimirFlecha(10);
+        imprimirFlecha(11);
+        imprimirFlecha(12);
+        imprimirFlecha(13);
+        imprimirFlecha(14);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasArquero4() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Flecha del Fénix - 500 monedas c/u");
-        System.out.println("2. Grito del Trueno - 700 monedas c/u");
-        System.out.println("3. Punzón del Destino - 900 monedas c/u");
-        System.out.println("4. Flecha de la Luna Eterna - 1.200 monedas c/u");
-        System.out.println("5. Lanza del Cazador Divino - 1.500 monedas c/u");
+        imprimirFlecha(15);
+        imprimirFlecha(16);
+        imprimirFlecha(17);
+        imprimirFlecha(18);
+        imprimirFlecha(19);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
+
     public void tiendaArmasArquero5() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Aliento de los Dioses - 3.000 monedas c/u");
-        System.out.println("2. Llamarada del Jucio Final - 4.500 monedas c/u");
-        System.out.println("3. Lamento del Inframundo - 6.000 monedas c/u");
-        System.out.println("4. Flecha del Vacío Abismal - 8.500 monedas c/u");
-        System.out.println("5. Destino del Último Amanecer - 10.000 monedas c/u");
+        imprimirFlecha(20);
+        imprimirFlecha(21);
+        imprimirFlecha(22);
+        imprimirFlecha(23);
+        imprimirFlecha(24);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
-    
+
     // TIENDA PARA LOS MAGOS
+    private void imprimirGrimorio(int indice) {
+        Grimorio grimorio = o.grimorios.get(indice);
+        System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
+    }
+
+    public void tiendaArmasMago1() {
+        System.out.println("=== TIENDA DE ARMAS ===");
+        imprimirGrimorio(0);
+        imprimirGrimorio(1);
+        imprimirGrimorio(2);
+        imprimirGrimorio(3);
+        imprimirGrimorio(4);
+        System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
+    public void tiendaArmasMago2() {
+        System.out.println("=== TIENDA DE ARMAS ===");
+        imprimirGrimorio(5);
+        imprimirGrimorio(6);
+        imprimirGrimorio(7);
+        imprimirGrimorio(8);
+        imprimirGrimorio(9);
+        System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
+    public void tiendaArmasMago3() {
+        System.out.println("=== TIENDA DE ARMAS ===");
+        imprimirGrimorio(10);
+        imprimirGrimorio(11);
+        imprimirGrimorio(12);
+        imprimirGrimorio(13);
+        imprimirGrimorio(14);
+        System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
+    public void tiendaArmasMago4() {
+        System.out.println("=== TIENDA DE ARMAS ===");
+        imprimirGrimorio(15);
+        imprimirGrimorio(16);
+        imprimirGrimorio(17);
+        imprimirGrimorio(18);
+        imprimirGrimorio(19);
+        System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
+    public void tiendaArmasMago5() {
+        System.out.println("=== TIENDA DE ARMAS ===");
+        imprimirGrimorio(20);
+        imprimirGrimorio(21);
+        imprimirGrimorio(22);
+        imprimirGrimorio(23);
+        imprimirGrimorio(24);
+        System.out.println("6. Salir");
+        System.out.print("Selecciona una opción: ");
+    }
     
-    public void tiendaArmasMago1(){
+    // TIENDA DE HECHIZOS
+    private void imprimirHechizo(int indice) {
+        Hechizo hechizo = o.hechizos.get(indice);
+        System.out.println(hechizo.getNombre() + " - " + hechizo.getPrecio() + " monedas | Daño: " + hechizo.getDaño() + " | Rareza: " + hechizo.getRareza());
+    }
+
+    public void tiendaHechizoMago1() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Manual del Aprendiz - 80 monedas");
-        System.out.println("2. Tomo de Chispas Arcanas - 100 monedas");
-        System.out.println("3. Libro de las Runas Simples - 120 monedas");
-        System.out.println("4. Compendio de Encantamientos Menores - 150 monedas");
-        System.out.println("5. Guía de la Magia Primaria - 180 monedas");
+        imprimirGrimorio(0);
+        imprimirGrimorio(1);
+        imprimirGrimorio(2);
+        imprimirGrimorio(3);
+        imprimirGrimorio(4);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
-    public void tiendaArmasMago2(){
+    public void tiendaHechizoMago2() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Códice del Hechicero - 300 monedas");
-        System.out.println("2. Grimorio de las Sombras Susurrantes - 350 monedas");
-        System.out.println("3. Tomo de la Llama Azul - 400 monedas");
-        System.out.println("4. Volumen del Viento Celestial - 450 monedas");
-        System.out.println("5. Libro del Mago Errante - 500 monedas");
+        imprimirGrimorio(5);
+        imprimirGrimorio(6);
+        imprimirGrimorio(7);
+        imprimirGrimorio(8);
+        imprimirGrimorio(9);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
-    public void tiendaArmasMago3(){
+    public void tiendaHechizoMago3() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Necronomicon Menor - 900 monedas");
-        System.out.println("2. Tomo de la Tempestad Arcana - 1.000 monedas");
-        System.out.println("3. Enciclopedia de los Ocho Sellos - 1.200 monedas");
-        System.out.println("4. Grimorio de los Espíritus Antiguos - 1.400 monedas");
-        System.out.println("5. Volumen de la Sangre y la Luna - 1.600 monedas");
+        imprimirGrimorio(10);
+        imprimirGrimorio(11);
+        imprimirGrimorio(12);
+        imprimirGrimorio(13);
+        imprimirGrimorio(14);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
-    public void tiendaArmasMago4(){
+    public void tiendaHechizoMago4() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. Libro del Ocaso Eterno - 3.000 monedas");
-        System.out.println("2. Manuscrito del Vacío Sombrío - 3.500 monedas");
-        System.out.println("3. Crónicas de los Dioses Caídos - 4.000 monedas");
-        System.out.println("4. Códice del Destino Torcido - 4.500 monedas");
-        System.out.println("5. Tomo del Último Arcano - 5.000 monedas");
+        imprimirGrimorio(15);
+        imprimirGrimorio(16);
+        imprimirGrimorio(17);
+        imprimirGrimorio(18);
+        imprimirGrimorio(19);
         System.out.println("6. Salir");
         System.out.print("Selecciona una opción: ");
     }
-    public void tiendaArmasMago5(){
+    public void tiendaHechizoMago5() {
         System.out.println("=== TIENDA DE ARMAS ===");
-        System.out.println("1. El Libro de la Creación Perdida - 10.000 monedas");
-        System.out.println("2. Necronomicon Absoluto - 12.500 monedas");
-        System.out.println("3. Grimorio del Fin de los Tiempos - 15.000 monedas");
-        System.out.println("4. Tomo del Infinito - 18.000 monedas");
-        System.out.println("5. La Verdadera Palabra de los Primordiales - 20.000 monedas");
+        imprimirGrimorio(20);
+        imprimirGrimorio(21);
+        imprimirGrimorio(22);
+        imprimirGrimorio(23);
+        imprimirGrimorio(24);
         System.out.println("6. Salir");
-        System.out.print("Selecciona una opción: ");
-    }
-    public void tiendaMascotas () {
-        System.out.println("=== TIENDA DE MASCOTAS ===");
-        System.out.println("1. Perro (SANADOR) - 2.500 monedas");
-        System.out.println("2. Gato (FORTUNA) - 2.500 monedas");
-        System.out.println("3. Salir");
         System.out.print("Selecciona una opción: ");
     }
 }

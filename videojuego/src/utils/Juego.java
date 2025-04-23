@@ -7,10 +7,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+// Clase donde estarán todos los metodos que servirán para el juego en si
 public class Juego {
     Textos t = new Textos();
     
+    // Metodo principal para el juego
     public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Scanner sc, Objetos o) throws FileNotFoundException {
         boolean jugando = true;
         Aleatorio a = new Aleatorio();
@@ -66,6 +67,8 @@ public class Juego {
             }
         }
     }
+    
+    // Metodo para enfrentar a un enemigo
     public void enfrentarEnemigo(Personajes jugador, Enemigos enemigo, Toolbox tb, Scanner sc) {
         System.out.println("¡Un " + enemigo.getNombre() + " apareció!");
 
@@ -117,6 +120,7 @@ public class Juego {
             }
         }
     }
+    
     public void mostrarEstado(Personajes p) {
         System.out.println("=== ESTADO DEL JUGADOR ===");
         System.out.println("Nombre: " + p.getNombre());
