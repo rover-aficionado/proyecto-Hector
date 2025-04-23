@@ -25,6 +25,7 @@ public class Textos {
         System.out.println("¿Estás preparado? Tu aventura comienza... AHORA");
     }
      public void seleccionTiendas() {
+         System.out.println("nivel del jugador");
          System.out.println("=== TIENDA === ");
          System.out.println("1. Tienda (Nivel 1)");
          System.out.println("2. Tienda (Nivel 2)");

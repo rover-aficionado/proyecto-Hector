@@ -24,42 +24,43 @@ public class Juego {
             String opcion = sc.nextLine();
 
             switch (opcion) {
-                case "1":
+                case "1": // menu MUNDO
                     boolean enMundo = true;
                     while (enMundo){
                         t.menuMundo();
                         opcion = sc.nextLine();
                         switch (opcion) {
-                            case "1":
+                            case "1": // explorar cueva 
                                 System.out.println("Explorando la cueva...");
                                 System.out.println("¡Apareció un enemigo!");
                                 Enemigos nuevoEnemigo = new EsbirrosDeLaLuz("Esbirros de la luz", "100", 100, a.numero(10));
                                 enfrentarEnemigo(jugador, nuevoEnemigo, tb, sc);
                                 break;
-                            case "2":
+                            case "2": // enfrentar al jefe final
                                 enfrentarEnemigo(jugador, enemigo, tb, sc);
                                 break;
-                            case "3":
+                            case "3": // tienda de armas
                                 tb.tiendaArmas(personajes, sc, equipo, o);
                                 break;
-                            case "4":
+                            case "4": // tienda de mascotas
                                 tb.tiendaMascotas(personajes, sc);
                                 break;
-                            case "5":
+                            case "5": // abrir el menú MENÚ
                                 enMundo = false;
                                 break;
                             default:
+                                System.out.println("opcion"+opcion);
                                 System.out.println("Valor no válido, intente otra vez");
                         }
                     }
                     break;
-                case "2":
+                case "2": // mostrar info del jugador
                     mostrarEstado(jugador);
                     break;
-                case "3":
+                case "3": // guardar partida
                     gdb.guardarPartida(jugador);
                     break;
-                case "4":
+                case "4": // sale al menú de crear personaje
                     System.out.println("Regresando al menú principal...");
                     jugando = false;
                     break;
@@ -79,9 +80,9 @@ public class Juego {
             System.out.println("1. Atacar");
             System.out.println("2. Huir");
             System.out.print("Elige: ");
-            int opcion = sc.nextInt();
+            String opcion = sc.nextLine();
 
-            if (opcion == 1) {
+            if (opcion.equals("1")) {
                 if (jugador instanceof Guerrero) {
                     Guerrero g = (Guerrero) jugador;
                     g.atacar();
@@ -101,9 +102,9 @@ public class Juego {
 
                 // Ataque del enemigo al jugador
                 enemigo.atacar(jugador);
-            } else if (opcion == 2) {
+            } else if (opcion.equals("2")) {
                 System.out.println("Huiste del combate.");
-                return;
+                break;
             } else {
                 System.out.println("Opción no válida.");
             }

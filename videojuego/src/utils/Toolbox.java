@@ -44,7 +44,7 @@ public class Toolbox {
                         switch(opcion) {
                             case "0":
                                 equipo.add(o.espadas.get(0));
-                                g.setMoneda(g.getMoneda() - o.espadas.get(0).getPrecio());
+                                p.setMoneda(g.getMoneda() - o.espadas.get(0).getPrecio());
                                 break;
                             case "1":
                                 equipo.add(o.espadas.get(1));
