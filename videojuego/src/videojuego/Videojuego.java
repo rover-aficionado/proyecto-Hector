@@ -11,6 +11,7 @@ import videojuego.armas.*;
 /*
  * @author rober, valen, alex
  * "los p*tos amos"
+prueba
  */
 public class Videojuego {
     public static void main(String[] args) throws FileNotFoundException {
