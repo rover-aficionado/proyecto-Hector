@@ -68,7 +68,8 @@ public class Videojuego {
             } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
                 gdb.verPartidasGuardadas();
                 String nombre = sc.next().trim();
-                gdb.cargarPartida(nombre);
+                Personajes nuevoPersonaje = gdb.cargarPartida(nombre);
+                j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
                 break;
             }else if(opcion.equalsIgnoreCase("3")) { // ver ganadores
                 

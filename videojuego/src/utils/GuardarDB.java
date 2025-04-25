@@ -53,7 +53,7 @@ public class GuardarDB {
     }
     
     // método para la carga de la partida
-    public void cargarPartida(String nombre){
+    public Personajes cargarPartida(String nombre){
         
         // query para la carga de la partida
         String sql = "SELECT * FROM personajes WHERE nombre=?";
@@ -84,19 +84,21 @@ public class GuardarDB {
                 // determinar el tipo del personaje e instancias de los mismos
                 if(rs.getInt(1)==1){
                     Personajes nuevaPartida = new Arquero(fortuna, nombre, fuerza, energia, moneda, curacion, fortuna);
+                    return nuevaPartida;
                 } else if (rs.getInt(1)==2){
                     Personajes nuevaPartida = new Guerrero(nombre, fuerza, energia, moneda, curacion, fortuna);
+                    return nuevaPartida;
                 } else if (rs.getInt(1)==3){
                     Personajes nuevaPartida = new Mago(moneda, nombre, fuerza, energia, moneda, curacion, fortuna);
+                    return nuevaPartida;
                 }
-
             }
    
         } catch (Exception e) {
             System.out.println("ERROR: no se pudo conectar con la base de datos");
             e.printStackTrace();
         }
-        
+        return null;
     }
     
     // listado de las partidas guardadas
