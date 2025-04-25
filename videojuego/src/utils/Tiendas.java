@@ -1,14 +1,23 @@
 package utils;
 
+import java.util.ArrayList;
 import videojuego.armas.*;
 
 public class Tiendas {
 
     // TIENDA PARA LOS GUERREROS
-    private Objetos o = new Objetos(); 
-    private void imprimirEspada(int indice) {
-        Espada espada = o.espadas.get(indice);
-        System.out.println(espada.getNombre() + " - " + espada.getPrecio() + " monedas | Daño: " + espada.getDaño() + " | Rareza: " + espada.getRareza());
+    public Objetos o = new Objetos(); 
+    public void imprimirEspada(int indice) {
+        Objetos objetos = new Objetos();
+        ArrayList<Espada> espadas = objetos.listaEspadas();
+        try {
+            Espada espada = espadas.get(indice);
+            System.out.println(espada.getNombre() + " - " + espada.getPrecio() + " monedas | Daño: " + espada.getDaño() + " | Rareza: " + espada.getRareza());
+        } catch (Exception e) {
+            System.out.println("ERROR: error interno");
+            System.out.println("espadas: "+ espadas.size());
+        }
+        
     }
 
     public void tiendaArmasGuerrero1() {

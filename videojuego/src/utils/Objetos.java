@@ -118,4 +118,36 @@ public class Objetos {
         hechizos.add(new Hechizo("Hechizo de la Divinidad Suprema", 110.0, 4000, "Divina"));
         hechizos.add(new Hechizo("Hechizo de los Primordiales Eternos", 120.0, 4500, "Divina"));
     }
+    
+    public ArrayList<Espada> listaEspadas(){
+        ArrayList<Espada> espadas = new ArrayList<>();
+        
+        espadas.add(new Espada("Filo Sombrío", 10, 50, "Común", 120));
+        espadas.add(new Espada("Colmillo de Hierro", 12.5, 65, "Común", 140));
+        espadas.add(new Espada("Brisa de Acero", 15, 70, "Común", 160));
+        espadas.add(new Espada("Cortavientos", 17.5, 80, "Común", 180));
+        espadas.add(new Espada("Daga Lunar", 20, 90, "Común", 200));
+        espadas.add(new Espada("Mandíbula de Dragón", 22.5, 150, "Poco común", 220));
+        espadas.add(new Espada("Hija de Tormenta", 25, 170, "Poco común", 240));
+        espadas.add(new Espada("Espina Carmesí", 27.5, 190, "Poco común", 260));
+        espadas.add(new Espada("Filo del Alba", 30, 210, "Rara", 280));
+        espadas.add(new Espada("Susurro Nocturno", 32.5, 250, "Rara", 300));
+        espadas.add(new Espada("Devoramundos", 35, 500, "Épica", 320));
+        espadas.add(new Espada("Canto de Sangre", 37.5, 550, "Legendaria", 340));
+        espadas.add(new Espada("Juicio Celestial", 40, 600, "Legendaria", 360));
+        espadas.add(new Espada("Tormenta Carmesí", 42.5, 650, "Legendaria", 380));
+        espadas.add(new Espada("Ruina del Rey", 45, 700, "Legendaria", 400));
+        espadas.add(new Espada("Alma de los caídos", 47.5, 1200, "Mítica", 420));
+        espadas.add(new Espada("Desgarro del infinito", 50, 1500, "Mítica", 440));
+        espadas.add(new Espada("Hoja del Apocalipsis", 52.5, 1750, "Mítica", 460));
+        espadas.add(new Espada("Sepulturero Eterno", 55, 2000, "Mítica", 480));
+        espadas.add(new Espada("Ultima Plegaria", 57.5, 2500, "Divina", 500));
+        espadas.add(new Espada("Luz de la Creación Primordial", 60, 5000, "Divina", 520));
+        espadas.add(new Espada("La Furia de los Mil Truenos", 62.5, 6500, "Divina", 540));
+        espadas.add(new Espada("Sentencia del Fin del Mundo", 65, 8000, "Divina", 560));
+        espadas.add(new Espada("Vorágine de la Eternidad", 67.5, 10000, "Divina", 580));
+        espadas.add(new Espada("Fio de la Oscuridad Primigenia", 70, 12500, "Divina", 600));
+        
+        return espadas;
+    }
 }

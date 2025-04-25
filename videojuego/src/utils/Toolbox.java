@@ -34,12 +34,12 @@ public class Toolbox {
         String opcion;
         t.seleccionTiendas();
         opcion = sc.nextLine();
+        System.out.println("aaaaa");
         
         for (Personajes p : personajes) {
             if(p instanceof Guerrero g) {
                 switch(opcion) {
                     case "1":
-                        System.out.println("aaaa");
                         ti.tiendaArmasGuerrero1();
                         opcion = sc.nextLine();
                         switch(opcion) {
