@@ -5,7 +5,7 @@ import videojuego.armas.*;
 
 public class Toolbox {
     Textos t = new Textos();
-    Tiendas ti = new Tiendas();
+    Tiendas ti = new Tiendas(); // TODO: eliminar
     public void introduccion(ArrayList<Personajes> personaje) {
         for (Personajes p : personaje) {
             if(p instanceof Guerrero g) {
@@ -26,7 +26,7 @@ public class Toolbox {
 
             }
         }
-    }
+    }   
     
     // METODO PARA VER LAS TIENDAS Y COMPRAR ARMAS
     
@@ -38,7 +38,8 @@ public class Toolbox {
         for (Personajes p : personajes) {
             if(p instanceof Guerrero g) {
                 switch(opcion) {
-                    case "1": 
+                    case "1":
+                        System.out.println("aaaa");
                         ti.tiendaArmasGuerrero1();
                         opcion = sc.nextLine();
                         switch(opcion) {
