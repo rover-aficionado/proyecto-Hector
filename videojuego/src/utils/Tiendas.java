@@ -7,13 +7,13 @@ public class Tiendas {
 
     // TIENDA PARA LOS GUERREROS
     public Objetos o = new Objetos(); 
-    public void imprimirEspada(int indice) {
+    public void imprimirEspada(int indice) { // accede a las listas de los objetos y las muestra
         Objetos objetos = new Objetos();
         ArrayList<Espada> espadas = objetos.listaEspadas();
-        try {
-            Espada espada = espadas.get(indice);
+        try { // accede a la lista de las espadas y las muestra
+            Espada espada = espadas.get(indice); 
             System.out.println(espada.getNombre() + " - " + espada.getPrecio() + " monedas | Daño: " + espada.getDaño() + " | Rareza: " + espada.getRareza());
-        } catch (Exception e) {
+        } catch (Exception e) { // previene errores debido a la lonjitud de las espadas
             System.out.println("ERROR: error interno");
             System.out.println("espadas: "+ espadas.size());
         }
