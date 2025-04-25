@@ -53,35 +53,31 @@ public class GuardarDB {
     }
     
     // método para la carga de la partida
-    public void cargarPartida(){
-        // lista las partidas guardadas
-        verPartidasGuardadas();
+    public void cargarPartida(String nombre){
         
-        // petición del nombre del personaje
-        System.out.println("nombre del personaje");
-        String nombre = scn.nextLine();
-        
-        // carga la partida
+        // query para la carga de la partida
         String sql = "SELECT * FROM personajes WHERE nombre=?";
                        
         // extracción de datos
         try (Connection con = DriverManager.getConnection(url, "root", "100695");
                 PreparedStatement prep = con.prepareStatement(sql);
-                ResultSet rs = prep.executeQuery();){
+                ){
             
+            // preparación y ejecución de la query
             prep.setString(1, nombre);
+            ResultSet rs = prep.executeQuery();
+            
             // estadísticas de los personajes
             if(rs.next()){
-                //String nombre = rs.getString(2);
-                double vida = rs.getDouble(3);
-                double vidaMaxima = rs.getDouble(4);
-                double fuerza = rs.getDouble(5);
-                double energia = rs.getDouble(6);
-                int nivelExperiencia = rs.getInt(7);
-                double experiencia = rs.getDouble(8);
-                int moneda = rs.getInt(9);
-                int curacion = rs.getInt(10);
-                int fortuna = rs.getInt(11);
+                double vida = rs.getDouble(4);
+                double vidaMaxima = rs.getDouble(5);
+                double fuerza = rs.getDouble(6);
+                double energia = rs.getDouble(7);
+                int nivelExperiencia = rs.getInt(8);
+                double experiencia = rs.getDouble(9);
+                int moneda = rs.getInt(10);
+                int curacion = rs.getInt(11);
+                int fortuna = rs.getInt(12);
 
                 // ejecución de la query
 
@@ -98,7 +94,7 @@ public class GuardarDB {
    
         } catch (Exception e) {
             System.out.println("ERROR: no se pudo conectar con la base de datos");
-            System.out.println(e);
+            e.printStackTrace();
         }
         
     }

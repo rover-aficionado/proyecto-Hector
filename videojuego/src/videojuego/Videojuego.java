@@ -66,7 +66,9 @@ public class Videojuego {
                 tb.introduccion(personajes);
                 
             } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
-                gdb.cargarPartida();
+                gdb.verPartidasGuardadas();
+                String nombre = sc.next().trim();
+                gdb.cargarPartida(nombre);
                 break;
             }else if(opcion.equalsIgnoreCase("3")) { // ver ganadores
                 
