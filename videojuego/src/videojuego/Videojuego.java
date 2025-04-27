@@ -2,14 +2,12 @@ package videojuego;
 
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import utils.*;
-import videojuego.personajes.*;
 import videojuego.armas.*;
+import videojuego.personajes.*;
 
 /*
- * @author rober, valen, alex
+ * @author rober, valen, alex 
  * "los p*tos amos"
  */
 public class Videojuego {
