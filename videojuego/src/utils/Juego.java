@@ -12,12 +12,13 @@ public class Juego {
     Textos t = new Textos();
     
     // Metodo principal para el juego
-    public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Scanner sc, Objetos o) throws FileNotFoundException {
+    public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Objetos o) throws FileNotFoundException {
         boolean jugando = true;
         Aleatorio a = new Aleatorio();
         CargarGuardarPartida cg = new CargarGuardarPartida();
         GuardarDB gdb = new GuardarDB();
-
+        Scanner sc = new Scanner(System.in);
+        
         tb.introduccion(personajes);
         while (jugando) {
             t.menuJuego();

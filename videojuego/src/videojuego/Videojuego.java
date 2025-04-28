@@ -43,19 +43,19 @@ public class Videojuego {
                             Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
                             personajes.add(g);
                             gdb.guardarPartida(g); // guardar la partida
-                            j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
+                            j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, o);
                             break;
                         case "2": // personaje mago
                             Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
                             personajes.add(m);
                             gdb.guardarPartida(m); // guardar la partida
-                            j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc,o);
+                            j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb,o);
                             break;
                         case "3": // personaje arquero
                             Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
                             personajes.add(a);
                             gdb.guardarPartida(a); // guardar partida
-                            j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
+                            j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, o);
                         default:
                             System.out.println("ERROR: opcion no válida");
                             throw new AssertionError();
@@ -65,7 +65,8 @@ public class Videojuego {
                     gdb.verPartidasGuardadas();
                     String nombre = sc.next().trim();
                     Personajes nuevoPersonaje = gdb.cargarPartida(nombre);
-                    j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
+                    //sc.close();
+                    j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, o);
                 case "3": // ver ganadores
                     System.out.println("funcionalidad no terminada");
                     break;
