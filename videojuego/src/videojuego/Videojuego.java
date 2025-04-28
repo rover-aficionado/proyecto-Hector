@@ -17,67 +17,64 @@ public class Videojuego {
         Toolbox tb = new Toolbox();
         Textos t = new Textos();
         Juego j = new Juego();
-        String opcion;
+        String opcion = "";
         GuardarDB gdb = new GuardarDB();
         ArrayList<Armas> equipo = new ArrayList<>();
         Objetos o = new Objetos();
         o.crearObjetos();
         
-        // menú principal
-        t.inicio();
-        opcion = sc.nextLine();
-        
-        while (true) {
-            if (opcion.equalsIgnoreCase("1")){ // selección de personajes
-                t.seleccionPersonaje();
-                opcion = sc.nextLine();
+        // menú de bienvenida.
+        while(!opcion.equals("4")){
+            t.inicio();
+            opcion = sc.nextLine();
+            
+            switch (opcion) {
+                case "1": // seleccion de los personajes
+                    t.seleccionPersonaje();
+                    opcion = sc.nextLine();
                 
-                // inicio de personajes
-                System.out.println("Introduce tu nombre:");
-                String nombreJugador = sc.nextLine().trim().toLowerCase();
-                
-                System.out.println("-------------------------------------------------------------");
-                // instancia el personaje según su tipo
-                if (opcion.equalsIgnoreCase("1")) { // guerrero
-                    Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
-                    personajes.add(g);
-                    gdb.guardarPartida(g); // guardar la partida
-                    j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
-                }else if (opcion.equalsIgnoreCase("3")) {
-                    Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
-                    personajes.add(a);
-                    gdb.guardarPartida(a); // guardar partida
-                    j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
-                    
-                }else if (opcion.equalsIgnoreCase("2")) { // mago
-                    Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
-                    personajes.add(m);
-                    gdb.guardarPartida(m); // guardar la partida
-                    j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc,o);
-                }else{
-                    System.out.println("Opcion incorrecta. Elige entre guerrero, arquero o mago");
-                    return;
-                }
-                //escribir txt con los datos de la partida
-                System.out.println("Personaje creado correctamente");
-                System.out.println("Generando mundo...");
-                tb.introduccion(personajes);
-                
-            } else if (opcion.equalsIgnoreCase("2")) { // reanudar partida
-                gdb.verPartidasGuardadas();
-                String nombre = sc.next().trim();
-                Personajes nuevoPersonaje = gdb.cargarPartida(nombre);
-                j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
-                break;
-            }else if(opcion.equalsIgnoreCase("3")) { // ver ganadores
-                
-            } else if (opcion.equalsIgnoreCase("4")) { // salir del juego
-                System.out.println("Saliendo del juego.....");
-                System.exit(0);
-            }else {
-                System.out.println("Opcion incorrecta, introduce opcion entre 1,2,3,4");
-                t.inicio();
+                    // inicio de personajes
+                    System.out.println("Introduce tu nombre:");
+                    String nombreJugador = sc.nextLine().trim().toLowerCase();
+
+                    System.out.println("-------------------------------------------------------------");
+                        switch (opcion) {
+                        case "1": // personaje guerrero
+                            Personajes g = new Guerrero(nombreJugador, 100, 100, 1, 100, 0);
+                            personajes.add(g);
+                            gdb.guardarPartida(g); // guardar la partida
+                            j.jugar(g, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
+                            break;
+                        case "2": // personaje mago
+                            Personajes m = new Mago(10, nombreJugador, 100, 100, 1, 100, 0);
+                            personajes.add(m);
+                            gdb.guardarPartida(m); // guardar la partida
+                            j.jugar(m, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc,o);
+                            break;
+                        case "3": // personaje arquero
+                            Arquero a = new Arquero(5, nombreJugador, 100, 100, 1, 100, 0);
+                            personajes.add(a);
+                            gdb.guardarPartida(a); // guardar partida
+                            j.jugar(a, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
+                        default:
+                            System.out.println("ERROR: opcion no válida");
+                            throw new AssertionError();
+                            }
+                    break;
+                case "2": // reanudar partida usando un personaje guardado
+                    gdb.verPartidasGuardadas();
+                    String nombre = sc.next().trim();
+                    Personajes nuevoPersonaje = gdb.cargarPartida(nombre);
+                    j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, sc, o);
+                case "3": // ver ganadores
+                    System.out.println("funcionalidad no terminada");
+                    break;
+                case "4":
+                    System.out.println("saliendo del juego, Adios");
+                    break;
+                default:
+                    System.out.println("ERROR: opcion no válida");
             }
-        }
+        }        
     }
 }
