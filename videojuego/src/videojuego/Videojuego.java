@@ -68,7 +68,8 @@ public class Videojuego {
                     //sc.close();
                     j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, o);
                 case "3": // ver ganadores
-                    System.out.println("funcionalidad no terminada");
+                    //System.out.println("funcionalidad no terminada");
+                    gdb.mejoresPersonajes();
                     break;
                 case "4":
                     System.out.println("saliendo del juego, Adios");
