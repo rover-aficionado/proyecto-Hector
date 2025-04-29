@@ -21,17 +21,17 @@ public class Juego {
         Scanner sc = new Scanner(System.in);
         
         tb.introduccion(personajes);
-        while (jugando) {
+        while (jugando != false) {
             t.menuJuego();
             String opcion = sc.nextLine();
 
             switch (opcion) {
                 case "1": // menu MUNDO
                     boolean enMundo = true;
-                    while (enMundo){
+                    while (enMundo != false){
                         t.menuMundo();
-                        opcion = sc.nextLine();
-                        switch (opcion) {
+                        String opcionMundo = sc.nextLine();
+                        switch (opcionMundo) {
                             case "1": // explorar cueva 
                                 System.out.println("Explorando la cueva...");
                                 System.out.println("¡Apareció un enemigo!");
@@ -74,41 +74,44 @@ public class Juego {
     
     // Metodo para enfrentar a un enemigo
     public void enfrentarEnemigo(Personajes jugador, Enemigos enemigo, Toolbox tb, Scanner sc) {
-        System.out.println("¡Un " + enemigo.getNombre() + " apareció!");
-
-        while (enemigo.getVida() > 0 && jugador.getVida() > 0) {
+        String opcion = "1";
+        
+        while (opcion != "2") {
+        	System.out.println("======================================");
             System.out.println("Tu vida: " + jugador.getVida());
             System.out.println(enemigo.getNombre() + " vida: " + enemigo.getVida());
             System.out.println("1. Atacar");
             System.out.println("2. Huir");
             System.out.print("Elige: ");
-            String opcion = sc.nextLine();
+            opcion = sc.nextLine();
 
-            if (opcion.equals("1")) {
-                if (jugador instanceof Guerrero) {
-                    Guerrero g = (Guerrero) jugador;
-                    g.atacar();
-                    enemigo.setVida(enemigo.getVida() - g.getFuerza());
-                    System.out.printf("Has atacado al %s con %.2f de daño\n", enemigo.getNombre(), g.getFuerza());
-                } else if (jugador instanceof Mago) {
-                    Mago m = (Mago) jugador;
-                    m.atacar();
-                    enemigo.setVida(enemigo.getVida() - m.getFuerza());
-                    System.out.printf("Has atacado al %s con %.2f de daño\n", enemigo.getNombre(), m.getFuerza());
-                } else if (jugador instanceof Arquero) {
-                    Arquero a = (Arquero) jugador;
-                    a.atacar();
-                    enemigo.setVida(enemigo.getVida() - a.getFuerza());
-                    System.out.printf("Has atacado al %s con %.2f de daño\n", enemigo.getNombre(), a.getFuerza());
-                }
-
+            switch (opcion) {
+            	case "1":
+	                if (jugador instanceof Guerrero) {
+	                    Guerrero g = (Guerrero) jugador;
+	                    g.atacar();
+	                    enemigo.setVida(enemigo.getVida() - g.getFuerza());
+	                    System.out.printf("Has atacado al %s con %.2f de daño\n", enemigo.getNombre(), g.getFuerza());
+	                } else if (jugador instanceof Mago) {
+	                    Mago m = (Mago) jugador;
+	                    m.atacar();
+	                    enemigo.setVida(enemigo.getVida() - m.getFuerza());
+	                    System.out.printf("Has atacado al %s con %.2f de daño\n", enemigo.getNombre(), m.getFuerza());
+	                } else if (jugador instanceof Arquero) {
+	                    Arquero a = (Arquero) jugador;
+	                    a.atacar();
+	                    enemigo.setVida(enemigo.getVida() - a.getFuerza());
+	                    System.out.printf("Has atacado al %s con %.2f de daño\n", enemigo.getNombre(), a.getFuerza());
+	                }
                 // Ataque del enemigo al jugador
-                enemigo.atacar(jugador);
-            } else if (opcion.equals("2")) {
-                System.out.println("Huiste del combate.");
-                break;
-            } else {
-                System.out.println("Opción no válida.");
+	                enemigo.atacar(jugador);
+	                break;
+            	case "2":
+            		System.out.println("Huiste del combate.");
+            		opcion = "2";
+            		break;
+                default:
+                	System.out.println("Opción no válida.");
             }
 
             if (jugador.getVida() <= 0) {
