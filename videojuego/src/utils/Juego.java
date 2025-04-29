@@ -10,6 +10,7 @@ import java.util.Scanner;
 // Clase donde estarán todos los metodos que servirán para el juego en si
 public class Juego {
     Textos t = new Textos();
+    GuardarDB gdb = new GuardarDB();
     
     // Metodo principal para el juego
     public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Scanner sc, Objetos o) throws FileNotFoundException {
@@ -118,6 +119,11 @@ public class Juego {
             if (enemigo.getVida() <= 0) {
                 System.out.println("¡Has vencido al " + enemigo.getNombre() + "!");
                 tb.ganarRecompensas(jugador);
+                
+                // en caso de que el enemigo sea el enemigo final se guarda en la base de datos el ganador
+                if (enemigo instanceof PadreSecretarioDelSenor){
+                    gdb.añadirGanador(jugador);
+                }
                 return;
             }
         }
