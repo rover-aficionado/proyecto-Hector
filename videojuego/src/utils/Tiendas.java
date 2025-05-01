@@ -77,8 +77,6 @@ public class Tiendas {
 
     // TIENDA PARA LOS ARQUEROS
     private void imprimirFlecha(int indice) {
-//        Flecha flecha = o.flechas.get(indice);
-//        System.out.println(flecha.getNombre() + " - " + flecha.getPrecio() + " monedas c/u | Daño: " + flecha.getDaño() + " | Rareza: " + flecha.getRareza());
         Objetos objetos = new Objetos();
         ArrayList<Flecha> flechas = objetos.listaFlechas();
         
@@ -148,8 +146,6 @@ public class Tiendas {
 
     // TIENDA PARA LOS MAGOS
     private void imprimirGrimorio(int indice) {
-//        Grimorio grimorio = o.grimorios.get(indice);
-//        System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
         Objetos objetos = new Objetos();
         ArrayList<Grimorio> grimorios = objetos.listaGrimorios();
         try { // lista los libros

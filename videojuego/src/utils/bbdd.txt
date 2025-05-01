@@ -1,21 +1,28 @@
 -- BASE DE DATOS PARA GUARDAR LAS PARTIDAS
--- La contraseña tiene que ser cambiada a la de la cuenta local.
 
-DROP TABLE IF EXISTS partidas;
+DROP DATABASE videojuego; 
+CREATE DATABASE videojuego;
+USE videojuego;
+DROP TABLE IF EXISTS ganadores;
 DROP TABLE IF EXISTS personajes;
 
 CREATE TABLE personajes (
     id_personaje INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tipo INT NOT NULL,
     nombre VARCHAR(100) NOT NULL, 
-    vida DOUBLE(5,2) NOT NULL,
-    vidaMaxima DOUBLE(5,2) NOT NULL,
-    fuerza DOUBLE(5,2) NOT NULL,
-    energia DOUBLE(5,2) NOT NULL,
+    vida DECIMAL(5,2) NOT NULL,
+    vidaMaxima DECIMAL(5,2) NOT NULL,
+    fuerza DECIMAL(5,2) NOT NULL,
+    energia DECIMAL(5,2) NOT NULL,
     nivelExperiencia INT NOT NULL,
-    experiencia DOUBLE(5,2) NOT NULL,
+    experiencia DECIMAL(5,2) NOT NULL,
     moneda INT NOT NULL,
     curacion INT NOT NULL,
     fortuna INT NOT NULL
 );
 
+CREATE TABLE ganadores (
+    id_ganador INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_personaje INT NOT NULL,
+    FOREIGN KEY (id_personaje) REFERENCES personajes(id_personaje)
+);
