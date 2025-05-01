@@ -5,7 +5,7 @@ import videojuego.armas.*;
 
 public class Toolbox {
     Textos t = new Textos();
-    Tiendas ti = new Tiendas(); // TODO: eliminar
+    Tiendas ti = new Tiendas();
     public void introduccion(ArrayList<Personajes> personaje) {
         for (Personajes p : personaje) {
             if(p instanceof Guerrero g) {
@@ -67,7 +67,8 @@ public class Toolbox {
 	                                break;
 	                            case "6":
 	                                break;
-	                        }
+                                }
+                                break;
 	                    case "2":
 	                        ti.tiendaArmasGuerrero2();
 	                        switch(opcion) {
@@ -94,6 +95,7 @@ public class Toolbox {
 	                            case "6":
 	                                break;
 	                        }
+                                break;
 	                    case "3":
 	                        ti.tiendaArmasGuerrero3();
 	                        switch(opcion) {
@@ -120,6 +122,7 @@ public class Toolbox {
 	                            case "6":
 	                                break;
 	                        }
+                                break;
 	                    case "4":
 	                        ti.tiendaArmasGuerrero4();
 	                        switch(opcion) {
@@ -146,6 +149,7 @@ public class Toolbox {
 	                            case "6":
 	                                break;
 	                        }
+                                break;
 	                    case "5": 
 	                        ti.tiendaArmasGuerrero5();
 	                        switch(opcion) {
@@ -172,6 +176,7 @@ public class Toolbox {
 	                            case "6":
 	                                break;
 	                        }
+                                break;
 	                    case "6":
 	                        System.out.println("Saliendo de las tiendas");
 	                        break;
@@ -319,7 +324,7 @@ public class Toolbox {
 	                        System.out.println("Valor no válido, vuelva a intentarlo");
 	                        break;
 	                }
-	            } else if (p instanceof Mago m) {
+	            } else if (p instanceof Mago m) { // tienda de armas para el mago
 	            	switch(opcion) {
 	                    case "1":
 	                        ti.tiendaArmasMago1();

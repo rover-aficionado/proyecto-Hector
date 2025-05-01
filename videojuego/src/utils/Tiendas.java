@@ -13,7 +13,7 @@ public class Tiendas {
         try { // accede a la lista de las espadas y las muestra
             Espada espada = espadas.get(indice); 
             System.out.println(espada.getNombre() + " - " + espada.getPrecio() + " monedas | Daño: " + espada.getDaño() + " | Rareza: " + espada.getRareza());
-        } catch (Exception e) { // previene errores debido a la lonjitud de las espadas
+        } catch (Exception e) { // previene errores debido a la lonjitud de la lista de las espadas  espadas
             System.out.println("ERROR: error interno");
             System.out.println("espadas: "+ espadas.size());
         }
@@ -138,8 +138,17 @@ public class Tiendas {
 
     // TIENDA PARA LOS MAGOS
     private void imprimirGrimorio(int indice) {
-        Grimorio grimorio = o.grimorios.get(indice);
-        System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
+//        Grimorio grimorio = o.grimorios.get(indice);
+//        System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
+        Objetos objetos = new Objetos();
+        ArrayList<Grimorio> grimorios = objetos.listaGrimorios();
+        try {
+            Grimorio grimorio=grimorios.get(indice);
+            System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
+        } catch (Exception e) {
+            System.out.println("ERROR: no hay libros que mostrar");
+            System.out.println(grimorios.size());
+        }
     }
 
     public void tiendaArmasMago1() {
