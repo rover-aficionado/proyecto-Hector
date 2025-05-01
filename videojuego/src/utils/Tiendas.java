@@ -77,8 +77,18 @@ public class Tiendas {
 
     // TIENDA PARA LOS ARQUEROS
     private void imprimirFlecha(int indice) {
-        Flecha flecha = o.flechas.get(indice);
-        System.out.println(flecha.getNombre() + " - " + flecha.getPrecio() + " monedas c/u | Daño: " + flecha.getDaño() + " | Rareza: " + flecha.getRareza());
+//        Flecha flecha = o.flechas.get(indice);
+//        System.out.println(flecha.getNombre() + " - " + flecha.getPrecio() + " monedas c/u | Daño: " + flecha.getDaño() + " | Rareza: " + flecha.getRareza());
+        Objetos objetos = new Objetos();
+        ArrayList<Flecha> flechas = objetos.listaFlechas();
+        
+        try { // muestra la información de la flecha pasada por parámetro
+            Flecha flecha = flechas.get(indice);
+            System.out.println(flecha.getNombre() + " - " + flecha.getPrecio() + " monedas c/u | Daño: " + flecha.getDaño() + " | Rareza: " + flecha.getRareza());
+        } catch (Exception e) { // en caso de que la lista esté vacía muestra un mensaje de error
+            System.out.println("ERROR: no hay flechas que listar");
+            System.out.println(flechas.size());
+        }
     }
 
     public void tiendaArmasArquero1() {
@@ -142,10 +152,10 @@ public class Tiendas {
 //        System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
         Objetos objetos = new Objetos();
         ArrayList<Grimorio> grimorios = objetos.listaGrimorios();
-        try {
+        try { // lista los libros
             Grimorio grimorio=grimorios.get(indice);
             System.out.println(grimorio.getNombre() + " - " + grimorio.getPrecio() + " monedas | Daño: " + grimorio.getDaño() + " | Rareza: " + grimorio.getRareza());
-        } catch (Exception e) {
+        } catch (Exception e) { // verifica que la lista tiene al menos un libro que mostrar
             System.out.println("ERROR: no hay libros que mostrar");
             System.out.println(grimorios.size());
         }
@@ -204,8 +214,15 @@ public class Tiendas {
     
     // TIENDA DE HECHIZOS
     private void imprimirHechizo(int indice) {
-        Hechizo hechizo = o.hechizos.get(indice);
-        System.out.println(hechizo.getNombre() + " - " + hechizo.getPrecio() + " monedas | Daño: " + hechizo.getDaño() + " | Rareza: " + hechizo.getRareza());
+        Objetos objetos = new Objetos();
+        ArrayList<Hechizo> hechizos = objetos.listaHechizos();
+        try { // muestra la insformación del hechizo pasado por parámetro
+            Hechizo hechizo = hechizos.get(indice);
+            System.out.println(hechizo.getNombre() + " - " + hechizo.getPrecio() + " monedas | Daño: " + hechizo.getDaño() + " | Rareza: " + hechizo.getRareza());
+        } catch (Exception e) { // salta error en caso de que la lista no tenga hechizos que mostrar
+            System.out.println("ERROR: no hay libros que mostrar");
+            System.out.println(hechizos.size());
+        }
     }
 
     public void tiendaHechizoMago1() {
