@@ -622,31 +622,65 @@ public class Toolbox {
                         }
 
 	            } else if (p instanceof Mago m) { // tienda de armas para el mago
+                        Objetos objetos = new Objetos();
+                        ArrayList<Grimorio> grimorios = objetos.listaGrimorios();
+                        Grimorio grimorio = null;
 	            	switch(opcion) {
 	                    case "1":
 	                        tiendas.tiendaArmasMago1();
 	                        opcion = sc.nextLine();
+                                
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.grimorios.get(0));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(0).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(0);
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.grimorios.get(1));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(1).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(1);
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.grimorios.get(2));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(2).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(2);
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.grimorios.get(3));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(3).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(3);
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.grimorios.get(4));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(4).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(4);
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
 	                        }
@@ -654,25 +688,60 @@ public class Toolbox {
 	                        tiendas.tiendaArmasMago2();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.grimorios.get(5));
-	                                m.setMoneda(m.getMoneda()- o.espadas.get(5).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(5);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.grimorios.get(6));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(6).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(6);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.grimorios.get(7));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(7).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(7);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.grimorios.get(8));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(8).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(8);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.grimorios.get(9));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(9).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(9);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
 	                        }
@@ -680,25 +749,60 @@ public class Toolbox {
 	                        tiendas.tiendaArmasMago3();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.grimorios.get(10));
-	                                m.setMoneda(m.getMoneda()- o.espadas.get(10).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(10);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.grimorios.get(11));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(11).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(11);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.grimorios.get(12));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(12).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(12);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.grimorios.get(13));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(13).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(13);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.grimorios.get(14));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(14).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(14);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
 	                        }
@@ -706,25 +810,60 @@ public class Toolbox {
 	                        tiendas.tiendaArmasMago4();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.grimorios.get(15));
-	                                m.setMoneda(m.getMoneda()- o.espadas.get(15).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(15);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.grimorios.get(16));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(16).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(16);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.grimorios.get(17));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(17).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(17);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.grimorios.get(18));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(18).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(18);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.grimorios.get(19));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(19).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(19);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
 	                        }
@@ -732,25 +871,60 @@ public class Toolbox {
 	                        tiendas.tiendaArmasMago5();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.grimorios.get(20));
-	                                m.setMoneda(m.getMoneda()- o.espadas.get(20).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(20);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.grimorios.get(21));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(21).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(21);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.grimorios.get(22));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(22).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(22);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.grimorios.get(23));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(23).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(23);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.grimorios.get(24));
-	                                m.setMoneda(m.getMoneda() - o.espadas.get(24).getPrecio());
-	                                break;
+	                                grimorio = grimorios.get(24);
+                                        
+                                        if (m.getMoneda()>= grimorio.getPrecio()){
+                                            m.setMoneda(m.getMoneda()-grimorio.getPrecio());
+                                            m.setFuerza(100 + grimorio.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tiene suficiente dinero");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
 	                        }
