@@ -4,24 +4,24 @@ import videojuego.personajes.*;
 import videojuego.armas.*;
 
 public class Toolbox {
-    Textos t = new Textos();
-    Tiendas ti = new Tiendas();
+    Textos textos = new Textos();
+    Tiendas tiendas = new Tiendas();
     public void introduccion(ArrayList<Personajes> personaje) {
         for (Personajes p : personaje) {
             if(p instanceof Guerrero g) {
                 System.out.println("-------------------------------------------------------------");
                 System.out.println("Bienvenido guerrero, tu aventura está a punto de comenzar...");
-                t.historia();
+                textos.historia();
                 System.out.println("-------------------------------------------------------------");
             } else if (p instanceof Mago m) {
                 System.out.println("-------------------------------------------------------------");
                 System.out.println("Bienvenido poseedor de magia, tu aventura está a punto de comenzar...");
-                t.historia();
+                textos.historia();
                 System.out.println("-------------------------------------------------------------");
             } else if (p instanceof Arquero a) {
                 System.out.println("-------------------------------------------------------------");
                 System.out.println("Bienvenido hawkeye, tu aventura está a punto de comenzar...");
-                t.historia();
+                textos.historia();
                 System.out.println("-------------------------------------------------------------");
 
             }
@@ -33,125 +33,262 @@ public class Toolbox {
     public void tiendaArmas(ArrayList<Personajes> personajes, Scanner sc, ArrayList<Armas> equipo, Objetos o) {
         String opcion = "";
         
-        while (opcion != "6") {
-	        t.seleccionTiendas();
+        while (!opcion.equals("6")) {
+	        textos.seleccionTiendas();
 	        opcion = sc.nextLine();
-	        //System.out.println("aaaaa");
-	        
+	           System.out.println("aaaaaaaaaa");
 	        for (Personajes p : personajes) {
 	            if(p instanceof Guerrero g) {
+                        Objetos objetos = new Objetos();
+                        ArrayList<Espada> espadas = objetos.listaEspadas();
+                        Espada espada = null;
+                        System.out.println("aaaaa");
 	                switch(opcion) {
 	                    case "1":
-	                        ti.tiendaArmasGuerrero1();
+	                        tiendas.tiendaArmasGuerrero1();
 	                        opcion = sc.nextLine();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.espadas.get(0));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(0).getPrecio());
-	                                break;
+	                                // extrae el arma de la lista de armas                                      
+                                        espada = espadas.get(0);
+                                        
+                                        // verifica que el jugador tiene el nivel y el dinero
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
+                                        // todas las secciones son iguales
 	                            case "2":
-	                                equipo.add(o.espadas.get(1));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(1).getPrecio());
-	                                break;
+	                                espada = espadas.get(1);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.espadas.get(2));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(2).getPrecio());
-	                                break;
+	                                espada = espadas.get(2);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.espadas.get(3));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(3).getPrecio());
-	                                break;
+	                                espada = espadas.get(3);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.espadas.get(4));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(4).getPrecio());
-	                                break;
+	                                espada = espadas.get(3);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
+                                    default:
+                                        System.out.println("opcion no valida");
+                                        break;
                                 }
                                 break;
 	                    case "2":
-	                        ti.tiendaArmasGuerrero2();
+	                        tiendas.tiendaArmasGuerrero2();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.espadas.get(5));
-	                                g.setMoneda(g.getMoneda()- o.espadas.get(5).getPrecio());
-	                                break;
+	                                espada = espadas.get(5);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.espadas.get(6));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(6).getPrecio());
-	                                break;
+	                                espada = espadas.get(6);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.espadas.get(7));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(7).getPrecio());
-	                                break;
+	                               espada = espadas.get(7);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.espadas.get(8));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(8).getPrecio());
-	                                break;
+	                                espada = espadas.get(8);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.espadas.get(9));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(9).getPrecio());
-	                                break;
+	                                espada = espadas.get(9);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
+                                    default:
+                                        System.out.println("opcion no válida");
+                                        break;
 	                        }
                                 break;
 	                    case "3":
-	                        ti.tiendaArmasGuerrero3();
+	                        tiendas.tiendaArmasGuerrero3();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.espadas.get(10));
-	                                g.setMoneda(g.getMoneda()- o.espadas.get(10).getPrecio());
-	                                break;
+	                                espada = espadas.get(10);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.espadas.get(11));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(11).getPrecio());
-	                                break;
+	                                espada = espadas.get(11);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.espadas.get(12));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(12).getPrecio());
-	                                break;
+	                                espada = espadas.get(12);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.espadas.get(13));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(13).getPrecio());
-	                                break;
+	                                espada = espadas.get(13);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.espadas.get(14));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(14).getPrecio());
-	                                break;
+	                                espada = espadas.get(14);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
+                                    default:
+                                        System.out.println("opcion no valida");
+                                        break;
 	                        }
                                 break;
 	                    case "4":
-	                        ti.tiendaArmasGuerrero4();
+	                        tiendas.tiendaArmasGuerrero4();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.espadas.get(15));
-	                                g.setMoneda(g.getMoneda()- o.espadas.get(15).getPrecio());
-	                                break;
+	                                espada = espadas.get(15);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.espadas.get(16));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(16).getPrecio());
-	                                break;
+	                                espada = espadas.get(16);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.espadas.get(17));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(17).getPrecio());
-	                                break;
+	                                espada = espadas.get(17);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.espadas.get(18));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(18).getPrecio());
-	                                break;
+	                                espada = espadas.get(18);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.espadas.get(19));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(19).getPrecio());
-	                                break;
+	                                espada = espadas.get(19);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
+                                    default:
+                                        System.out.println("opcion no válida");
 	                        }
                                 break;
 	                    case "5": 
-	                        ti.tiendaArmasGuerrero5();
+	                        tiendas.tiendaArmasGuerrero5();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.espadas.get(20));
@@ -187,7 +324,7 @@ public class Toolbox {
 	            } else if (p instanceof Arquero a) {
 	            	switch(opcion) {
 	                    case "1":
-	                        ti.tiendaArmasArquero1();
+	                        tiendas.tiendaArmasArquero1();
 	                        opcion = sc.nextLine();
 	                        switch(opcion) {
 	                            case "1":
@@ -214,7 +351,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "2":
-	                        ti.tiendaArmasArquero2();
+	                        tiendas.tiendaArmasArquero2();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.flechas.get(5));
@@ -240,7 +377,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "3":
-	                        ti.tiendaArmasArquero3();
+	                        tiendas.tiendaArmasArquero3();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.flechas.get(10));
@@ -266,7 +403,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "4":
-	                        ti.tiendaArmasArquero4();
+	                        tiendas.tiendaArmasArquero4();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.flechas.get(15));
@@ -292,7 +429,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "5": 
-	                        ti.tiendaArmasArquero5();
+	                        tiendas.tiendaArmasArquero5();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.flechas.get(20));
@@ -327,7 +464,7 @@ public class Toolbox {
 	            } else if (p instanceof Mago m) { // tienda de armas para el mago
 	            	switch(opcion) {
 	                    case "1":
-	                        ti.tiendaArmasMago1();
+	                        tiendas.tiendaArmasMago1();
 	                        opcion = sc.nextLine();
 	                        switch(opcion) {
 	                            case "1":
@@ -354,7 +491,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "2":
-	                        ti.tiendaArmasMago2();
+	                        tiendas.tiendaArmasMago2();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.grimorios.get(5));
@@ -380,7 +517,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "3":
-	                        ti.tiendaArmasMago3();
+	                        tiendas.tiendaArmasMago3();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.grimorios.get(10));
@@ -406,7 +543,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "4":
-	                        ti.tiendaArmasMago4();
+	                        tiendas.tiendaArmasMago4();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.grimorios.get(15));
@@ -432,7 +569,7 @@ public class Toolbox {
 	                                break;
 	                        }
 	                    case "5": 
-	                        ti.tiendaArmasMago5();
+	                        tiendas.tiendaArmasMago5();
 	                        switch(opcion) {
 	                            case "1":
 	                                equipo.add(o.grimorios.get(20));
