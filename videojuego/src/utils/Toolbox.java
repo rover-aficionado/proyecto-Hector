@@ -380,151 +380,247 @@ public class Toolbox {
 	                }
 	            } else if (p instanceof Arquero a) {
 	            	switch(opcion) {
-	                    case "1":
-	                        tiendas.tiendaArmasArquero1();
-	                        opcion = sc.nextLine();
+                            case "1":
+                                tiendas.tiendaArmasArquero1();
+                                opcion = sc.nextLine();
                                 Objetos objeto = new Objetos();
                                 ArrayList<Flecha> flechas = objeto.listaFlechas();
                                 Flecha flecha = null;
-                                
-	                        switch(opcion) {
-	                            case "1":
-	                                flecha = flechas.get(0);
-                                        
-                                        if (a.getMoneda()>=flecha.getPrecio()){
-                                            a.setMoneda(a.getMoneda()-flecha.getPrecio());
-                                            a.setFlechas(a.getFlechas() +1);
+
+                                switch(opcion) {
+                                    case "1":
+                                        flecha = flechas.get(0);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
                                         }
-	                            case "2":
-	                                equipo.add(o.flechas.get(1));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(1).getPrecio());
-	                                break;
-	                            case "3":
-	                                equipo.add(o.flechas.get(2));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(2).getPrecio());
-	                                break;
-	                            case "4":
-	                                equipo.add(o.flechas.get(3));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(3).getPrecio());
-	                                break;
-	                            case "5":
-	                                equipo.add(o.flechas.get(4));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(4).getPrecio());
-	                                break;
-	                            case "6":
-	                                break;
-	                        }
-	                    case "2":
-	                        tiendas.tiendaArmasArquero2();
-	                        switch(opcion) {
-	                            case "1":
-	                                equipo.add(o.flechas.get(5));
-	                                a.setMoneda(a.getMoneda()- o.espadas.get(5).getPrecio());
-	                                break;
-	                            case "2":
-	                                equipo.add(o.flechas.get(6));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(6).getPrecio());
-	                                break;
-	                            case "3":
-	                                equipo.add(o.flechas.get(7));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(7).getPrecio());
-	                                break;
-	                            case "4":
-	                                equipo.add(o.flechas.get(8));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(8).getPrecio());
-	                                break;
-	                            case "5":
-	                                equipo.add(o.flechas.get(9));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(9).getPrecio());
-	                                break;
-	                            case "6":
-	                                break;
-	                        }
-	                    case "3":
-	                        tiendas.tiendaArmasArquero3();
-	                        switch(opcion) {
-	                            case "1":
-	                                equipo.add(o.flechas.get(10));
-	                                a.setMoneda(a.getMoneda()- o.espadas.get(10).getPrecio());
-	                                break;
-	                            case "2":
-	                                equipo.add(o.flechas.get(11));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(11).getPrecio());
-	                                break;
-	                            case "3":
-	                                equipo.add(o.flechas.get(12));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(12).getPrecio());
-	                                break;
-	                            case "4":
-	                                equipo.add(o.flechas.get(13));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(13).getPrecio());
-	                                break;
-	                            case "5":
-	                                equipo.add(o.flechas.get(14));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(14).getPrecio());
-	                                break;
-	                            case "6":
-	                                break;
-	                        }
-	                    case "4":
-	                        tiendas.tiendaArmasArquero4();
-	                        switch(opcion) {
-	                            case "1":
-	                                equipo.add(o.flechas.get(15));
-	                                a.setMoneda(a.getMoneda()- o.espadas.get(15).getPrecio());
-	                                break;
-	                            case "2":
-	                                equipo.add(o.flechas.get(16));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(16).getPrecio());
-	                                break;
-	                            case "3":
-	                                equipo.add(o.flechas.get(17));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(17).getPrecio());
-	                                break;
-	                            case "4":
-	                                equipo.add(o.flechas.get(18));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(18).getPrecio());
-	                                break;
-	                            case "5":
-	                                equipo.add(o.flechas.get(19));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(19).getPrecio());
-	                                break;
-	                            case "6":
-	                                break;
-	                        }
-	                    case "5": 
-	                        tiendas.tiendaArmasArquero5();
-	                        switch(opcion) {
-	                            case "1":
-	                                equipo.add(o.flechas.get(20));
-	                                a.setMoneda(a.getMoneda()- o.espadas.get(20).getPrecio());
-	                                break;
-	                            case "2":
-	                                equipo.add(o.flechas.get(21));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(21).getPrecio());
-	                                break;
-	                            case "3":
-	                                equipo.add(o.flechas.get(22));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(22).getPrecio());
-	                                break;
-	                            case "4":
-	                                equipo.add(o.flechas.get(23));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(23).getPrecio());
-	                                break;
-	                            case "5":
-	                                equipo.add(o.flechas.get(24));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(24).getPrecio());
-	                                break;
-	                            case "6":
-	                                break;
-	                        }
-	                    case "6":
-	                        System.out.println("Saliendo de las tiendas");
-	                        break;
-	                    default:
-	                        System.out.println("Valor no válido, vuelva a intentarlo");
-	                        break;
-	                }
+                                        break;
+                                    case "2":
+                                        flecha = flechas.get(1);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "3":
+                                        flecha = flechas.get(2);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "4":
+                                        flecha = flechas.get(3);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "5":
+                                        flecha = flechas.get(4);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "6":
+                                        break;
+                                }
+                                break;
+
+                            case "2":
+                                tiendas.tiendaArmasArquero2();
+                                opcion = sc.nextLine();
+                                flechas = new Objetos().listaFlechas();
+
+                                switch(opcion) {
+                                    case "1":
+                                        flecha = flechas.get(5);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "2":
+                                        flecha = flechas.get(6);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "3":
+                                        flecha = flechas.get(7);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "4":
+                                        flecha = flechas.get(8);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "5":
+                                        flecha = flechas.get(9);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "6":
+                                        break;
+                                }
+                                break;
+
+                            case "3":
+                                tiendas.tiendaArmasArquero3();
+                                opcion = sc.nextLine();
+                                flechas = new Objetos().listaFlechas();
+
+                                switch(opcion) {
+                                    case "1":
+                                        flecha = flechas.get(10);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "2":
+                                        flecha = flechas.get(11);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "3":
+                                        flecha = flechas.get(12);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "4":
+                                        flecha = flechas.get(13);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "5":
+                                        flecha = flechas.get(14);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "6":
+                                        break;
+                                }
+                                break;
+
+                            case "4":
+                                tiendas.tiendaArmasArquero4();
+                                opcion = sc.nextLine();
+                                flechas = new Objetos().listaFlechas();
+
+                                switch(opcion) {
+                                    case "1":
+                                        flecha = flechas.get(15);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "2":
+                                        flecha = flechas.get(16);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "3":
+                                        flecha = flechas.get(17);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "4":
+                                        flecha = flechas.get(18);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "5":
+                                        flecha = flechas.get(19);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "6":
+                                        break;
+                                }
+                                break;
+
+                            case "5":
+                                tiendas.tiendaArmasArquero5();
+                                opcion = sc.nextLine();
+                                flechas = new Objetos().listaFlechas();
+
+                                switch(opcion) {
+                                    case "1":
+                                        flecha = flechas.get(20);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "2":
+                                        flecha = flechas.get(21);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "3":
+                                        flecha = flechas.get(22);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "4":
+                                        flecha = flechas.get(23);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "5":
+                                        flecha = flechas.get(24);
+                                        if (a.getMoneda() >= flecha.getPrecio()) {
+                                            a.setMoneda(a.getMoneda() - flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() + 1);
+                                        }
+                                        break;
+                                    case "6":
+                                        break;
+                                }
+                                break;
+
+                            case "6":
+                                System.out.println("Saliendo de las tiendas");
+                                break;
+
+                            default:
+                                System.out.println("Valor no válido, vuelva a intentarlo");
+                                break;
+                        }
+
 	            } else if (p instanceof Mago m) { // tienda de armas para el mago
 	            	switch(opcion) {
 	                    case "1":
