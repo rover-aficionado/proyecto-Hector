@@ -1,5 +1,4 @@
--- BASE DE DATOS PARA GUARDAR LAS PARTIDAS.
--- este txt es solo una copia en caso de que el .sql no funcione.
+-- BASE DE DATOS PARA GUARDAR LAS PARTIDAS
 
 DROP DATABASE videojuego; 
 CREATE DATABASE videojuego;
@@ -28,7 +27,7 @@ CREATE TABLE ganadores (
     FOREIGN KEY (id_personaje) REFERENCES personajes(id_personaje)
 );
 
--- Insertar personajes de prueba para la verificación del sistema de guardado del juego.
+-- Insertar personajes de prueba
 INSERT INTO personajes (tipo, nombre, vida, vidaMaxima, fuerza, energia, nivelExperiencia, experiencia, moneda, curacion, fortuna)
 VALUES
 (1, 'admin', 900.00, 900.00, 100.00, 90.00, 100, 0.00, 100, 10, 15),
@@ -40,26 +39,12 @@ VALUES
 -- Insertar ganadores de prueba
 INSERT INTO ganadores (id_personaje) VALUES (1);
 
--- querys usadas para el sistema de guardado (esta parte son las query exactas dentro del programa java. NO SON FUNCIONALES).
--- listar las partidas guardadas
+-- querys de prueba
 SELECT *
 FROM personajes;
 
--- guardar partida
-INSERT INTO personajes (tipo, nombre, vida, vidaMaxima, fuerza,energia, nivelExperiencia, experiencia, moneda, curacion, fortuna) 
-VALUES (?,?,?,?,?,?,?,?,?,?,?);
+SELECT * 
+FROM personajes p 
+INNER JOIN ganadores g 
+ON g.id_personaje = p.id_personaje;
 
--- cargar partida 
-SELECT *
-FROM personajes 
-WHERE nombre = ?;
-
--- mejores personajes 
-SELECT *
-FROM personajes  p
-INNER JOIN ganadores g
-ON p.id_personaje = g.id_personaje;
-
--- añadir ganadores
-INSERT INTO ganadores (id_personaje) 
-VALUES (?);
