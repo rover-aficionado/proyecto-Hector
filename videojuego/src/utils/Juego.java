@@ -133,14 +133,14 @@ public class Juego {
         }
     }
     
-    public void mostrarEstado(Personajes p) {
+    public void mostrarEstado(Personajes personaje) {
         System.out.println("=== ESTADO DEL JUGADOR ===");
-        System.out.println("Nombre: " + p.getNombre());
-        System.out.println("Vida: " + p.getVida());
-        System.out.println("Fuerza: " + p.getFuerza());
-        System.out.println("Experiencia: " + p.getExperiencia());
-        System.out.println("Monedas: " + p.getMoneda());
-        System.out.println("Nivel de experiencia: " + p.getNivelExperiencia());
+        System.out.println("Nombre: " + personaje.getNombre());
+        System.out.println("Vida: " + personaje.getVida());
+        System.out.println("Fuerza: " + personaje.getFuerza());
+        System.out.println("Experiencia: " + personaje.getExperiencia());
+        System.out.println("Monedas: " + personaje.getMoneda());
+        System.out.println("Nivel de experiencia: " + personaje.getNivelExperiencia());
     }
 
     public Enemigos generarEnemigoAleatorio() {

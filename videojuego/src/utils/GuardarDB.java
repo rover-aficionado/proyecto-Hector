@@ -82,13 +82,14 @@ public class GuardarDB {
                 // ejecución de la query
 
                 // determinar el tipo del personaje e instancias de los mismos
-                if(rs.getInt(1)==1){
+                if(rs.getInt(2)==1){
                     Personajes nuevaPartida = new Arquero(fortuna, nombre, fuerza, energia, moneda, curacion, fortuna);
+                    System.out.println("bueno");
                     return nuevaPartida;
-                } else if (rs.getInt(1)==2){
+                } else if (rs.getInt(2)==2){
                     Personajes nuevaPartida = new Guerrero(nombre, fuerza, energia, moneda, curacion, fortuna);
                     return nuevaPartida;
-                } else if (rs.getInt(1)==3){
+                } else if (rs.getInt(2)==3){
                     Personajes nuevaPartida = new Mago(moneda, nombre, fuerza, energia, moneda, curacion, fortuna);
                     return nuevaPartida;
                 }
@@ -98,6 +99,7 @@ public class GuardarDB {
             System.out.println("ERROR: no se pudo conectar con la base de datos");
             e.printStackTrace();
         }
+        System.out.println("malo");
         return null;
     }
     
