@@ -55,6 +55,7 @@ public class Toolbox {
                                         // verifica que el jugador tiene el nivel y el dinero
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -66,6 +67,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -76,6 +78,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -86,6 +89,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -96,6 +100,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -116,6 +121,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -126,6 +132,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -136,6 +143,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -146,6 +154,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -156,6 +165,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -176,6 +186,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -186,6 +197,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -196,6 +208,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -206,6 +219,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -216,6 +230,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -236,6 +251,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -246,6 +262,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -256,6 +273,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -266,6 +284,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -276,6 +295,7 @@ public class Toolbox {
                                         
                                         if (p.getMoneda()>=espada.getPrecio()){
                                             p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
                                             break;
                                         } else {
                                             System.out.println("no tienes el nivel para este arma");
@@ -291,27 +311,64 @@ public class Toolbox {
 	                        tiendas.tiendaArmasGuerrero5();
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.espadas.get(20));
-	                                g.setMoneda(g.getMoneda()- o.espadas.get(20).getPrecio());
-	                                break;
+	                                espada = espadas.get(20);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "2":
-	                                equipo.add(o.espadas.get(21));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(21).getPrecio());
-	                                break;
+	                                espada = espadas.get(21);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "3":
-	                                equipo.add(o.espadas.get(22));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(22).getPrecio());
-	                                break;
+	                                espada = espadas.get(22);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "4":
-	                                equipo.add(o.espadas.get(23));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(23).getPrecio());
-	                                break;
+	                                espada = espadas.get(23);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "5":
-	                                equipo.add(o.espadas.get(24));
-	                                g.setMoneda(g.getMoneda() - o.espadas.get(24).getPrecio());
-	                                break;
+	                                espada = espadas.get(24);
+                                        
+                                        if (p.getMoneda()>=espada.getPrecio()){
+                                            p.setFuerza(100 + espada.getDaño());
+                                            p.setMoneda(p.getMoneda()-espada.getPrecio());
+                                            break;
+                                        } else {
+                                            System.out.println("no tienes el nivel para este arma");
+                                            break;
+                                        }
 	                            case "6":
 	                                break;
+                                    default:
+                                        System.out.println("opción no válida");
 	                        }
                                 break;
 	                    case "6":
@@ -326,11 +383,18 @@ public class Toolbox {
 	                    case "1":
 	                        tiendas.tiendaArmasArquero1();
 	                        opcion = sc.nextLine();
+                                Objetos objeto = new Objetos();
+                                ArrayList<Flecha> flechas = objeto.listaFlechas();
+                                Flecha flecha = null;
+                                
 	                        switch(opcion) {
 	                            case "1":
-	                                equipo.add(o.flechas.get(0));
-	                                a.setMoneda(a.getMoneda() - o.espadas.get(0).getPrecio());
-	                                break;
+	                                flecha = flechas.get(0);
+                                        
+                                        if (a.getMoneda()>=flecha.getPrecio()){
+                                            a.setMoneda(a.getMoneda()-flecha.getPrecio());
+                                            a.setFlechas(a.getFlechas() +1);
+                                        }
 	                            case "2":
 	                                equipo.add(o.flechas.get(1));
 	                                a.setMoneda(a.getMoneda() - o.espadas.get(1).getPrecio());
