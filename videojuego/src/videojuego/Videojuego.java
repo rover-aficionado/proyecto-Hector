@@ -65,10 +65,8 @@ public class Videojuego {
                     gdb.verPartidasGuardadas();
                     String nombre = sc.next().trim();
                     Personajes nuevoPersonaje = gdb.cargarPartida(nombre);
-                    //sc.close();
                     j.jugar(nuevoPersonaje, j.generarEnemigoAleatorio(), personajes, equipo, tb, o);
                 case "3": // ver ganadores
-                    //System.out.println("funcionalidad no terminada");
                     gdb.mejoresPersonajes();
                     break;
                 case "4":

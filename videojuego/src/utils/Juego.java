@@ -16,7 +16,6 @@ public class Juego {
     public void jugar(Personajes jugador, Enemigos enemigo, ArrayList<Personajes> personajes, ArrayList<Armas> equipo, Toolbox tb, Objetos o) throws FileNotFoundException {
         boolean jugando = true;
         Aleatorio a = new Aleatorio();
-        CargarGuardarPartida cg = new CargarGuardarPartida();
         GuardarDB gdb = new GuardarDB();
         Scanner sc = new Scanner(System.in);
         
@@ -123,6 +122,7 @@ public class Juego {
             if (enemigo.getVida() <= 0) {
                 System.out.println("¡Has vencido al " + enemigo.getNombre() + "!");
                 tb.ganarRecompensas(jugador);
+                jugador.setVida(100.00);
                 
                 // en caso de que el enemigo sea el enemigo final se guarda en la base de datos el ganador
                 if (enemigo instanceof PadreSecretarioDelSenor){

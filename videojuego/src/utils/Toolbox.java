@@ -975,9 +975,9 @@ public class Toolbox {
         }
     }
 
-    public void subirNivel(Personajes p) {
-        int[] niveles = {200, 500, 1000, 5000, 10000};
-        for (int nivel : niveles) {
+    public void subirNivel(Personajes p) { // este método solo se ejecuta en este archivo
+        double[] niveles = {200.00, 500.00, 1000.00, 5000.00, 10000.00};
+        for (double nivel : niveles) {
             if (p.getExperiencia() > nivel) {
                 p.setNivelExperiencia(p.getNivelExperiencia() + 1);
                 p.setVidaMaxima(p.getVidaMaxima() + 5);
@@ -987,17 +987,9 @@ public class Toolbox {
         }
     }
 
-    public void ganarRecompensas(Personajes p) {
-        int bonusExp = (p.getFortuna() > 0) ? (int) (p.getNivelExperiencia() * 0.25) : 0;
-        int bonusMonedas = (p.getFortuna() > 0) ? (int) (p.getNivelExperiencia() * 0.25) : 0;
-
-        p.setExperiencia(p.getExperiencia() + 50 + bonusExp);
-        p.setMoneda(p.getMoneda() + 5 + bonusMonedas);
+    public void ganarRecompensas(Personajes p) { // se ejecuta en enfrentarEnemigo()
+        p.setExperiencia(p.getExperiencia()+50);
 
         subirNivel(p);
-    }
-    
-    public void creacionObjetos() {
-        
     }
 }
